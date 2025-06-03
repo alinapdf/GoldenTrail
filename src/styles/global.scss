@@ -1,0 +1,63 @@
+@import "base/reset";
+@import "base/typography";
+@import "utils/variables";
+@import "components/buttons";
+
+* {
+  transition: all 0.5s ease;
+}
+
+body {
+  font-family: $font-regular;
+  color: $color-black;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: $font-bold;
+  font-size: $h1-size-large;
+  line-height: 45;
+}
+
+h2 {
+  font-family: $font-semibold;
+  font-size: $h2-size-large;
+  margin-bottom: 32px;
+}
+
+h3 {
+  font-family: $font-medium;
+  font-size: $h3-size-large;
+}
+
+p {
+  font-family: $font-regular;
+  font-size: $p-size;
+}
+
+.container {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: $h1-size-medium;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  h1 {
+    font-size: $h1-size-small;
+  }
+
+  h2 {
+    font-size: $h2-size-small;
+    margin-bottom: 28px;
+  }
+
+  h3 {
+    font-size: $h3-size-small;
+  }
+}
