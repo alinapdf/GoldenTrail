@@ -1,0 +1,147 @@
+.productCard-objs {
+  display: flex;
+  gap: 17px;
+  .productCard {
+    align-items: stretch;
+    .productCard_top {
+      margin-bottom: 23px;
+      .productCard_main-info {
+        position: relative;
+        margin-bottom: 20px;
+        .productCard_img {
+          background-color: rgba(217, 217, 217, 1);
+          width: 336px;
+          height: 278px;
+          img {
+            height: 278px;
+          }
+        }
+        .productCard_status {
+          position: absolute;
+          top: 19px;
+          left: 19px;
+          background-color: rgba(220, 182, 90, 1);
+          padding: 2px 15px;
+          font-family: Nunito Sans;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          text-transform: uppercase;
+          color: white;
+        }
+        .productCard_btns {
+          position: absolute;
+          top: 19px;
+          right: 19px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .productCard_btn.baasket {
+            width: 40px;
+            background-image: url("../../assets/img/cart.svg"); // путь от SCSS-файла
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 100%;
+            padding: 24px 0px 14px 0px;
+            border: none;
+            cursor: pointer;
+            transition: background-image 0.2s ease-in-out;
+            &:hover {
+              background-image: url("../../assets/img/cartb.svg");
+              background-color: rgba(18, 32, 45, 1);
+            }
+          }
+          .productCard_btn.fav {
+            width: 40px;
+            background-image: url("../../assets/img/heart.svg"); // путь от SCSS-файла
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 100%;
+            padding: 24px 0px 14px 0px;
+            border: none;
+            cursor: pointer;
+            transition: background-image 0.2s ease-in-out;
+
+            &:hover {
+              background-image: url("../../assets/img/heart.svg");
+              background-color: rgba(18, 32, 45, 1);
+            }
+          }
+        }
+      }
+      .productCard_sizes {
+        display: flex;
+        gap: 23px;
+        margin-top: 10px;
+        font-family: Nunito Sans;
+        font-weight: 500;
+        font-size: 14px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+    .productCard_bottom {
+      .productCard_bottom-info {
+        display: flex;
+        justify-content: space-between;
+        .productCard_price {
+          display: flex;
+          gap: 12px;
+          .productCard_price_main-price {
+            font-family: Nunito Sans;
+            font-weight: 700;
+            font-size: 18px;
+            color: rgba(34, 34, 34, 1);
+          }
+          .productCard_price_old-price {
+            font-family: Nunito Sans;
+            font-weight: 500;
+            font-size: 18px;
+            text-decoration: line-through;
+            color: rgba(236, 236, 236, 1);
+          }
+        }
+
+        .productCard_colors {
+          display: flex;
+          gap: 9px;
+          .productCard_color-item span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+          }
+        }
+      }
+      .productCard_action {
+        margin-top: 18px;
+        display: flex;
+        justify-content: space-between;
+        .btn-main {
+          background-color: rgba(18, 32, 45, 1);
+          padding: 6px 28px;
+          font-family: Nunito Sans;
+          font-weight: 600;
+          font-size: 16px;
+          color: rgba(255, 255, 255, 1);
+        }
+        a {
+          font-family: Nunito Sans;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          text-decoration: underline;
+          text-decoration-style: solid;
+          text-decoration-thickness: 0%;
+          text-decoration-skip-ink: auto;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+}

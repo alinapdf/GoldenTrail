@@ -1,0 +1,24 @@
+.container-About {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+  margin-top: 160px;
+  .about-block {
+    display: flex;
+    justify-content: space-between;
+    .About-Info {
+      width: 512px;
+      .About-Descs {
+        margin-bottom: 16px;
+
+        .About-Desc {
+          height: 88px;
+          font-family: Nunito Sans;
+          font-weight: 400;
+          font-size: 18px;
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

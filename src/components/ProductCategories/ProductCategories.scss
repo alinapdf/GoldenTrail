@@ -1,0 +1,33 @@
+.product-categories {
+  margin-top: 160px;
+  .product-categories-list {
+    display: flex;
+    gap: 16px;
+    .product-category-card {
+      background-color: rgba(217, 217, 217, 1);
+      position: relative;
+      background-position: bottom 0px;
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      border-bottom: 2px solid rgba(18, 32, 45, 1);
+      width: 336px;
+      height: 225px;
+      .product-category-name {
+        word-break: normal;
+        position: absolute;
+        font-family: Nunito Sans;
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: uppercase;
+        top: 18px;
+        left: 18px;
+        right: 18px;
+      }
+      .btn {
+        position: absolute;
+        bottom: 18px;
+        left: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,155 @@
+.container-BestSellers {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+  margin-top: 160px;
+  .BestSellers-objs {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    .BestSellers {
+      align-items: stretch;
+      width: 336px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      .BestSellers_top {
+        margin-bottom: 23px;
+        width: 336px;
+        .BestSellers_main-info {
+          position: relative;
+          margin-bottom: 20px;
+          border-bottom: 2px solid rgba(18, 32, 45, 1);
+          .BestSellers_img {
+            background-color: rgba(217, 217, 217, 1);
+            width: 336px;
+            height: 278px;
+            position: relative;
+            overflow: hidden;
+            img {
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+          .BestSellers_status {
+            position: absolute;
+            top: 19px;
+            left: 19px;
+            background-color: rgba(220, 182, 90, 1);
+            padding: 2px 15px;
+            font-family: Nunito Sans;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            color: white;
+          }
+          .BestSellers_btns {
+            position: absolute;
+            top: 19px;
+            right: 19px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .BestSellers_btn.baasket {
+              width: 40px;
+              background-image: url("../../assets/img/cart.svg"); // путь от SCSS-файла
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: rgba(255, 255, 255, 1);
+              border-radius: 100%;
+              padding: 24px 0px 14px 0px;
+              border: none;
+              cursor: pointer;
+              transition: background-image 0.2s ease-in-out;
+              &:hover {
+                background-image: url("../../assets/img/cartb.svg");
+                background-color: rgba(18, 32, 45, 1);
+              }
+            }
+            .BestSellers_btn.fav {
+              width: 40px;
+              background-image: url("../../assets/img/heart.svg"); // путь от SCSS-файла
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: rgba(255, 255, 255, 1);
+              border-radius: 100%;
+              padding: 24px 0px 14px 0px;
+              border: none;
+              cursor: pointer;
+              transition: background-image 0.2s ease-in-out;
+
+              &:hover {
+                background-image: url("../../assets/img/heart.svg");
+                background-color: rgba(18, 32, 45, 1);
+              }
+            }
+          }
+        }
+        .BestSellers_sizes {
+          display: flex;
+          gap: 23px;
+          margin-top: 10px;
+          font-family: Nunito Sans;
+          font-weight: 500;
+          font-size: 14px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+      .BestSellers_bottom {
+        .BestSellers_bottom-info {
+          display: flex;
+          justify-content: space-between;
+          .BestSellers_price {
+            display: flex;
+            gap: 12px;
+            .BestSellers_price_main-price {
+              font-family: Nunito Sans;
+              font-weight: 700;
+              font-size: 18px;
+              color: rgba(34, 34, 34, 1);
+            }
+            .BestSellers_price_old-price {
+              font-family: Nunito Sans;
+              font-weight: 500;
+              font-size: 18px;
+              text-decoration: line-through;
+              color: rgba(236, 236, 236, 1);
+            }
+          }
+          .BestSellers_colors {
+            display: flex;
+            gap: 9px;
+            .BestSellers_color-item span {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+            }
+          }
+        }
+        .BestSellers_action {
+          margin-top: 18px;
+          display: flex;
+          justify-content: space-between;
+          a {
+            font-family: Nunito Sans;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-decoration-thickness: 0%;
+            text-decoration-skip-ink: auto;
+            align-self: flex-end;
+            list-style: none;
+          }
+        }
+      }
+    }
+  }
+}

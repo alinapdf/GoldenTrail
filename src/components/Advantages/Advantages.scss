@@ -1,0 +1,52 @@
+.Advantages-wrapper {
+  margin-top: 160px;
+  background-color: rgba(18, 32, 45, 1);
+
+  .Advantages-inner {
+    max-width: 1072px;
+    margin: 0 auto;
+    padding: 64px 16px;
+
+    .h2 {
+      font-family: "Nunito Sans", sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+
+    .Advantages-objs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(412px, 1fr));
+      gap: 24px;
+    }
+
+    .Advantages-obj {
+      text-align: start;
+      .Advantages-img {
+        margin-bottom: 24px;
+        img {
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      .Advantages-Name {
+        font-family: Nunito Sans;
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 1);
+        margin-bottom: 19px;
+      }
+
+      .Advantages-Desc {
+        font-family: Nunito Sans;
+        font-weight: 400;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+.container-newproducts {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+  margin-top: 160px;
+  .newProducts-objs {
+    display: flex;
+    gap: 17px;
+    .newProducts {
+      align-items: stretch;
+      .newProducts_top {
+        margin-bottom: 23px;
+        .newProducts_main-info {
+          position: relative;
+          margin-bottom: 20px;
+          border-bottom: 2px solid rgba(18, 32, 45, 1);
+          .newProducts_img {
+            background-color: rgba(217, 217, 217, 1);
+            width: 336px;
+            height: 278px;
+            position: relative;
+            img {
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+          .newProducts_status {
+            position: absolute;
+            top: 19px;
+            left: 19px;
+            background-color: rgba(220, 182, 90, 1);
+            padding: 2px 15px;
+            font-family: Nunito Sans;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            color: white;
+          }
+          .newProducts_btns {
+            position: absolute;
+            top: 19px;
+            right: 19px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .newProducts_btn.baasket {
+              width: 40px;
+              background-image: url("../../assets/img/cart.svg"); // путь от SCSS-файла
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: rgba(255, 255, 255, 1);
+              border-radius: 100%;
+              padding: 24px 0px 14px 0px;
+              border: none;
+              cursor: pointer;
+              transition: background-image 0.2s ease-in-out;
+              &:hover {
+                background-image: url("../../assets/img/cartb.svg");
+                background-color: rgba(18, 32, 45, 1);
+              }
+            }
+            .newProducts_btn.fav {
+              width: 40px;
+              background-image: url("../../assets/img/heart.svg"); // путь от SCSS-файла
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: rgba(255, 255, 255, 1);
+              border-radius: 100%;
+              padding: 24px 0px 14px 0px;
+              border: none;
+              cursor: pointer;
+              transition: background-image 0.2s ease-in-out;
+
+              &:hover {
+                background-image: url("../../assets/img/heart.svg");
+                background-color: rgba(18, 32, 45, 1);
+              }
+            }
+          }
+        }
+        .newProducts_sizes {
+          display: flex;
+          gap: 23px;
+          margin-top: 10px;
+          font-family: Nunito Sans;
+          font-weight: 500;
+          font-size: 14px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .newProducts_bottom {
+      .newProducts_bottom-info {
+        display: flex;
+        justify-content: space-between;
+        .newProducts_price {
+          display: flex;
+          gap: 12px;
+          .newProducts_price_main-price {
+            font-family: Nunito Sans;
+            font-weight: 700;
+            font-size: 18px;
+            color: rgba(34, 34, 34, 1);
+          }
+          .newProducts_price_old-price {
+            font-family: Nunito Sans;
+            font-weight: 500;
+            font-size: 18px;
+            text-decoration: line-through;
+            color: rgba(236, 236, 236, 1);
+          }
+        }
+        .newProducts_colors {
+          display: flex;
+          gap: 9px;
+          .newProducts_color-item span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+          }
+        }
+      }
+      .newProducts_action {
+        margin-top: 18px;
+        display: flex;
+        justify-content: space-between;
+        a {
+          font-family: Nunito Sans;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          text-decoration: underline;
+          text-decoration-style: solid;
+          text-decoration-thickness: 0%;
+          text-decoration-skip-ink: auto;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+}
