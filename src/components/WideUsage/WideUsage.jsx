@@ -50,14 +50,16 @@ function WideUsage() {
             <div className="WideUsage-img">
               <img src={product.img} alt={product.name} />
             </div>
-            <div className="WideUsage-Name">{product.name}</div>
-            <ul className="WideUsage-menu">
-              {product.menu.map((item, index) => (
-                <li className="WideUsage-menu-items" key={index}>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="WideUsage-block">
+              <div className="WideUsage-Name">{product.name}</div>
+              <ul className="WideUsage-menu">
+                {product.menu.map((item, index) => (
+                  <li className="WideUsage-menu-items" key={index}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>

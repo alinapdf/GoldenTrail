@@ -28,7 +28,7 @@ function About() {
           </div>
           <button className="btn-main">Подробнее о компании</button>
         </div>
-        <div>
+        <div className="AboutPic-img">
           <img src={AboutPic} />
         </div>
       </div>

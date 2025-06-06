@@ -56,7 +56,7 @@ function CardItem() {
   ];
 
   return (
-    <div className="container">
+    <div className="container-productCard">
       <h2>Популярные товары</h2>
       <div className="productCard-objs">
         {products.map((product) => (

@@ -12,21 +12,19 @@ function ProductCategories() {
   ];
 
   return (
-    <div className="container">
-      <div className="product-categories">
-        <h2>Категории товаров</h2>
-        <div className="product-categories-list">
-          {categories.map((category) => (
-            <div
-              key={category.id}
-              className="product-category-card"
-              style={{ backgroundImage: `url(${category.bg})` }}
-            >
-              <div className="product-category-name">{category.name}</div>
-              <button className="btn-main btn">Перейти в каталог</button>
-            </div>
-          ))}
-        </div>
+    <div className="product-categories">
+      <h2>Категории товаров</h2>
+      <div className="product-categories-list">
+        {categories.map((category) => (
+          <div
+            key={category.id}
+            className="product-category-card"
+            style={{ backgroundImage: `url(${category.bg})` }}
+          >
+            <div className="product-category-name">{category.name}</div>
+            <button className="btn-main btn">Перейти в каталог</button>
+          </div>
+        ))}
       </div>
     </div>
   );
