@@ -48,6 +48,11 @@ function Header() {
                     RU
                   </button>
                 </div>
+                <button className="headerMan_burger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
               </div>
             </div>
           </div>
