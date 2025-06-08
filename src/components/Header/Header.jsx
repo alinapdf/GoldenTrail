@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/Logo.svg";
+
+import cart from "../../assets/img/cart.svg";
 
 function Header() {
   return (
@@ -7,9 +10,11 @@ function Header() {
         <div className="headerMain">
           <div className="container">
             <div className="headerMain_wrapper">
-              <div className="headerMan_logo">
-                <img src={logo} alt="Golden Trail" />
-              </div>
+              <Link to={"/"}>
+                <div className="headerMan_logo">
+                  <img src={logo} alt="Golden Trail" />
+                </div>
+              </Link>
               <nav className="headerMan_nav">
                 <button
                   className="headerMan_nav-item"
@@ -17,9 +22,12 @@ function Header() {
                 >
                   <a href="#">Продукция</a>
                 </button>
-                <a href="#" className="headerMan_nav-item">
-                  О нас
-                </a>
+                <Link to={"/about"}>
+                  <a href="#" className="headerMan_nav-item">
+                    О нас
+                  </a>
+                </Link>
+
                 <a href="#" className="headerMan_nav-item">
                   Контакты
                 </a>
@@ -30,7 +38,11 @@ function Header() {
                   id="headerMain-search"
                 ></button>
                 <a href="#" className="headerMan_btns-btn fav"></a>
-                <a href="#" className="headerMan_btns-btn basket"></a>
+                <Link to={"/busket"}>
+                  <a href="#" className="headerMan_btns-btn basket">
+                    <img src={cart} />
+                  </a>
+                </Link>
                 <a href="" className="headerMan_btns-btn user"></a>
               </div>
               <div className="headerMan_right">
