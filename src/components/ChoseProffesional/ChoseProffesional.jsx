@@ -3,18 +3,31 @@ import "./ChoseProffesional.scss";
 import cart from "../../assets/img/cart.svg";
 import heart from "../../assets/img/heart.svg";
 import cartb from "../../assets/img/cartb.svg";
-
+import Heartb from "../../assets/img/Heartb.svg";
 import Man from "../../assets/img/Man.png";
 import Glasses from "../../assets/img/Glasses.png";
 import Door from "../../assets/img/Door.png";
 
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/CardSlice";
+import { addFav } from "../../redux/AddFav";
+
 function ChoseProffesional() {
+  const dispatch = useDispatch();
+
+  const handleAdd = (product) => {
+    dispatch(addItem(product));
+  };
+
+  const handleAddFav = (product) => {
+    dispatch(addFav(product));
+  };
   const products = [
     {
       id: 1,
       name: "Фартук рентгенозащитный",
       img: Man,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
       colors: [
         "rgba(29, 227, 137, 1)",
@@ -31,7 +44,7 @@ function ChoseProffesional() {
       id: 2,
       name: "Очки рентгенозащитные",
       img: Glasses,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: ["S", "M", "Xl"],
       colors: [
         "rgba(242, 219, 71, 1)",
@@ -48,7 +61,7 @@ function ChoseProffesional() {
       id: 3,
       name: "Защитные ширмы",
       img: Door,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: [],
       colors: [
         "rgba(242, 219, 71, 1)",
@@ -75,8 +88,14 @@ function ChoseProffesional() {
                 </div>
                 <div className="ChoseProffesional_status">{product.is_new}</div>
                 <div className="ChoseProffesional_btns">
-                  <button className="ChoseProffesional_btn baasket"></button>
-                  <button className="ChoseProffesional_btn fav"></button>
+                  <button
+                    className="ChoseProffesional_btn baasket"
+                    onClick={() => handleAdd(product)}
+                  ></button>
+                  <button
+                    className="ChoseProffesional_btn fav"
+                    onClick={() => handleAddFav(product)}
+                  ></button>
                 </div>
               </div>
               <h3>{product.name}</h3>
@@ -109,7 +128,9 @@ function ChoseProffesional() {
                 </ul>
               </div>
               <div className="ChoseProffesional_action">
-                <button className="btn-main">Купить в 1 клик</button>
+                <button className="btn-main" onClick={() => handleAdd(product)}>
+                  Купить в 1 клик
+                </button>
                 <a href="#" className="link-main">
                   Подробнее
                 </a>

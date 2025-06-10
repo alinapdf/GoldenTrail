@@ -1,0 +1,208 @@
+@import "../../styles/utils/variables";
+
+.container-FavBusket {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+  .FavBusket-Block {
+    margin-top: 64px;
+    align-items: flex-start;
+    .FavBusket-Block-newcard {
+      display: flex;
+      flex-direction: column;
+      .FavBusket-Block-Obj {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .FavBusket-Left-Block {
+          display: flex;
+          gap: 16px;
+          .FavBusket-img {
+            width: 160px;
+            height: 160px;
+            background-color: rgba(236, 236, 236, 1);
+          }
+          .FavBusket-Blok-desc {
+            .h3 {
+              font-family: $font-medium;
+              font-weight: 500;
+              font-size: 20px;
+              width: 336px;
+              margin-bottom: 25px;
+              color: rgba(34, 34, 34, 1);
+            }
+            .FavBusket-Menu {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              .FavBusket-Item-Size {
+                display: flex;
+                justify-content: space-between;
+                max-width: 128px;
+              }
+              .FavBusket-Item-Quantity {
+                display: flex;
+                justify-content: space-between;
+                max-width: 128px;
+              }
+            }
+          }
+        }
+
+        .FavBusket-Total-Price {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          .FavBusket-New-Price {
+            font-family: $font-bold;
+            font-weight: 700;
+            font-size: 32px;
+            text-align: right;
+            margin-bottom: 7px;
+            color: rgba(18, 32, 45, 1);
+            white-space: nowrap;
+          }
+          .FavBusket-Old-Price {
+            font-family: $font-semibold;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: right;
+            text-decoration: line-through;
+            color: rgba(127, 127, 127, 1);
+            margin-bottom: 12px;
+          }
+          .Del-Add {
+            display: flex;
+            gap: 20px;
+            .deleete {
+              font-family: $font-medium;
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 100%;
+              letter-spacing: 0%;
+              text-align: left;
+              text-decoration: underline;
+              text-decoration-style: solid;
+              text-decoration-thickness: 0%;
+              text-decoration-skip-ink: auto;
+              color: rgba(34, 34, 34, 1);
+            }
+            .btn {
+              background-color: rgba(18, 32, 45, 1);
+              padding: 6px 28px;
+              font-family: $font-semibold;
+              font-weight: 600;
+              font-size: 16px;
+              color: rgba(255, 255, 255, 1);
+              border-bottom: 2px solid rgba(220, 182, 90, 1);
+            }
+          }
+        }
+      }
+    }
+
+    .FavBusket-Block-Total-Price {
+      padding: 18px;
+      background-color: rgba(236, 236, 236, 1);
+      margin-bottom: 18px;
+      .FavBusket-Block-Total {
+        display: flex;
+        justify-content: space-between;
+        .FavBusket-Total {
+          font-family: $font-semibold;
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          color: rgba(18, 32, 45, 1);
+        }
+        .FavBusket-Price {
+          font-family: $font-bold;
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          text-align: right;
+          color: rgba(18, 32, 45, 1);
+          white-space: nowrap;
+        }
+      }
+      .Delivery-texts {
+        display: flex;
+        justify-content: space-between;
+        .Delivery-text {
+          color: rgba(127, 127, 127, 1);
+        }
+        .delivery {
+          color: rgba(127, 127, 127, 1);
+        }
+      }
+    }
+
+    .FavBusket-Buttons {
+      display: flex;
+      justify-content: space-between;
+      .FavBusket-Buttons-add {
+        display: flex;
+        gap: 16px;
+        .btn {
+          background-color: rgba(18, 32, 45, 1);
+          padding: 6px 28px;
+          font-family: $font-semibold;
+          font-weight: 600;
+          font-size: 16px;
+          color: rgba(255, 255, 255, 1);
+          border-bottom: 2px solid rgba(220, 182, 90, 1);
+          margin-bottom: 18px;
+        }
+      }
+      .delete {
+        font-family: $font-medium;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: right;
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-decoration-offset: 0%;
+        text-decoration-thickness: 0%;
+        text-decoration-skip-ink: auto;
+      }
+    }
+  }
+
+  .FavBusket-categories-list {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    .FavBusket-category-card {
+      background-color: rgba(217, 217, 217, 1);
+      position: relative;
+      background-position: bottom 0px;
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      border-bottom: 2px solid rgba(18, 32, 45, 1);
+      width: 336px;
+      height: 225px;
+      .FavBusket-category-name {
+        word-break: normal;
+        position: absolute;
+        font-family: $font-medium;
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: uppercase;
+        top: 18px;
+        left: 18px;
+        right: 18px;
+      }
+      .btn {
+        position: absolute;
+        bottom: 18px;
+        left: 18px;
+      }
+    }
+  }
+}

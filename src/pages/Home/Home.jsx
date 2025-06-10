@@ -22,6 +22,7 @@ function Home() {
       <WideUsage />
       <Advantages />
       <Reviews />
+
     </>
   );
 }

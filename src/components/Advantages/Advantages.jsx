@@ -41,7 +41,7 @@ function Advantages() {
                 <img src={product.img} alt={product.name} />
               </div>
               <div className="Advantages-Name">{product.name}</div>
-              <div className="Advantages-Desc">{product.desc}</div>
+              <p className="Advantages-Desc">{product.desc}</p>
             </div>
           ))}
         </div>

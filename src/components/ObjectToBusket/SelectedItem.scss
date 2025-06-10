@@ -1,0 +1,223 @@
+@import "../../styles/utils/variables";
+
+.container-SelectedItem {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+  .SelectedItem-categories-list {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    .SelectedItem-category-card {
+      background-color: rgba(217, 217, 217, 1);
+      position: relative;
+      background-position: bottom 0px;
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      border-bottom: 2px solid rgba(18, 32, 45, 1);
+      width: 336px;
+      height: 225px;
+      .SelectedItem-category-name {
+        word-break: normal;
+        position: absolute;
+        font-family: $font-medium;
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: uppercase;
+        top: 18px;
+        left: 18px;
+        right: 18px;
+      }
+      .btn {
+        position: absolute;
+        bottom: 18px;
+        left: 18px;
+      }
+    }
+  }
+  .SelectedItem-Block {
+    margin-top: 64px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    .SelectedItem-Block-newcard {
+      display: flex;
+      flex-direction: column;
+      .SelectedItem-Block-Obj {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 20px;
+        .SelectedItem-img {
+          width: 160px;
+          height: 160px;
+          background-color: rgba(236, 236, 236, 1);
+        }
+        .SelectedItem-Blok-desc {
+          .h3 {
+            font-family: $font-medium;
+            font-weight: 500;
+            font-size: 20px;
+            width: 336px;
+            margin-bottom: 25px;
+            color: rgba(34, 34, 34, 1);
+          }
+          .SelectedItem-Menu {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            .SelectedItem-Item-Size {
+              display: flex;
+              justify-content: space-between;
+              max-width: 128px;
+            }
+            .SelectedItem-Item-Quantity {
+              display: flex;
+              justify-content: space-between;
+              max-width: 128px;
+            }
+          }
+        }
+        .SelectedItem-Total-Price {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          .SelectedItem-New-Price {
+            font-family: $font-bold;
+            font-weight: 700;
+            font-size: 32px;
+            text-align: right;
+            margin-bottom: 7px;
+            color: rgba(18, 32, 45, 1);
+            white-space: nowrap;
+          }
+          .SelectedItem-Old-Price {
+            font-family: $font-semibold;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: right;
+            text-decoration: line-through;
+            color: rgba(127, 127, 127, 1);
+            margin-bottom: 12px;
+          }
+          .deleete {
+            font-family: $font-medium;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: left;
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-decoration-thickness: 0%;
+            text-decoration-skip-ink: auto;
+            color: rgba(34, 34, 34, 1);
+          }
+        }
+      }
+    }
+
+    .SelectedItem-Block-Total-Price {
+      padding: 18px;
+      background-color: rgba(236, 236, 236, 1);
+      .SelectedItem-Block-Discount {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+
+        .SelectedItem-Discount {
+          font-family: $font-regular;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          color: rgba(127, 127, 127, 1);
+        }
+        .SelectedItem-Discount-total {
+          font-family: $font-regular;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          text-align: right;
+          color: rgba(127, 127, 127, 1);
+        }
+      }
+      .SelectedItem-Block-Total {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 32px;
+        .SelectedItem-Total {
+          font-family: $font-semibold;
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          color: rgba(18, 32, 45, 1);
+        }
+        .SelectedItem-Total-Ptice {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          .SelectedItem-Price {
+            font-family: $font-bold;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: right;
+            color: rgba(18, 32, 45, 1);
+            white-space: nowrap;
+          }
+        }
+      }
+      .btn {
+        width: 100%;
+        background-color: rgba(18, 32, 45, 1);
+        padding: 6px 28px;
+        font-family: $font-semibold;
+        font-weight: 600;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 1);
+        border-bottom: 2px solid rgba(220, 182, 90, 1);
+        margin-bottom: 18px;
+      }
+      .Delivery-text {
+        color: rgba(127, 127, 127, 1);
+      }
+    }
+  }
+}
+
+.product-categories-list {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  .product-category-card {
+    background-color: rgba(217, 217, 217, 1);
+    position: relative;
+    background-position: bottom 0px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    border-bottom: 2px solid rgba(18, 32, 45, 1);
+    width: 336px;
+    height: 225px;
+    .product-category-name {
+      word-break: normal;
+      position: absolute;
+      font-family: $font-medium;
+      font-weight: 500;
+      font-size: 20px;
+      text-transform: uppercase;
+      top: 18px;
+      left: 18px;
+      right: 18px;
+    }
+    .btn {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@import "../../styles/utils/variables";
+
 .container-WideUsage {
   max-width: 1072px;
   margin: 0 auto;
@@ -6,6 +8,7 @@
   .WideUsage {
     display: flex;
     gap: 38px;
+    margin-top: 32px;
     .WideUsage-obj {
       .WideUsage-img {
         width: 88px;
@@ -18,7 +21,7 @@
       }
       .WideUsage-block {
         .WideUsage-Name {
-          font-family: Nunito Sans;
+          font-family: $font-medium;
           font-weight: 500;
           font-size: 20px;
           width: 290px;
@@ -33,7 +36,7 @@
           .WideUsage-menu-items {
             list-style: disc;
             margin-bottom: 5px;
-            font-family: Nunito Sans;
+            font-family: $font-regular;
             font-weight: 400;
             font-size: 16px;
             color: rgba(34, 34, 34, 1);
@@ -65,7 +68,7 @@
         }
         .WideUsage-block {
           .WideUsage-Name {
-            font-family: Nunito Sans;
+            font-family: $font-medium;
             font-weight: 500;
             font-size: 20px;
             width: 290px;
@@ -80,7 +83,7 @@
             .WideUsage-menu-items {
               list-style: disc;
               margin-bottom: 5px;
-              font-family: Nunito Sans;
+              font-family: $font-regular;
               font-weight: 400;
               font-size: 16px;
               color: rgba(34, 34, 34, 1);
@@ -113,7 +116,7 @@
         }
         .WideUsage-block {
           .WideUsage-Name {
-            font-family: Nunito Sans;
+            font-family: $font-medium;
             font-weight: 500;
             font-size: 20px;
             width: 290px;
@@ -128,7 +131,7 @@
             .WideUsage-menu-items {
               list-style: disc;
               margin-bottom: 5px;
-              font-family: Nunito Sans;
+              font-family: $font-regular;
               font-weight: 400;
               font-size: 16px;
               color: rgba(34, 34, 34, 1);

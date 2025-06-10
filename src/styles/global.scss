@@ -16,13 +16,11 @@ body {
 h1 {
   font-family: $font-bold;
   font-size: $h1-size-large;
-  line-height: 45;
 }
 
 h2 {
   font-family: $font-semibold;
   font-size: $h2-size-large;
-  margin-bottom: 32px;
 }
 
 h3 {
@@ -33,6 +31,7 @@ h3 {
 p {
   font-family: $font-regular;
   font-size: $p-size;
+  margin-bottom: 16px;
 }
 
 .container {

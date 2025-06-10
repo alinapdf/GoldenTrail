@@ -4,15 +4,29 @@ import xalat from "../../assets/img/xalat.png";
 import mask from "../../assets/img/mask.png";
 import cart from "../../assets/img/cart.svg";
 import heart from "../../assets/img/heart.svg";
+import Heartb from "../../assets/img/Heartb.svg";
 import cartb from "../../assets/img/cartb.svg";
 
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/CardSlice";
+import { addFav } from "../../redux/AddFav";
+
 function NewProducts() {
+  const dispatch = useDispatch();
+
+  const handleAdd = (product) => {
+    dispatch(addItem(product));
+  };
+
+  const handleAddFav = (product) => {
+    dispatch(addFav(product));
+  };
   const products = [
     {
       id: 1,
       name: "Халат хирургический одноразовый",
       img: xalat,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
       colors: [
         "rgba(29, 227, 137, 1)",
@@ -22,7 +36,7 @@ function NewProducts() {
 
       mainPrice: "320 ₽",
       oldPrice: "540 ₽",
-      is_new: true,
+      is_new: "new",
       is_bestSellers: false,
       is_poplar: false,
       desc: "Рентгенозащитный воротник щитовидной железы",
@@ -31,7 +45,7 @@ function NewProducts() {
       id: 2,
       name: "Маски медицинские 3-х слойные (50 шт)",
       img: mask,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: ["S", "M", "Xl"],
       colors: [
         "rgba(242, 219, 71, 1)",
@@ -48,7 +62,7 @@ function NewProducts() {
       id: 3,
       name: "Шапочки одноразовые (100 шт)",
       img: cap,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: ["S", "M", "Xl"],
       colors: ["#ffffff"],
       mainPrice: "180 ₽",
@@ -71,8 +85,14 @@ function NewProducts() {
                 </div>
                 <div className="newProducts_status">{product.is_new}</div>
                 <div className="newProducts_btns">
-                  <button className="newProducts_btn baasket"></button>
-                  <button className="newProducts_btn fav"></button>
+                  <button
+                    className="newProducts_btn baasket"
+                    onClick={() => handleAdd(product)}
+                  ></button>
+                  <button
+                    className="newProducts_btn fav"
+                    onClick={() => handleAddFav(product)}
+                  ></button>
                 </div>
               </div>
               <h3>{product.name}</h3>
@@ -105,7 +125,9 @@ function NewProducts() {
                 </ul>
               </div>
               <div className="newProducts_action">
-                <button className="btn-main">Купить в 1 клик</button>
+                <button className="btn-main" onClick={() => handleAdd(product)}>
+                  Купить в 1 клик
+                </button>
                 <a href="#" className="link-main">
                   Подробнее
                 </a>

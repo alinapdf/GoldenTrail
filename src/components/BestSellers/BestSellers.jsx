@@ -9,14 +9,27 @@ import BlueRulon from "../../assets/img/BlueRulon.png";
 import cart from "../../assets/img/cart.svg";
 import heart from "../../assets/img/heart.svg";
 import cartb from "../../assets/img/cartb.svg";
+import Heartb from "../../assets/img/Heartb.svg";
+
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/CardSlice";
+import { addFav } from "../../redux/AddFav";
 
 function BestSellers() {
+  const dispatch = useDispatch();
+
+  const handleAdd = (product) => {
+    dispatch(addItem(product));
+  };
+  const handleAddFav = (product) => {
+    dispatch(addFav(product));
+  };
   const products = [
     {
       id: 1,
       name: "Бахилы плотные (100 пар)",
       img: bahil,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
       colors: [
         "rgba(29, 227, 137, 1)",
@@ -33,7 +46,7 @@ function BestSellers() {
       id: 2,
       name: "Респиратор FFP2/FFP3",
       img: Raspirator,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: ["S", "M", "Xl"],
       colors: [
         "rgba(242, 219, 71, 1)",
@@ -50,7 +63,7 @@ function BestSellers() {
       id: 3,
       name: "Экран лицевой защитный",
       img: MMask,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: ["S", "M", "Xl"],
       colors: [
         "rgba(242, 219, 71, 1)",
@@ -67,7 +80,7 @@ function BestSellers() {
       id: 4,
       name: "УФ-лампа бактерицидная",
       img: Truba,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: [],
       colors: ["#ffffff"],
       mainPrice: "2 200 ₽",
@@ -79,7 +92,7 @@ function BestSellers() {
       id: 5,
       name: "Пленка пищевая для обертываний",
       img: Plenka,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: [],
       colors: ["#ffffff"],
       mainPrice: "150 ₽",
@@ -91,7 +104,7 @@ function BestSellers() {
       id: 6,
       name: "Простыни одноразовые в рулоне",
       img: BlueRulon,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: [],
       colors: [
         "rgba(242, 219, 71, 1)",
@@ -118,8 +131,14 @@ function BestSellers() {
                 </div>
                 <div className="BestSellers_status">{product.is_new}</div>
                 <div className="BestSellers_btns">
-                  <button className="BestSellers_btn baasket"></button>
-                  <button className="BestSellers_btn fav"></button>
+                  <button
+                    className="BestSellers_btn baasket "
+                    onClick={() => handleAdd(product)}
+                  ></button>
+                  <button
+                    className="BestSellers_btn fav"
+                    onClick={() => handleAddFav(product)}
+                  ></button>
                 </div>
               </div>
               <h3>{product.name}</h3>
@@ -152,7 +171,9 @@ function BestSellers() {
                 </ul>
               </div>
               <div className="BestSellers_action">
-                <button className="btn-main">Купить в 1 клик</button>
+                <button className="btn-main" onClick={() => handleAdd(product)}>
+                  Купить в 1 клик
+                </button>
                 <a href="#" className="link-main">
                   Подробнее
                 </a>
