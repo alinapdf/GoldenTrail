@@ -45,38 +45,48 @@
       flex-direction: column;
       .SelectedItem-Block-Obj {
         display: flex;
-        gap: 16px;
+        justify-content: space-between;
         margin-bottom: 20px;
-        .SelectedItem-img {
-          width: 160px;
-          height: 160px;
-          background-color: rgba(236, 236, 236, 1);
-        }
-        .SelectedItem-Blok-desc {
-          .h3 {
-            font-family: $font-medium;
-            font-weight: 500;
-            font-size: 20px;
-            width: 336px;
-            margin-bottom: 25px;
-            color: rgba(34, 34, 34, 1);
-          }
-          .SelectedItem-Menu {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            .SelectedItem-Item-Size {
-              display: flex;
-              justify-content: space-between;
-              max-width: 128px;
-            }
-            .SelectedItem-Item-Quantity {
-              display: flex;
-              justify-content: space-between;
-              max-width: 128px;
+        .SelectedItem-Block-Left {
+          display: flex;
+          gap: 16px;
+          .SelectedItem-img {
+            width: 160px;
+            height: 160px;
+            background-color: rgba(236, 236, 236, 1);
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
             }
           }
+          .SelectedItem-Blok-desc {
+            .h3 {
+              font-family: $font-medium;
+              font-weight: 500;
+              font-size: 20px;
+              width: 336px;
+              margin-bottom: 25px;
+              color: rgba(34, 34, 34, 1);
+            }
+            .SelectedItem-Menu {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              .SelectedItem-Item-Size {
+                display: flex;
+                justify-content: space-between;
+                max-width: 128px;
+              }
+              .SelectedItem-Item-Quantity {
+                display: flex;
+                justify-content: space-between;
+                max-width: 128px;
+              }
+            }
+          }
         }
+
         .SelectedItem-Total-Price {
           display: flex;
           flex-direction: column;
@@ -101,6 +111,23 @@
             color: rgba(127, 127, 127, 1);
             margin-bottom: 12px;
           }
+          .SelectedItem-Buttons {
+            margin-bottom: 14px;
+            margin-top: 12px;
+            width: 70px;
+            height: 30px;
+            display: flex;
+            background-color: rgba(236, 236, 236, 1);
+            .SelectedItem-decrease {
+              width: 100%;
+            }
+            .SelecctedItem-increase {
+              width: 100%;
+            }
+            .SelectedItem-Quantity {
+              align-content: center;
+            }
+          }
           .deleete {
             font-family: $font-medium;
             font-weight: 500;
@@ -121,11 +148,11 @@
     .SelectedItem-Block-Total-Price {
       padding: 18px;
       background-color: rgba(236, 236, 236, 1);
+
       .SelectedItem-Block-Discount {
         display: flex;
         justify-content: space-between;
         margin-bottom: 12px;
-
         .SelectedItem-Discount {
           font-family: $font-regular;
           font-weight: 400;
