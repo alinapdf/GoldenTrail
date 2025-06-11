@@ -1,18 +1,27 @@
 import cart from "../../assets/img/cart.svg";
 import heart from "../../assets/img/heart.svg";
 import cartb from "../../assets/img/cartb.svg";
+import Heartb from "../../assets/img/Heartb.svg";
 import SoManyLike from "../../assets/img/SoManyLike.png";
 import SoManyLike2 from "../../assets/img/SoManyLike2.png";
 import SoManyLike3 from "../../assets/img/SoManyLike3.png";
 
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/CardSlice";
+
 import "./SoMayLike.scss";
 function SoMayLike() {
+  const dispatch = useDispatch();
+
+  const handleAdd = (product) => {
+    dispatch(addItem(product));
+  };
   const products = [
     {
       id: 1,
       name: "Антисептик для рук 1 л",
       img: SoManyLike,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: [],
       colors: [],
       mainPrice: "290 ₽",
@@ -24,7 +33,7 @@ function SoMayLike() {
       id: 2,
       name: "Салфетки спиртовые (100 шт)",
       img: SoManyLike2,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: [],
       colors: [],
       mainPrice: "180 ₽",
@@ -36,7 +45,7 @@ function SoMayLike() {
       id: 3,
       name: "Средство для дезинфекции поверхностей 5 л",
       img: SoManyLike3,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: [],
       colors: [],
       mainPrice: "600 ₽",
@@ -59,7 +68,10 @@ function SoMayLike() {
                 </div>
                 <div className="SoMayLike_status">{product.is_new}</div>
                 <div className="SoMayLike_btns">
-                  <button className="SoMayLike_btn baasket"></button>
+                  <button
+                    className="SoMayLike_btn baasket"
+                    onClick={() => handleAdd(product)}
+                  ></button>
                   <button className="SoMayLike_btn fav"></button>
                 </div>
               </div>
@@ -93,7 +105,9 @@ function SoMayLike() {
                 </ul>
               </div>
               <div className="SoMayLike_action">
-                <button className="btn-main">Купить в 1 клик</button>
+                <button className="btn-main" onClick={() => handleAdd(product)}>
+                  Купить в 1 клик
+                </button>
                 <a href="#" className="link-main">
                   Подробнее
                 </a>

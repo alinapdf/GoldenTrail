@@ -1,3 +1,5 @@
+@import "../../styles/utils/variables";
+
 .product-categories {
   max-width: 1072px;
   margin: 0 auto;
@@ -6,6 +8,7 @@
   .product-categories-list {
     display: flex;
     gap: 16px;
+    margin-top: 32px;
     .product-category-card {
       background-color: rgba(217, 217, 217, 1);
       position: relative;
@@ -18,7 +21,7 @@
       .product-category-name {
         word-break: normal;
         position: absolute;
-        font-family: Nunito Sans;
+        font-family: $font-medium;
         font-weight: 500;
         font-size: 20px;
         text-transform: uppercase;

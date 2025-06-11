@@ -11,9 +11,7 @@ function Header() {
           <div className="container">
             <div className="headerMain_wrapper">
               <Link to={"/"}>
-                <div className="headerMan_logo">
-                  <img src={logo} alt="Golden Trail" />
-                </div>
+                <img src={logo} alt="Golden Trail" />
               </Link>
               <nav className="headerMan_nav">
                 <button
@@ -22,11 +20,7 @@ function Header() {
                 >
                   <a href="#">Продукция</a>
                 </button>
-                <Link to={"/about"}>
-                  <a href="#" className="headerMan_nav-item">
-                    О нас
-                  </a>
-                </Link>
+                <Link to={"/about"}>О нас</Link>
 
                 <a href="#" className="headerMan_nav-item">
                   Контакты
@@ -39,9 +33,7 @@ function Header() {
                 ></button>
                 <a href="#" className="headerMan_btns-btn fav"></a>
                 <Link to={"/busket"}>
-                  <a href="#" className="headerMan_btns-btn basket">
-                    <img src={cart} />
-                  </a>
+                  <img src={cart} />
                 </Link>
                 <a href="" className="headerMan_btns-btn user"></a>
               </div>

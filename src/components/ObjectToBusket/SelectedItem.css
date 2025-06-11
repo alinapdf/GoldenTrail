@@ -1,0 +1,44 @@
+.container-SelectedItem {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj {
+  display: flex;
+  gap: 16px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-img {
+  width: 160px;
+  height: 160px;
+  background-color: rgb(236, 236, 236);
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-Blok-desc .h3 {
+  font-family: Nunito Sans;
+  font-weight: 500;
+  font-size: 16px;
+  width: 336px;
+  margin-bottom: 25px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-Blok-desc .SelectedItem-Menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-Blok-desc .SelectedItem-Menu .SelectedItem-Item-Size {
+  display: flex;
+  justify-content: space-between;
+  max-width: 128px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-Blok-desc .SelectedItem-Menu .SelectedItem-Item-Quantity {
+  display: flex;
+  justify-content: space-between;
+  max-width: 128px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-Total-Price .SelectedItem-New-Price {
+  font-family: Nunito Sans;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}/*# sourceMappingURL=SelectedItem.css.map */

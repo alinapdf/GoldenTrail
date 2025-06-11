@@ -3,15 +3,29 @@ import expr from "../CardItem/expr.png";
 import cart from "../../assets/img/cart.svg";
 import heart from "../../assets/img/heart.svg";
 import cartb from "../../assets/img/cartb.svg";
+import Heartb from "../../assets/img/Heartb.svg";
 import percatki from "../CardItem/percatki.png";
 
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/CardSlice";
+import { addFav } from "../../redux/AddFav";
+
 function CardItem() {
+  const dispatch = useDispatch();
+
+  const handleAdd = (product) => {
+    dispatch(addItem(product));
+  };
+
+  const handleAddFav = (product) => {
+    dispatch(addFav(product));
+  };
   const products = [
     {
       id: 1,
       name: "Рентгенозащитный воротник щитовидной железы",
       img: expr,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: ["XS", "S", "M", "L", "XL", "XXL"],
       colors: [
         "rgba(29, 227, 137, 1)",
@@ -28,7 +42,7 @@ function CardItem() {
       id: 2,
       name: "Перчатки нитриловые нестерильные (100 шт.)",
       img: percatki,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: ["S", "M", "L"],
       colors: [
         "rgba(242, 219, 71, 1)",
@@ -45,7 +59,7 @@ function CardItem() {
       id: 3,
       name: "Перчатки нитриловые нестерильные (100 шт.)",
       img: expr,
-      images: [cart, heart, cartb],
+      images: [cart, heart, cartb, Heartb],
       sizes: [],
       colors: ["#ffffff"],
       mainPrice: "600 ₽",
@@ -61,7 +75,6 @@ function CardItem() {
       <div className="productCard-objs">
         {products.map((product) => (
           <div className="productCard" key={product.id}>
-            <a href="#" className="link-for-mobile"></a>
             <div className="productCard_top">
               <div className="productCard_main-info">
                 <div className="productCard_img">
@@ -69,8 +82,14 @@ function CardItem() {
                 </div>
                 <div className="productCard_status">{product.is_new}</div>
                 <div className="productCard_btns">
-                  <button className="productCard_btn baasket"></button>
-                  <button className="productCard_btn fav"></button>
+                  <button
+                    className="productCard_btn baasket"
+                    onClick={() => handleAdd(product)}
+                  ></button>
+                  <button
+                    className="productCard_btn fav"
+                    onClick={() => handleAddFav(product)}
+                  ></button>
                 </div>
               </div>
               <h3>{product.name}</h3>
@@ -103,7 +122,9 @@ function CardItem() {
                 </ul>
               </div>
               <div className="productCard_action">
-                <button className="btn-main">Купить в 1 клик</button>
+                <button className="btn-main" onClick={() => handleAdd(product)}>
+                  Купить в 1 клик
+                </button>
                 <a href="#" className="link-main">
                   Подробнее
                 </a>

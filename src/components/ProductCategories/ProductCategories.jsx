@@ -21,7 +21,7 @@ function ProductCategories() {
             className="product-category-card"
             style={{ backgroundImage: `url(${category.bg})` }}
           >
-            <div className="product-category-name">{category.name}</div>
+            <h3 className="product-category-name">{category.name}</h3>
             <button className="btn-main btn">Перейти в каталог</button>
           </div>
         ))}

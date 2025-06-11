@@ -9,22 +9,22 @@ function About() {
       <div className="about-block">
         <div className="About-Info">
           <div className="About-Descs">
-            <div className="About-Desc">
+            <p>
               Компания Golden Trail MMC с 2022 года является эксклюзивным
               дистрибьютором Trivitron Healthcare Pvt Ltd в Азербайджане. Наша
               миссия — защита здоровья людей.
-            </div>
-            <div className="About-Desc">
+            </p>
+            <p>
               Мы предлагаем рентгенозащитную одежду Kiran Medical Systems,
               которая обеспечивает надёжную защиту медицинского персонала и
               пациентов. В ассортименте — мужские и женские модели, различные
               материалы и пошив по индивидуальным меркам.
-            </div>
-            <div className="About-Desc">
+            </p>
+            <p>
               Также мы поставляем одноразовые медицинские расходные материалы,
               антисептики и дезинфицирующие средства от ведущих мировых
               производителей для медицинских и косметологических учреждений.
-            </div>
+            </p>
           </div>
           <button className="btn-main">Подробнее о компании</button>
         </div>
