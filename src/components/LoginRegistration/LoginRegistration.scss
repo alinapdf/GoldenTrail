@@ -1,0 +1,81 @@
+.LoginRegistration-wrapper {
+  background-color: rgba(18, 32, 45, 1);
+  padding: 300px 600px;
+  .LoginRegistration-Container {
+    max-width: 1072px;
+    margin: 0 auto;
+
+    .LoginRegistration-Logo {
+      width: 216px;
+      height: 25px;
+      text-align: center;
+      margin-bottom: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .LoginRegistration-Block {
+      width: 512px;
+      background-color: rgba(255, 255, 255, 1);
+      padding: 20px;
+
+      .LoginRegistration-Buttons {
+        display: flex;
+        justify-content: space-around;
+        gap: 58px;
+
+        .LoginRegistration-BtnL,
+        .LoginRegistration-BtnR {
+          font-family: Nunito Sans;
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          text-align: center;
+          color: rgba(127, 127, 127, 1);
+          cursor: pointer;
+          transition: color 0.3s ease;
+        }
+
+        .LoginRegistration-BtnL.active,
+        .LoginRegistration-BtnR.active {
+          color: rgba(18, 32, 45, 1);
+        }
+      }
+
+      .LoginRegistration-Login,
+      .LoginRegistration-Registration {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 34px;
+
+        input {
+          padding: 6px 0px 6px 12px;
+          background-color: rgba(236, 236, 236, 1);
+        }
+
+        .LoginRegistration-btn {
+          background-color: rgba(18, 32, 45, 1);
+          padding: 6px 28px;
+          font-weight: 600;
+          font-size: 16px;
+          color: rgba(255, 255, 255, 1);
+          width: 100%;
+        }
+
+        .LoginRegistration-btn2 {
+          font-family: Nunito Sans;
+          font-weight: 600;
+          font-size: 12px;
+          text-align: center;
+          text-decoration: underline;
+          text-decoration-style: solid;
+        }
+      }
+    }
+  }
+}

@@ -81,67 +81,69 @@ function OrderItem() {
         </div>
       )}
 
-      <div className="order-container">
-        <div className="order-left">
-          <div className="order-number">
-            Заказ номер 03-123-0505
-            <FaRegCopy className="copy-icon" />
+      <div className="order-containers-Cancelled">
+        <div className="order-container-Cancelled">
+          <div className="order-left-Cancelled">
+            <div className="order-number-Cancelled">
+              Заказ номер 03-123-0505
+              <FaRegCopy className="copy-icon" />
+            </div>
+            <div className="order-info-Cancelled">
+              <span className="order-data-Cancelled">от 05.05.2025</span>
+              <span className="order-price-Cancelled">9 350 ₽</span>
+            </div>
           </div>
-          <div className="order-info">
-            <span className="order-data">от 05.05.2025</span>
-            <span className="order-price">9 350 ₽</span>
+
+          <div className="order-right-Cancelled">
+            <label className="order-status-Cancelled">
+              <span className="order-circle-Cancelled"></span>
+              <span className="order-payment-Cancelled">Отменен</span>
+            </label>
+            <button className="toggle-btn" onClick={toggleAccordion2}>
+              <img
+                src={up}
+                alt="toggle"
+                className={`toggle-arrow ${isOpen2 ? "rotated" : ""}`}
+              />
+            </button>
           </div>
         </div>
 
-        <div className="order-right">
-          <label className="order-status">
-            <span className="order-circle"></span>
-            <span className="order-payment">Отменен</span>
-          </label>
-          <button className="toggle-btn" onClick={toggleAccordion2}>
-            <img
-              src={up}
-              alt="toggle"
-              className={`toggle-arrow ${isOpen2 ? "rotated" : ""}`}
-            />
-          </button>
-        </div>
-      </div>
-
-      {isOpen2 && (
-        <div className="myorders-blocks">
-          {[1, 2, 3].map((_, idx) => (
-            <div className="myorders-block" key={idx}>
-              <div className="order-info-block">
-                <div className="order-info-img">
-                  <img src={SSS} alt="product" />
-                </div>
-                <div className="Order-info-items">
-                  <h2>Рентгенозащитный воротник щитовидной железы</h2>
-                  <div className="Order-info-item">
-                    <div className="Order">
-                      <div className="Order-word">Цвет</div>
-                      <div></div>
-                    </div>
-                    <div className="Order">
-                      <div className="Order-word">Размер</div>
-                      <div className="Order-means">S</div>
-                    </div>
-                    <div className="Order">
-                      <div className="Order-word">Количество</div>
-                      <div className="Order-means">1</div>
+        {isOpen2 && (
+          <div className="myorders-blocks">
+            {[1, 2, 3].map((_, idx) => (
+              <div className="myorders-block" key={idx}>
+                <div className="order-info-block">
+                  <div className="order-info-img">
+                    <img src={SSS} alt="product" />
+                  </div>
+                  <div className="Order-info-items">
+                    <h2>Рентгенозащитный воротник щитовидной железы</h2>
+                    <div className="Order-info-item">
+                      <div className="Order">
+                        <div className="Order-word">Цвет</div>
+                        <div></div>
+                      </div>
+                      <div className="Order">
+                        <div className="Order-word">Размер</div>
+                        <div className="Order-means">S</div>
+                      </div>
+                      <div className="Order">
+                        <div className="Order-word">Количество</div>
+                        <div className="Order-means">1</div>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div className="Order-Prices">
+                  <div className="Order-old-price">12 400 ₽</div>
+                  <div className="Order-new-price">9 300 ₽</div>
+                </div>
               </div>
-              <div className="Order-Prices">
-                <div className="Order-old-price">12 400 ₽</div>
-                <div className="Order-new-price">9 300 ₽</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
+      </div>
 
       <div className="order-container">
         <div className="order-left">
