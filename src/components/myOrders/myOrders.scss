@@ -1,6 +1,6 @@
 @import "../../styles/utils/variables";
 
-.Myorders-container {
+.order-wrapper {
   max-width: 1072px;
   margin: 0 auto;
   padding: 0 16px;
@@ -98,18 +98,95 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  .order-info-block {
+  margin-top: 16px;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  .myorders-block {
     display: flex;
     justify-content: space-between;
-    .order-info-img {
-      width: 92px;
-      height: 92px;
-      background-color: rgba(217, 217, 217, 1);
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .order-info-block {
+      display: flex;
+      gap: 16px;
+      .order-info-img {
+        width: 92px;
+        height: 92px;
+        background-color: rgba(217, 217, 217, 1);
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .Order-info-items {
+        h2 {
+          font-size: 20px;
+        }
+        .Order-info-item {
+          display: flex;
+          gap: 43px;
+          .Order {
+            display: flex;
+            min-width: 105px;
+            justify-content: space-between;
+            .Order-word {
+              font-family: Nunito Sans;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 100%;
+              letter-spacing: 0%;
+              color: rgba(127, 127, 127, 1);
+            }
+            .Order-means {
+              font-family: Nunito Sans;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 100%;
+              letter-spacing: 0%;
+              text-align: center;
+              text-transform: uppercase;
+              color: rgba(34, 34, 34, 1);
+            }
+          }
+        }
+      }
+    }
+    .Order-Prices {
+      display: flex;
+      gap: 28px;
+      .Order-old-price {
+        font-family: Nunito Sans;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: right;
+        text-decoration: line-through;
+        color: rgba(127, 127, 127, 1);
+      }
+      .Order-new-price {
+        font-family: Nunito Sans;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: right;
+        color: rgba(18, 32, 45, 1);
       }
     }
   }
+}
+
+.myorders-blocks.hide {
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+.toggle-arrow {
+  transition: transform 0.7s ease;
+}
+
+.toggle-arrow.rotated {
+  transform: rotate(180deg);
 }
