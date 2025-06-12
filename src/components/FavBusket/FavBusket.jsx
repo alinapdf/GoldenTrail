@@ -1,7 +1,7 @@
 import "./FavBusket.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFav } from "../../redux/AddFav";
-import { addItem } from "../../redux/CardSlice";
+import { removeFav, clearFav } from "../../redux/AddFav";
+import { addItem, increaseQuantity, decreaseQuantity } from "../../redux/CardSlice";
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
 import dezenfekiciya from "../../assets/img/dezenfekciya.png";
@@ -20,7 +20,8 @@ function FavBusket() {
 
   const total = favorites.reduce((sum, item) => {
     const price = parseFloat(item.mainPrice.replace(/\s|₽/g, ""));
-    return sum + price * item.quantity;
+    const qty = item.quantity || 1;
+    return sum + price * qty;
   }, 0);
 
   const categories = [

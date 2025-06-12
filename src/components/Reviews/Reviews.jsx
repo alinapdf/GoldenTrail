@@ -1,16 +1,11 @@
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useState } from "react";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import Autor from "../../assets/img/LogoAutor.png";
 import stars from "../../assets/img/Starrs.png";
-
 import { Pagination, Navigation } from "swiper/modules";
-
 import styles from "./Reviews.module.css";
 
 const Reviews = () => {
@@ -87,6 +82,8 @@ const Reviews = () => {
     },
   ];
 
+  const [expandedReviews, setExpandedReviews] = useState({});
+
   return (
     <div className="reviewsContainer">
       <div className="container">
@@ -121,8 +118,7 @@ const Reviews = () => {
           className={styles.swiper_Review}
         >
           {comment.map((item) => {
-            const [expanded, setExpanded] = useState(false);
-
+            const expanded = !!expandedReviews[item.id];
             const shouldTruncate = item.comment.length > 180;
             const visibleText =
               expanded || !shouldTruncate
@@ -147,7 +143,12 @@ const Reviews = () => {
                     {visibleText}
                     {shouldTruncate && (
                       <button
-                        onClick={() => setExpanded(!expanded)}
+                        onClick={() =>
+                          setExpandedReviews((prev) => ({
+                            ...prev,
+                            [item.id]: !expanded,
+                          }))
+                        }
                         className={styles.showMoreBtn}
                       >
                         {expanded ? "Скрыть" : "Читать полностью"}
@@ -165,3 +166,4 @@ const Reviews = () => {
 };
 
 export default Reviews;
+
