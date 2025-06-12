@@ -6,6 +6,9 @@ import cartb from "../../assets/img/cartb.svg";
 import Heartb from "../../assets/img/Heartb.svg";
 import percatki from "../CardItem/percatki.png";
 
+import { Link } from "react-router-dom";
+import { setCurrentProduct } from "../../redux/CurrentProductSlice";
+
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
 import { addFav } from "../../redux/AddFav";
@@ -73,6 +76,7 @@ function CardItem() {
     <div className="container-productCard">
       <h2>Популярные товары</h2>
       <div className="productCard-objs">
+        {" "}
         {products.map((product) => (
           <div className="productCard" key={product.id}>
             <div className="productCard_top">
@@ -125,9 +129,13 @@ function CardItem() {
                 <button className="btn-main" onClick={() => handleAdd(product)}>
                   Купить в 1 клик
                 </button>
-                <a href="#" className="link-main">
+                <Link
+                  to={`/desc/${product.id}`}
+                  className="link-main"
+                  onClick={() => dispatch(setCurrentProduct(product))}
+                >
                   Подробнее
-                </a>
+                </Link>
               </div>
             </div>
           </div>

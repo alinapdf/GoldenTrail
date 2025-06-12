@@ -47,15 +47,18 @@
       color: rgba(0, 0, 0, 1);
     }
     .btn-main-busket {
-      background-color: rgba(18, 32, 45, 1);
+      background-color: rgba(127, 127, 127, 1);
       padding: 6px 28px;
-      font-family:$font-semibold;
+      font-family: $font-semibold;
       font-weight: 600;
       font-size: 16px;
       color: rgba(255, 255, 255, 1);
       border-bottom: 2px solid rgba(220, 182, 90, 1);
       width: 100%;
       margin-top: 36px;
+      &:hover {
+        background-color: rgba(18, 32, 45, 1);
+      }
     }
   }
   .PersonalData-Inputs-Block-Add {
@@ -114,4 +117,7 @@
   margin-top: -10px;
   margin-bottom: 10px;
   display: block;
+}
+input.filled {
+  border: 1px solid rgba(34, 34, 34, 1); // такой же, как :hover
 }
