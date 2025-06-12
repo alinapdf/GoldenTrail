@@ -1,6 +1,10 @@
 import "./SelectedItem.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItem } from "../../redux/CardSlice";
+import {
+  removeItem,
+  increaseQuantity,
+  decreaseQuantity,
+} from "../../redux/CardSlice";
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
 import dezenfekiciya from "../../assets/img/dezenfekciya.png";
@@ -51,21 +55,23 @@ function SelectedItem() {
             <div className="SelectedItem-Block-newcard">
               {cart.map((item) => (
                 <div className="SelectedItem-Block-Obj" key={item.id}>
-                  <div className="SelectedItem-img">
-                    <img src={item.img} alt={item.name} />
-                  </div>
-                  <div className="SelectedItem-Blok-desc">
-                    <h3 className="h3">{item.name}</h3>
-                    <ul className="SelectedItem-Menu">
-                      <li className="SelectedItem-Item-Size">
-                        <div>Размер</div>
-                        <div>{item.sizes[0] || "-"}</div>
-                      </li>
-                      <li className="SelectedItem-Item-Quantity">
-                        <div>Количество</div>
-                        <div>{item.quantity}</div>
-                      </li>
-                    </ul>
+                  <div className="SelectedItem-Block-Left">
+                    <div className="SelectedItem-img">
+                      <img src={item.img} alt={item.name} />
+                    </div>
+                    <div className="SelectedItem-Blok-desc">
+                      <h3 className="h3">{item.name}</h3>
+                      <ul className="SelectedItem-Menu">
+                        <li className="SelectedItem-Item-Size">
+                          <div>Размер</div>
+                          <div>{item.sizes[0] || "-"}</div>
+                        </li>
+                        <li className="SelectedItem-Item-Quantity">
+                          <div>Количество</div>
+                          <div>{item.quantity}</div>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                   <div className="SelectedItem-Total-Price">
                     <div className="SelectedItem-New-Price">
@@ -76,6 +82,23 @@ function SelectedItem() {
                         {item.oldPrice}
                       </div>
                     )}
+                    <div className="SelectedItem-Buttons">
+                      <button
+                        onClick={() => dispatch(decreaseQuantity(item.id))}
+                        className="SelectedItem-decrease"
+                      >
+                        -
+                      </button>
+                      <span className="SelectedItem-Quantity">
+                        {item.quantity}
+                      </span>
+                      <button
+                        onClick={() => dispatch(increaseQuantity(item.id))}
+                        className="SelecctedItem-increase"
+                      >
+                        +
+                      </button>
+                    </div>
                     <button
                       className="deleete"
                       onClick={() => handleRemove(item.id)}

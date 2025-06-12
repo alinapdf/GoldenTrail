@@ -1,0 +1,201 @@
+.ProductWrapper {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.productCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.imageSection {
+  flex: 1 1 40%;
+  max-width: 500px;
+}
+
+.mainSwiper img,
+.thumbSwiper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.thumbSwiper {
+  margin-top: 16px;
+}
+
+.thumbSwiper .swiper-slide {
+  opacity: 0.6;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumbSwiper .swiper-slide-thumb-active {
+  opacity: 1;
+  border: 2px solid #000;
+}
+
+.infoSection {
+  flex: 1 1 50%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoSection h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.inStock {
+  color: green;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.optionBlock {
+  margin-bottom: 24px;
+}
+
+.optionBlock span {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.colorOptions {
+  display: flex;
+  gap: 8px;
+}
+
+.colorDot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.colorDot:hover {
+  opacity: 0.8;
+}
+
+.colorDot.active {
+  border-color: #000;
+}
+
+/* Примеры цветов */
+.pink {
+  background-color: #f472b6;
+}
+.blue {
+  background-color: #3b82f6;
+}
+.green {
+  background-color: #22c55e;
+}
+.gray {
+  background-color: #6b7280;
+}
+
+.sizeOptions {
+  display: flex;
+  gap: 8px;
+}
+
+.sizeBtn {
+  padding: 6px 14px;
+  font-size: 14px;
+  background: #f3f4f6;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sizeBtn:hover {
+  background: #e5e7eb;
+}
+
+.sizeBtn.active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity button {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  background: #e5e7eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quantity input {
+  width: 40px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.priceBlock {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.currentPrice {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+}
+
+.oldPrice {
+  font-size: 16px;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.buyButton {
+  background-color: #111;
+  color: #fff;
+  font-size: 16px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: background 0.2s;
+}
+
+.buyButton:hover {
+  background-color: #000;
+}
+
+.guarantee {
+  font-size: 14px;
+  color: #444;
+}
+
+h2 {
+  margin-bottom: 20px;
+}

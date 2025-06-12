@@ -12,6 +12,9 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
 import { addFav } from "../../redux/AddFav";
 
+import { Link } from "react-router-dom";
+import { setCurrentProduct } from "../../redux/CurrentProductSlice";
+
 function ChoseProffesional() {
   const dispatch = useDispatch();
 
@@ -131,9 +134,13 @@ function ChoseProffesional() {
                 <button className="btn-main" onClick={() => handleAdd(product)}>
                   Купить в 1 клик
                 </button>
-                <a href="#" className="link-main">
+                <Link
+                  to={`/desc/${product.id}`}
+                  className="link-main"
+                  onClick={() => dispatch(setCurrentProduct(product))}
+                >
                   Подробнее
-                </a>
+                </Link>
               </div>
             </div>
           </div>

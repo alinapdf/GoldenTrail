@@ -1,0 +1,123 @@
+@import "../../styles/utils/variables";
+
+.PersonalData-container {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+  margin-top: 64px;
+  .PersonalData-Inputs-Buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 512px;
+    margin-top: 64px;
+    .PersonalData-input {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 12px;
+      width: 100%;
+      input {
+        height: 34px;
+        padding-top: 6px;
+        padding-right: 12px;
+        padding-bottom: 6px;
+        padding-left: 12px;
+        gap: 10px;
+        background-color: rgba(236, 236, 236, 1);
+
+        &:hover {
+          border: 1px solid rgba(34, 34, 34, 1);
+        }
+      }
+    }
+    .Change {
+      align-self: flex-end;
+      font-family: $font-medium;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: right;
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-decoration-offset: 0%;
+      text-decoration-thickness: 0%;
+      text-decoration-skip-ink: auto;
+      color: rgba(0, 0, 0, 1);
+    }
+    .btn-main-busket {
+      background-color: rgba(127, 127, 127, 1);
+      padding: 6px 28px;
+      font-family: $font-semibold;
+      font-weight: 600;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 1);
+      border-bottom: 2px solid rgba(220, 182, 90, 1);
+      width: 100%;
+      margin-top: 36px;
+      &:hover {
+        background-color: rgba(18, 32, 45, 1);
+      }
+    }
+  }
+  .PersonalData-Inputs-Block-Add {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    .PersonalData-Inputs-Add {
+      min-width: 512px;
+      margin-top: 64px;
+      .PersonalData-Name {
+        display: flex;
+        justify-content: space-between;
+      }
+      .PersonalData-input {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 12px;
+        width: 100%;
+        margin-top: 36px;
+        input {
+          height: 34px;
+          padding-top: 6px;
+          padding-right: 12px;
+          padding-bottom: 6px;
+          padding-left: 12px;
+          gap: 10px;
+          background-color: rgba(236, 236, 236, 1);
+
+          &:hover {
+            border: 1px solid rgba(34, 34, 34, 1);
+          }
+        }
+      }
+      .btn-main-busket {
+        background-color: rgba(127, 127, 127, 1);
+        padding: 6px 28px;
+        font-family: $font-semibold;
+        font-weight: 600;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 1);
+        border-bottom: 2px solid rgba(220, 182, 90, 1);
+        width: 100%;
+        margin-top: 36px;
+        &:hover {
+          background-color: rgba(18, 32, 45, 1);
+        }
+      }
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  display: block;
+}
+input.filled {
+  border: 1px solid rgba(34, 34, 34, 1); // такой же, как :hover
+}

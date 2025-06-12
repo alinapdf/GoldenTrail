@@ -8,6 +8,7 @@ import PopularBrands from "../../components/PopularBrands/PopularBrands";
 import ProductCategories from "../../components/ProductCategories/ProductCategories";
 import Reviews from "../../components/Reviews/Reviews";
 import WideUsage from "../../components/WideUsage/WideUsage";
+import Desc from "../Desc/Desc";
 
 function Home() {
   return (
@@ -22,7 +23,6 @@ function Home() {
       <WideUsage />
       <Advantages />
       <Reviews />
-
     </>
   );
 }

@@ -2,6 +2,7 @@ import Header from "./components/Header/Header";
 import AboutPages from "./pages/About/About";
 import Busket from "./pages/Busket/Busket";
 import Home from "./pages/Home/Home";
+import Desc from "./pages/Desc/Desc";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPages />} />
         <Route path="/Busket" element={<Busket />} />
+        <Route path="/desc/:id" element={<Desc />} />
       </Routes>
 
       <main>main</main>

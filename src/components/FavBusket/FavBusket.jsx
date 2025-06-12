@@ -79,6 +79,23 @@ function FavBusket() {
                     {item.oldPrice && (
                       <div className="FavBusket-Old-Price">{item.oldPrice}</div>
                     )}
+                    <div className="FavBusket-Buttons">
+                      <button
+                        onClick={() => dispatch(decreaseQuantity(item.id))}
+                        className="FavBusket-decrease"
+                      >
+                        -
+                      </button>
+                      <span className="FavBusket-Quantity">
+                        {item.quantity}
+                      </span>
+                      <button
+                        onClick={() => dispatch(increaseQuantity(item.id))}
+                        className="FavBusket-increase"
+                      >
+                        +
+                      </button>
+                    </div>
                     <div className="Del-Add">
                       <button
                         className="deleete"
