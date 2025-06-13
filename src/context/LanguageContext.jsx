@@ -48,7 +48,7 @@ export const LanguageProvider = ({ children }) => {
     return availableLanguages.includes(lang) ? lang : "ru";
   };
 
-  const [language, setLanguage] = useState(() => {
+  const [language, setLanguageState] = useState(() => {
     const saved = localStorage.getItem("language");
     if (saved && availableLanguages.includes(saved)) return saved;
     return detectBrowserLanguage();
@@ -57,6 +57,12 @@ export const LanguageProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("language", language);
   }, [language]);
+
+  const setLanguage = (lang) => {
+    localStorage.setItem("language", lang);
+    setLanguageState(lang);
+    window.location.reload();
+  };
 
   const t = (key) => translations[language][key] || key;
 
