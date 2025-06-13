@@ -45,6 +45,12 @@ export async function register(info) {
   return data;
 }
 
+export async function logout() {
+  await getCsrfCookie();
+  await request('/api/logout', { method: 'POST' });
+  localStorage.removeItem('token');
+}
+
 export async function me() {
   try {
     return await request('/api/me');
