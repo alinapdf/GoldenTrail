@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../assets/img/Logo.svg";
 import "./LoginRegistration.scss";
-
+import { Link } from "react-router-dom";
 function LoginRegistration() {
   const [isLoginActive, setIsLoginActive] = useState(true); // Track active tab (Login or Registration)
 
@@ -42,7 +42,12 @@ function LoginRegistration() {
               <input placeholder="E-mail или телефон" />
               <input placeholder="Пароль" />
               <button className="LoginRegistration-btn">Войти</button>
-              <button className="LoginRegistration-btn2">Забыли пароль?</button>
+              <Link to={"/LR/ResetParol"}>
+                {" "}
+                <button className="LoginRegistration-btn2">
+                  Забыли пароль?
+                </button>
+              </Link>
             </div>
           )}
 

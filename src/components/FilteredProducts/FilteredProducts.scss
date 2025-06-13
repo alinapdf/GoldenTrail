@@ -10,19 +10,22 @@
     .FilteredProducts-filter {
       background-color: rgba(236, 236, 236, 1);
       min-width: 200px;
-      font-family: Nunito Sans;
+      font-family: $font-regular;
       font-weight: 400;
       font-size: 14px;
       line-height: 130%;
       letter-spacing: 0.25%;
       display: flex;
       justify-content: space-between;
-      padding: 5px;
+      padding: 11px;
+      .FilteredProducts-name {
+        align-self: center;
+      }
     }
     .FilteredProducts-All {
       background-color: rgba(18, 32, 45, 1);
-      min-width: 200px;
-      font-family: Nunito Sans;
+      min-width: 158px;
+      font-family: $font-regular;
       font-weight: 400;
       font-size: 14px;
       line-height: 130%;
@@ -30,7 +33,24 @@
       color: white;
       display: flex;
       justify-content: space-between;
-      padding: 5px;
+      padding: 11px;
+      .FilteredProducts-All-name {
+        align-self: center;
+      }
+    }
+    .FilteredProducts-delete {
+      font-family: $font-medium;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-decoration-offset: 0%;
+      text-decoration-thickness: 0%;
+      text-decoration-skip-ink: auto;
+      color: rgba(34, 34, 34, 1);
+      align-self: flex-end;
     }
   }
 
@@ -40,7 +60,7 @@
     margin-top: 20px;
     flex-wrap: wrap;
     .FilteredProducts-All-btn {
-      font-family: Nunito Sans;
+      font-family: $font-semibold;
       font-weight: 600;
       font-size: 16px;
       line-height: 100%;

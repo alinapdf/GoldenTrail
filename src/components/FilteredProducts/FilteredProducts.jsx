@@ -1,4 +1,5 @@
 import "./FilteredProducts.scss";
+import { useState } from "react";
 
 import up from "../../assets/img/up.svg";
 import vector from "../../assets/img/Vector.svg";
@@ -21,6 +22,8 @@ import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
 
 function FilteredProducts() {
+  const [showAllFilters, setShowAllFilters] = useState(false);
+
   const dispatch = useDispatch();
 
   const handleAdd = (product) => {
@@ -121,6 +124,46 @@ function FilteredProducts() {
       oldPrice: "",
       is_new: "sale",
       desc: "Простыни одноразовые в рулоне",
+    }, {
+      id: 7,
+      name: "УФ-лампа бактерицидная",
+      img: Truba,
+      images: [cart, heart, cartb, Heartb],
+      sizes: [],
+      colors: ["#ffffff"],
+      mainPrice: "2 200 ₽",
+      oldPrice: "",
+      is_new: "New",
+      desc: "УФ-лампа бактерицидная",
+    },
+    {
+      id: 8,
+      name: "Пленка пищевая для обертываний",
+      img: Plenka,
+      images: [cart, heart, cartb, Heartb],
+      sizes: [],
+      colors: ["#ffffff"],
+      mainPrice: "150 ₽",
+      oldPrice: "",
+      is_new: "popular",
+      desc: "Пленка пищевая для обертываний",
+    },
+    {
+      id: 9,
+      name: "Простыни одноразовые в рулоне",
+      img: BlueRulon,
+      images: [cart, heart, cartb, Heartb],
+      sizes: [],
+      colors: [
+        "rgba(242, 219, 71, 1)",
+        "rgba(255, 151, 229, 1)",
+        "rgba(105, 147, 254, 1)",
+        "rgba(255, 255, 255, 1)",
+      ],
+      mainPrice: "300 ₽",
+      oldPrice: "",
+      is_new: "sale",
+      desc: "Простыни одноразовые в рулоне",
     },
   ];
   return (
@@ -133,26 +176,32 @@ function FilteredProducts() {
             <img src={up} />
           </div>
         </div>
-        <div className="FilteredProducts-All">
-          <div className="FilteredProducts-All-name">Все фильтры</div>
+        <button
+          className="FilteredProducts-All"
+          onClick={() => setShowAllFilters((prev) => !prev)}
+        >
+          <span className="FilteredProducts-All-name">Все фильтры</span>
           <div>
             <img src={vector} />
           </div>
-        </div>
+        </button>
         <button className="FilteredProducts-delete">Очистить фильтры</button>
       </div>
-      <div className="FilteredProducts-All-buttns">
-        <button className="FilteredProducts-All-btn">Фартуки</button>
-        <button className="FilteredProducts-All-btn">Юбки и жителы</button>
-        <button className="FilteredProducts-All-btn">Защитные халаты</button>
-        <button className="FilteredProducts-All-btn">
-          Комбинированные костюмы
-        </button>
-        <button className="FilteredProducts-All-btn">
-          Брюшные и тазовые экраны
-        </button>
-        <button className="FilteredProducts-All-btn">Одеяла с защитой</button>
-      </div>
+      {showAllFilters && (
+        <div className="FilteredProducts-All-buttns">
+          <button className="FilteredProducts-All-btn">Фартуки</button>
+          <button className="FilteredProducts-All-btn">Юбки и жителы</button>
+          <button className="FilteredProducts-All-btn">Защитные халаты</button>
+          <button className="FilteredProducts-All-btn">
+            Комбинированные костюмы
+          </button>
+          <button className="FilteredProducts-All-btn">
+            Брюшные и тазовые экраны
+          </button>
+          <button className="FilteredProducts-All-btn">Одеяла с защитой</button>
+        </div>
+      )}
+
       <div className="FilteredProducts-objs">
         {products.map((product) => (
           <div className="FilteredProducts" key={product.id}>

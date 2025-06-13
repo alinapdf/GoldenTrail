@@ -6,6 +6,7 @@ import Desc from "./pages/Desc/Desc";
 import { Routes, Route } from "react-router-dom";
 import LoginRegistration from "./components/LoginRegistration/LoginRegistration";
 import FilteredProducts from "./components/FilteredProducts/FilteredProducts";
+import ResetParol from "./components/LoginRegistration/ResetParol/ResetParol";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/desc/:id" element={<Desc />} />
         <Route path="/LR" element={<LoginRegistration />} />
         <Route path="/Filter" element={<FilteredProducts />} />
+        <Route path="/LR/ResetParol" element={<ResetParol />} />
       </Routes>
 
       <main>main</main>
