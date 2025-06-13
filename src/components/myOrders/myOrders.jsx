@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FaRegCopy } from "react-icons/fa";
 import up from "../../assets/img/up.svg"; // замените на свою иконку
 
 import SSS from "../../assets/img/mask.png"; // картинка товара
 
 import "./myOrders.scss";
+import { LanguageContext } from "../../context/LanguageContext";
 
 function OrderItem() {
+  const { t } = useContext(LanguageContext);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => setIsOpen(!isOpen);
@@ -19,15 +21,15 @@ function OrderItem() {
 
   return (
     <div className="order-wrapper">
-      <h2>Мои заказы[3]</h2>
+      <h2>{t("orders_page.title")}[3]</h2>
       <div className="order-container">
         <div className="order-left">
           <div className="order-number">
-            Заказ номер 03-123-0505
+            {t("orders_page.order_number")} 03-123-0505
             <FaRegCopy className="copy-icon" />
           </div>
           <div className="order-info">
-            <span className="order-data">от 05.05.2025</span>
+            <span className="order-data">{t("orders_page.from")} 05.05.2025</span>
             <span className="order-price">9 350 ₽</span>
           </div>
         </div>
@@ -35,7 +37,7 @@ function OrderItem() {
         <div className="order-right">
           <label className="order-status">
             <span className="order-circle"></span>
-            <span className="order-payment">Оплачен</span>
+            <span className="order-payment">{t("orders_page.paid")}</span>
           </label>
           <button className="toggle-btn" onClick={toggleAccordion}>
             <img
@@ -59,15 +61,15 @@ function OrderItem() {
                   <h2>Рентгенозащитный воротник щитовидной железы</h2>
                   <div className="Order-info-item">
                     <div className="Order">
-                      <div className="Order-word">Цвет</div>
+                      <div className="Order-word">{t("orders_page.color")}</div>
                       <div className="Order-color"></div>
                     </div>
                     <div className="Order">
-                      <div className="Order-word">Размер</div>
+                      <div className="Order-word">{t("orders_page.size")}</div>
                       <div className="Order-means">S</div>
                     </div>
                     <div className="Order">
-                      <div className="Order-word">Количество</div>
+                      <div className="Order-word">{t("orders_page.quantity")}</div>
                       <div className="Order-means">1</div>
                     </div>
                   </div>
@@ -96,9 +98,9 @@ function OrderItem() {
           </div>
 
           <div className="order-right-Cancelled">
-            <label className="order-status-Cancelled">
-              <span className="order-circle-Cancelled"></span>
-              <span className="order-payment-Cancelled">Отменен</span>
+          <label className="order-status-Cancelled">
+            <span className="order-circle-Cancelled"></span>
+            <span className="order-payment-Cancelled">{t("orders_page.cancelled")}</span>
             </label>
             <button className="toggle-btn" onClick={toggleAccordion2}>
               <img
@@ -122,15 +124,15 @@ function OrderItem() {
                     <h2>Рентгенозащитный воротник щитовидной железы</h2>
                     <div className="Order-info-item">
                       <div className="Order">
-                        <div className="Order-word">Цвет</div>
+                      <div className="Order-word">{t("orders_page.color")}</div>
                         <div className="Order-color"></div>
                       </div>
                       <div className="Order">
-                        <div className="Order-word">Размер</div>
+                      <div className="Order-word">{t("orders_page.size")}</div>
                         <div className="Order-means">S</div>
                       </div>
                       <div className="Order">
-                        <div className="Order-word">Количество</div>
+                      <div className="Order-word">{t("orders_page.quantity")}</div>
                         <div className="Order-means">1</div>
                       </div>
                     </div>
@@ -153,7 +155,7 @@ function OrderItem() {
             <FaRegCopy className="copy-icon" />
           </div>
           <div className="order-info-delivery">
-            <span className="order-data-delivery">от 15.04.2025 на </span>
+            <span className="order-data-delivery">{t("orders_page.from")} 15.04.2025</span>
             <span className="order-price-delivery">7 000 ₽</span>
           </div>
         </div>
@@ -161,7 +163,7 @@ function OrderItem() {
         <div className="order-right-delivery">
           <label className="order-status-delivery">
             <span className="order-circle-delivery"></span>
-            <span className="order-payment-delivery">Доставлен</span>
+            <span className="order-payment-delivery">{t("orders_page.delivered")}</span>
           </label>
           <button className="toggle-btn" onClick={toggleAccordion3}>
             <img
@@ -185,15 +187,15 @@ function OrderItem() {
                   <h2>Рентгенозащитный воротник щитовидной железы</h2>
                   <div className="Order-info-item">
                     <div className="Order">
-                      <div className="Order-word">Цвет</div>
+                      <div className="Order-word">{t("orders_page.color")}</div>
                       <div className="Order-color"></div>
                     </div>
                     <div className="Order">
-                      <div className="Order-word">Размер</div>
+                      <div className="Order-word">{t("orders_page.size")}</div>
                       <div className="Order-means">S</div>
                     </div>
                     <div className="Order">
-                      <div className="Order-word">Количество</div>
+                      <div className="Order-word">{t("orders_page.quantity")}</div>
                       <div className="Order-means">1</div>
                     </div>
                   </div>
@@ -209,7 +211,7 @@ function OrderItem() {
       )}
 
       <div className="copy-button-wrapper">
-        <button className="btn">Скопировано</button>
+        <button className="btn">{t("orders_page.copied")}</button>
       </div>
     </div>
   );

@@ -2,9 +2,12 @@ import useProducts from "../../hooks/useProducts";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 
 import "./SoMayLike.scss";
 function SoMayLike() {
+  const { t } = useContext(LanguageContext);
   const dispatch = useDispatch();
 
   const handleAdd = (product) => {
@@ -14,7 +17,7 @@ function SoMayLike() {
 
   return (
     <div className="container-SoMayLike">
-      <h2>Новинки</h2>
+      <h2>{t("products_block.new")}</h2>
       <div className="SoMayLike-objs">
         {products.map((product) => (
           <div className="SoMayLike" key={product.id}>
@@ -63,10 +66,10 @@ function SoMayLike() {
               </div>
               <div className="SoMayLike_action">
                 <button className="btn-main" onClick={() => handleAdd(product)}>
-                  Купить в 1 клик
+                  {t("products_block.buy")}
                 </button>
                 <a href="#" className="link-main">
-                  Подробнее
+                  {t("products_block.more")}
                 </a>
               </div>
             </div>

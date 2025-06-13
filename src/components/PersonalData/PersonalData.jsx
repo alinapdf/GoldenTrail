@@ -153,10 +153,12 @@
 
 // export default PersonalData;
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./PersonalData.scss";
+import { LanguageContext } from "../../context/LanguageContext";
 
 function PersonalData() {
+  const { t } = useContext(LanguageContext);
   const [users, setUsers] = useState([]); // массив пользователей
   const [userInfo, setUserInfo] = useState({
     name: "",
@@ -177,11 +179,11 @@ function PersonalData() {
 
   const validate = () => {
     const newErrors = {};
-    if (!userInfo.name) newErrors.name = "Введите имя";
-    if (!userInfo.surname) newErrors.surname = "Введите фамилию";
-    if (!userInfo.email) newErrors.email = "Введите email";
-    if (!userInfo.phone) newErrors.phone = "Введите номер телефона";
-    if (!userInfo.password) newErrors.password = "Введите пароль";
+    if (!userInfo.name) newErrors.name = t("personal_data.errors.name");
+    if (!userInfo.surname) newErrors.surname = t("personal_data.errors.surname");
+    if (!userInfo.email) newErrors.email = t("personal_data.errors.email");
+    if (!userInfo.phone) newErrors.phone = t("personal_data.errors.phone");
+    if (!userInfo.password) newErrors.password = t("personal_data.errors.password");
     return newErrors;
   };
 
@@ -198,7 +200,7 @@ function PersonalData() {
       setUsers((prev) => [...prev, userInfo]); // добавляем нового
     }
 
-    alert("Данные сохранены!");
+    alert(t("personal_data.saved"));
   };
 
   useEffect(() => {
@@ -210,7 +212,9 @@ function PersonalData() {
 
   return (
     <div className="PersonalData-container">
-      <h2>Здравствуйте, {userInfo.name || "Гость"}</h2>
+      <h2>
+        {t("personal_data.hello")}, {userInfo.name || t("personal_data.guest")}
+      </h2>
 
       <div className="PersonalData-Inputs-Buttons">
         <div className="PersonalData-input">
@@ -219,7 +223,11 @@ function PersonalData() {
               <React.Fragment key={field}>
                 <input
                   name={field}
-                  placeholder={field === "password" ? "Пароль" : field}
+                  placeholder={
+                    field === "password"
+                      ? t("personal_data.placeholders.password")
+                      : t(`personal_data.placeholders.${field}`)
+                  }
                   type={field === "password" ? "password" : "text"}
                   value={userInfo[field]}
                   onChange={handleInputChange}
@@ -233,9 +241,9 @@ function PersonalData() {
           )}
         </div>
 
-        <button className="Change">Изменить пароль</button>
+        <button className="Change">{t("personal_data.change_password")}</button>
         <button className="btn-main-busket" onClick={handleSave}>
-          Сохранить изменения
+          {t("personal_data.save_changes")}
         </button>
       </div>
 
@@ -243,7 +251,7 @@ function PersonalData() {
         {addresses.map((_, index) => (
           <div key={index} className="PersonalData-Inputs-Add">
             <div className="PersonalData-Name">
-              <div className="PersonalData-name">Адрес доставки</div>
+              <div className="PersonalData-name">{t("personal_data.address")}</div>
               {index === addresses.length - 1 && (
                 <button
                   className="simvol-btn"
@@ -265,13 +273,30 @@ function PersonalData() {
               )}
             </div>
             <div className="PersonalData-input">
-              <input placeholder="Город/Населенный пункт" type="text" />
-              <input placeholder="Улица" type="text" />
-              <input placeholder="Дом/Строение" type="text" />
-              <input placeholder="Квартира/Офис" type="text" />
-              <input placeholder="Почтовый индекс" type="text" />
+              <input
+                placeholder={t("personal_data.placeholders.city")}
+                type="text"
+              />
+              <input
+                placeholder={t("personal_data.placeholders.street")}
+                type="text"
+              />
+              <input
+                placeholder={t("personal_data.placeholders.building")}
+                type="text"
+              />
+              <input
+                placeholder={t("personal_data.placeholders.apartment")}
+                type="text"
+              />
+              <input
+                placeholder={t("personal_data.placeholders.postalCode")}
+                type="text"
+              />
             </div>
-            <button className="btn-main-busket">Сохранить изменения</button>
+            <button className="btn-main-busket">
+              {t("personal_data.save_changes")}
+            </button>
           </div>
         ))}
       </div>

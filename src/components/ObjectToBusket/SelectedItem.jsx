@@ -8,8 +8,11 @@ import {
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
 import dezenfekiciya from "../../assets/img/dezenfekciya.png";
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 
 function SelectedItem() {
+  const { t } = useContext(LanguageContext);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
@@ -23,9 +26,9 @@ function SelectedItem() {
   }, 0);
 
   const categories = [
-    { id: 1, name: "Рентгенозащитная одежда", bg: person },
-    { id: 2, name: "Одноразовая продукция", bg: bahyli },
-    { id: 3, name: "Антисептики и дезинфекция", bg: dezenfekiciya },
+    { id: 1, name: t("categories.xr"), bg: person },
+    { id: 2, name: t("categories.disposable"), bg: bahyli },
+    { id: 3, name: t("categories.antiseptics"), bg: dezenfekiciya },
   ];
 
   return (
@@ -33,7 +36,7 @@ function SelectedItem() {
       {cart.length === 0 ? (
         <>
           <div className="SelectedItem-Empty">
-            <p>Ваша корзина пуста</p>
+            <p>{t("busket.empty_cart")}</p>
           </div>
 
           <div className="SelectedItem-categories-list">
@@ -44,7 +47,9 @@ function SelectedItem() {
                 style={{ backgroundImage: `url(${category.bg})` }}
               >
                 <h3 className="SelectedItem-category-name">{category.name}</h3>
-                <button className="btn-main btn">Перейти в каталог</button>
+                <button className="btn-main btn">
+                  {t("busket.go_to_catalog")}
+                </button>
               </div>
             ))}
           </div>
@@ -63,11 +68,11 @@ function SelectedItem() {
                       <h3 className="h3">{item.name}</h3>
                       <ul className="SelectedItem-Menu">
                         <li className="SelectedItem-Item-Size">
-                          <div>Размер</div>
+                          <div>{t("busket.size")}</div>
                           <div>{item.sizes[0] || "-"}</div>
                         </li>
                         <li className="SelectedItem-Item-Quantity">
-                          <div>Количество</div>
+                          <div>{t("busket.quantity")}</div>
                           <div>{item.quantity}</div>
                         </li>
                       </ul>
@@ -103,7 +108,7 @@ function SelectedItem() {
                       className="deleete"
                       onClick={() => handleRemove(item.id)}
                     >
-                      Удалить
+                      {t("busket.delete")}
                     </button>
                   </div>
                 </div>
@@ -112,22 +117,21 @@ function SelectedItem() {
 
             <div className="SelectedItem-Block-Total-Price">
               <div className="SelectedItem-Block-Discount">
-                <div className="SelectedItem-Discount">Скидка</div>
+                <div className="SelectedItem-Discount">{t("busket.discount")}</div>
                 <div className="SelectedItem-Discount-total">-0 ₽</div>
               </div>
               <div className="SelectedItem-Block-Total">
-                <div className="SelectedItem-Total">Итого</div>
+                <div className="SelectedItem-Total">{t("busket.total")}</div>
                 <div className="SelectedItem-Total-Ptice">
                   <div className="SelectedItem-Price">
                     {total.toLocaleString()} ₽
                   </div>
-                  <p className="delivery">Без учета стоимости доставки</p>
+                  <p className="delivery">{t("busket.no_delivery")}</p>
                 </div>
               </div>
-              <button className="btn">Купить в 1 клик</button>
+              <button className="btn">{t("busket.one_click")}</button>
               <p className="Delivery-text">
-                Доступные способы оплаты и доставки можно выбрать при оформлении
-                заказа.
+                {t("busket.pay_delivery_info")}
               </p>
             </div>
           </div>

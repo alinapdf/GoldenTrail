@@ -10,8 +10,11 @@ import { addItem } from "../../redux/CardSlice";
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
 import dezenfekiciya from "../../assets/img/dezenfekciya.png";
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 
 function FavBusket() {
+  const { t } = useContext(LanguageContext);
   const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();
 
@@ -30,9 +33,9 @@ function FavBusket() {
   }, 0);
 
   const categories = [
-    { id: 1, name: "Рентгенозащитная одежда", bg: person },
-    { id: 2, name: "Одноразовая продукция", bg: bahyli },
-    { id: 3, name: "Антисептики и дезинфекция", bg: dezenfekiciya },
+    { id: 1, name: t("categories.xr"), bg: person },
+    { id: 2, name: t("categories.disposable"), bg: bahyli },
+    { id: 3, name: t("categories.antiseptics"), bg: dezenfekiciya },
   ];
 
   return (
@@ -41,7 +44,7 @@ function FavBusket() {
         {favorites.length === 0 ? (
           <>
             <div className="FavBusket-Empty">
-              <p>В избранном пока ничего нет</p>
+              <p>{t("busket.favorites_empty")}</p>
             </div>
             <div className="FavBusket-categories-list">
               {categories.map((category) => (
@@ -51,7 +54,9 @@ function FavBusket() {
                   style={{ backgroundImage: `url(${category.bg})` }}
                 >
                   <h3 className="FavBusket-category-name">{category.name}</h3>
-                  <button className="btn-main btn">Перейти в каталог</button>
+                  <button className="btn-main btn">
+                    {t("busket.go_to_catalog")}
+                  </button>
                 </div>
               ))}
             </div>
@@ -69,11 +74,11 @@ function FavBusket() {
                       <h3 className="h3">{item.name}</h3>
                       <ul className="FavBusket-Menu">
                         <li className="FavBusket-Item-Size">
-                          <div>Размер</div>
+                          <div>{t("busket.size")}</div>
                           <div>{item.sizes?.[0] || "-"}</div>
                         </li>
                         <li className="FavBusket-Item-Quantity">
-                          <div>Количество</div>
+                          <div>{t("busket.quantity")}</div>
                           <div>{item.quantity}</div>
                         </li>
                       </ul>
@@ -106,10 +111,10 @@ function FavBusket() {
                         className="deleete"
                         onClick={() => handleRemove(item.id)}
                       >
-                        Удалить
+                        {t("busket.delete")}
                       </button>
                       <button className="btn" onClick={() => handleAdd(item)}>
-                        Добавить в корзину
+                        {t("busket.add_to_cart")}
                       </button>
                     </div>
                   </div>
@@ -119,27 +124,26 @@ function FavBusket() {
 
             <div className="FavBusket-Block-Total-Price">
               <div className="FavBusket-Block-Total">
-                <div className="FavBusket-Total">Итого</div>
+                <div className="FavBusket-Total">{t("busket.total")}</div>
                 <div className="FavBusket-Price">
                   {total.toLocaleString()} ₽
                 </div>
               </div>
               <div className="Delivery-texts">
                 <p className="Delivery-text">
-                  Доступные способы оплаты и доставки можно выбрать при
-                  оформлении заказа.
+                  {t("busket.pay_delivery_info")}
                 </p>
-                <p className="delivery">Без учета стоимости доставки</p>
+                <p className="delivery">{t("busket.no_delivery")}</p>
               </div>
             </div>
 
             <div className="FavBusket-Buttons">
               <div className="FavBusket-Buttons-add">
-                <button className="btn">Купить в 1 клик</button>
-                <button className="btn">Добавить все в корзину</button>
+                <button className="btn">{t("busket.one_click")}</button>
+                <button className="btn">{t("busket.add_all_to_cart")}</button>
               </div>
               <button className="delete" onClick={() => dispatch(clearFav())}>
-                Очистить избранное
+                {t("busket.clear_favorites")}
               </button>
             </div>
           </>
