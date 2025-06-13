@@ -22,7 +22,8 @@ function LoginRegistration() {
       alert("Вход выполнен");
     } catch (err) {
       console.error(err);
-      alert("Ошибка входа");
+      const msg = err.message || "Ошибка входа";
+      alert(msg);
     }
   };
 
@@ -45,7 +46,8 @@ function LoginRegistration() {
       setIsLoginActive(true);
     } catch (err) {
       console.error(err);
-      alert("Ошибка регистрации");
+      const msg = err.message || "Ошибка регистрации";
+      alert(msg);
     }
   };
 

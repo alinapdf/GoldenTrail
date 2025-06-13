@@ -3,11 +3,28 @@ const API_BASE_URL =
 
 async function request(path, options = {}) {
   const token = localStorage.getItem('token');
-  const headers = { 'Content-Type': 'application/json', ...(options.headers || {}) };
+  const headers = {
+    'Content-Type': 'application/json',
+    ...(options.headers || {}),
+  };
   if (token) headers['Authorization'] = `Bearer ${token}`;
+
   const resp = await fetch(`${API_BASE_URL}${path}`, { ...options, headers });
-  if (!resp.ok) throw new Error('Network request failed');
-  return resp.json();
+
+  let data = null;
+  try {
+    data = await resp.json();
+  } catch {
+    // ignore JSON parse errors
+  }
+
+  if (!resp.ok) {
+    const message =
+      (data && (data.message || data.error)) || 'Ошибка запроса';
+    throw new Error(message);
+  }
+
+  return data;
 }
 
 export async function login(credentials) {
