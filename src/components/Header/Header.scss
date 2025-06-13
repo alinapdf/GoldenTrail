@@ -1,0 +1,80 @@
+@import "../../styles/utils/variables";
+
+.header {
+  background-color: $color-blue;
+  color: $color-white;
+}
+
+.header-main__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.header-main__nav {
+  display: flex;
+  gap: 24px;
+}
+
+.header-main__link {
+  color: $color-white;
+}
+
+.header-main__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: $color-white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.header-main__language {
+  display: flex;
+  gap: 8px;
+  margin-left: 16px;
+}
+
+.header-main__language button {
+  background: none;
+  border: none;
+  color: $color-white;
+  opacity: 0.7;
+}
+
+.header-main__language button.active {
+  opacity: 1;
+  font-weight: 600;
+}
+
+.header-main__burger {
+  display: none;
+  margin-left: 16px;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+}
+
+.header-main__burger span {
+  width: 20px;
+  height: 2px;
+  background-color: $color-white;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .header-main__nav {
+    display: none;
+  }
+  .header-main__burger {
+    display: flex;
+  }
+}

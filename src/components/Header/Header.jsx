@@ -1,70 +1,54 @@
 import { Link } from "react-router-dom";
+import { FiSearch, FiHeart, FiShoppingCart, FiUser } from "react-icons/fi";
 import logo from "../../assets/img/Logo.svg";
-
-import cart from "../../assets/img/cart.svg";
+import "./Header.scss";
 
 function Header() {
   return (
-    <header>
-      <div className="headerWrapper">
-        <div className="headerMain">
-          <div className="container">
-            <div className="headerMain_wrapper">
-              <Link to={"/"}>
-                <img src={logo} alt="Golden Trail" />
-              </Link>
-              <nav className="headerMan_nav">
-                <button
-                  className="headerMan_nav-item"
-                  id="headerMainProduction"
-                >
-                  <a href="#">Продукция</a>
-                </button>
-                <Link to={"/about"}>О нас</Link>
-
-                <a href="#" className="headerMan_nav-item">
-                  Контакты
-                </a>
-              </nav>
-              <div className="headerMan_btns">
-                <button
-                  className="headerMan_btns-btn search"
-                  id="headerMain-search"
-                ></button>
-                <a href="#" className="headerMan_btns-btn fav"></a>
-                <Link to={"/busket"}>
-                  <img src={cart} />
-                </Link>
-                <Link to={"/LR"}>x</Link> <Link to={"/Filter"}>Filter</Link>
-              </div>
-              <div className="headerMan_right">
-                <div className="headerMan_language">
-                  <button className="headerMan_language-item" id="AZ-lang">
-                    AZ
-                  </button>
-                  <button className="headerMan_language-item" id="EM-lang">
-                    EN
-                  </button>
-                  <button
-                    className="headerMan_language-item active"
-                    id="RU-lang"
-                  >
-                    RU
-                  </button>
-                </div>
-                <button className="headerMan_burger">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button>
-              </div>
+    <header className="header">
+      <div className="header-main">
+        <div className="container header-main__wrapper">
+          <Link className="header-main__logo" to="/">
+            <img src={logo} alt="Golden Trail" />
+          </Link>
+          <nav className="header-main__nav">
+            <a href="#" className="header-main__link">
+              Продукция
+            </a>
+            <Link to="/about" className="header-main__link">
+              О нас
+            </Link>
+            <a href="#" className="header-main__link">
+              Контакты
+            </a>
+          </nav>
+          <div className="header-main__actions">
+            <button className="icon-btn" aria-label="Поиск">
+              <FiSearch />
+            </button>
+            <Link to="/favorites" className="icon-btn" aria-label="Избранное">
+              <FiHeart />
+            </Link>
+            <Link to="/busket" className="icon-btn" aria-label="Корзина">
+              <FiShoppingCart />
+            </Link>
+            <Link to="/LR" className="icon-btn" aria-label="Аккаунт">
+              <FiUser />
+            </Link>
+          </div>
+          <div className="header-main__right">
+            <div className="header-main__language">
+              <button>AZ</button>
+              <button>EN</button>
+              <button className="active">RU</button>
             </div>
+            <button className="header-main__burger" aria-label="Меню">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </div>
-        <div className="headerProduction"></div>
-        <div className="headerSearch"></div>
-        <div className="headerMobile"></div>
-        <div className="headerBottomLinks"></div>
       </div>
     </header>
   );
