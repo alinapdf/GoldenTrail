@@ -19,22 +19,33 @@ function LoginRegistration() {
   const handleLogin = async () => {
     try {
       await login({ email: loginEmail, password: loginPassword });
+      alert("Вход выполнен");
     } catch (err) {
       console.error(err);
+      alert("Ошибка входа");
     }
   };
 
   const handleRegister = async () => {
-    if (regPassword !== regRepeat) return;
+    if (!regName || !regPhone || !regPassword || !regRepeat) {
+      alert("Заполните все поля");
+      return;
+    }
+    if (regPassword !== regRepeat) {
+      alert("Пароли не совпадают");
+      return;
+    }
     try {
       await register({
         name: regName,
         phone: regPhone,
         password: regPassword,
       });
+      alert("Регистрация успешна");
       setIsLoginActive(true);
     } catch (err) {
       console.error(err);
+      alert("Ошибка регистрации");
     }
   };
 
