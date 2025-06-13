@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { sendContact } from "../../api/contact";
 import "./OrderEasily.scss";
+import { LanguageContext } from "../../context/LanguageContext";
 
 function OrderEasily() {
+  const { t } = useContext(LanguageContext);
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -27,37 +29,37 @@ function OrderEasily() {
   return (
     <div className="OrderEasily-container">
       <div className="OrderEasily-Title">
-        <h2>Закажите легко</h2>
-        <p>Оставьте заявку и мы свяжемся с вами в ближайшее время</p>
+        <h2>{t("order_easily.title")}</h2>
+        <p>{t("order_easily.subtitle")}</p>
       </div>
       <form className="OrderEasily-Registration" onSubmit={handleSubmit}>
         <input
           name="name"
-          placeholder="Имя"
+          placeholder={t("order_easily.name")}
           value={form.name}
           onChange={handleChange}
         />
         <input
           name="phone"
-          placeholder="Телефон"
+          placeholder={t("order_easily.phone")}
           value={form.phone}
           onChange={handleChange}
         />
         <input
           name="email"
           type="email"
-          placeholder="E-mail"
+          placeholder={t("order_easily.email")}
           value={form.email}
           onChange={handleChange}
         />
         <textarea
           name="message"
-          placeholder="Сообщение"
+          placeholder={t("order_easily.message")}
           value={form.message}
           onChange={handleChange}
         />
         <button type="submit" className="OrderEasily-btn">
-          Отправить
+          {t("order_easily.send")}
         </button>
       </form>
     </div>

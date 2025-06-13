@@ -1,5 +1,7 @@
 import "./NewProducts.scss";
 import useProducts from "../../hooks/useProducts";
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
@@ -8,6 +10,7 @@ import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
 
 function NewProducts() {
+  const { t } = useContext(LanguageContext);
   const dispatch = useDispatch();
 
   const handleAdd = (product) => {
@@ -21,7 +24,7 @@ function NewProducts() {
 
   return (
     <div className="container-newproducts">
-      <h2>Новинки</h2>
+      <h2>{t("products_block.new")}</h2>
       <div className="newProducts-objs">
         {products.map((product) => (
           <div className="newProducts" key={product.id}>
@@ -73,14 +76,14 @@ function NewProducts() {
               </div>
               <div className="newProducts_action">
                 <button className="btn-main" onClick={() => handleAdd(product)}>
-                  Купить в 1 клик
+                  {t("products_block.buy")}
                 </button>
                 <Link
                   to={`/desc/${product.id}`}
                   className="link-main"
                   onClick={() => dispatch(setCurrentProduct(product))}
                 >
-                  Подробнее
+                  {t("products_block.more")}
                 </Link>
               </div>
             </div>

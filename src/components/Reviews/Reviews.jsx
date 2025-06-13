@@ -1,6 +1,6 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,12 +8,14 @@ import "swiper/css/navigation";
 
 import Autor from "../../assets/img/LogoAutor.png";
 import stars from "../../assets/img/Starrs.png";
+import { LanguageContext } from "../../context/LanguageContext";
 
 import { Pagination, Navigation } from "swiper/modules";
 
 import styles from "./Reviews.module.css";
 
 const Reviews = () => {
+  const { t } = useContext(LanguageContext);
   const comment = [
     {
       id: 1,
@@ -92,14 +94,12 @@ const Reviews = () => {
   return (
     <div className="reviewsContainer">
       <div className="container">
-        <h2 className={styles.reviewTitle}>Что о нас говорят клиенты</h2>
+        <h2 className={styles.reviewTitle}>{t("reviews.title")}</h2>
 
         <div className={styles.controlsWrapper}>
           <div className={`customPagination ${styles.customPagination}`}></div>
           <div className={styles.rightControls}>
-            <span className={styles.slideHint}>
-              Листайте чтобы посмотреть все отзывы
-            </span>
+            <span className={styles.slideHint}>{t("reviews.slide_hint")}</span>
             <div className={styles.buttonsWrapper}>
               <div className={`swiper-button-prev ${styles.navButton}`}></div>
               <div className={`swiper-button-next ${styles.navButton}`}></div>
@@ -153,7 +153,7 @@ const Reviews = () => {
                         onClick={toggleExpand}
                         className={styles.showMoreBtn}
                       >
-                        {isExpanded ? "Скрыть" : "Читать полностью"}
+                        {isExpanded ? t("reviews.hide") : t("reviews.show_more")}
                       </button>
                     )}
                   </p>

@@ -1,6 +1,8 @@
 import "./CardItem.scss";
 
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
 
 import { useDispatch } from "react-redux";
@@ -9,6 +11,7 @@ import { addFav } from "../../redux/AddFav";
 import useProducts from "../../hooks/useProducts";
 
 function CardItem() {
+  const { t } = useContext(LanguageContext);
   const dispatch = useDispatch();
 
   const handleAdd = (product) => {
@@ -22,7 +25,7 @@ function CardItem() {
 
   return (
     <div className="container-productCard">
-      <h2>Популярные товары</h2>
+      <h2>{t("products_block.popular")}</h2>
       <div className="productCard-objs">
         {" "}
         {products.map((product) => (
@@ -75,14 +78,14 @@ function CardItem() {
               </div>
               <div className="productCard_action">
                 <button className="btn-main" onClick={() => handleAdd(product)}>
-                  Купить в 1 клик
+                  {t("products_block.buy")}
                 </button>
                 <Link
                   to={`/desc/${product.id}`}
                   className="link-main"
                   onClick={() => dispatch(setCurrentProduct(product))}
                 >
-                  Подробнее
+                  {t("products_block.more")}
                 </Link>
               </div>
             </div>

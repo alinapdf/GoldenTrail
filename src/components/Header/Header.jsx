@@ -18,26 +18,26 @@ function Header() {
           </Link>
           <nav className={`header-main__nav ${menuOpen ? "open" : ""}`}>
             <a href="#" className="header-main__link">
-              {t("products")}
+              {t("header.products")}
             </a>
             <Link to="/about" className="header-main__link">
-              {t("about")}
+              {t("header.about")}
             </Link>
             <a href="#" className="header-main__link">
-              {t("contacts")}
+              {t("header.contacts")}
             </a>
           </nav>
           <div className="header-main__actions">
-            <button className="icon-btn" aria-label={t("search")}>
+            <button className="icon-btn" aria-label={t("header.search")}>
               <FiSearch />
             </button>
-            <Link to="/favorites" className="icon-btn" aria-label={t("favorites")}>
+            <Link to="/favorites" className="icon-btn" aria-label={t("header.favorites")}> 
               <FiHeart />
             </Link>
-            <Link to="/busket" className="icon-btn" aria-label={t("cart")}>
+            <Link to="/busket" className="icon-btn" aria-label={t("header.cart")}> 
               <FiShoppingCart />
             </Link>
-            <Link to="/LR" className="icon-btn" aria-label={t("account")}>
+            <Link to="/LR" className="icon-btn" aria-label={t("header.account")}> 
               <FiUser />
             </Link>
           </div>
@@ -49,7 +49,7 @@ function Header() {
             </div>
             <button
               className="header-main__burger"
-              aria-label={t("menu")}
+              aria-label={t("header.menu")}
               onClick={() => setMenuOpen(!menuOpen)}
             >
               <span></span>

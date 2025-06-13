@@ -1,6 +1,8 @@
 import "./BestSellers.scss";
 
 import useProducts from "../../hooks/useProducts";
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
@@ -10,6 +12,7 @@ import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
 
 function BestSellers() {
+  const { t } = useContext(LanguageContext);
   const dispatch = useDispatch();
 
   const handleAdd = (product) => {
@@ -21,7 +24,7 @@ function BestSellers() {
   const products = useProducts().filter((p) => p.is_on_sale);
   return (
     <div className="container-BestSellers">
-      <h2>Хиты продаж</h2>
+      <h2>{t("products_block.best")}</h2>
       <div className="BestSellers-objs">
         {products.map((product) => (
           <div className="BestSellers" key={product.id}>
@@ -73,14 +76,14 @@ function BestSellers() {
               </div>
               <div className="BestSellers_action">
                 <button className="btn-main" onClick={() => handleAdd(product)}>
-                  Купить в 1 клик
+                  {t("products_block.buy")}
                 </button>
                 <Link
                   to={`/desc/${product.id}`}
                   className="link-main"
                   onClick={() => dispatch(setCurrentProduct(product))}
                 >
-                  Подробнее
+                  {t("products_block.more")}
                 </Link>
               </div>
             </div>

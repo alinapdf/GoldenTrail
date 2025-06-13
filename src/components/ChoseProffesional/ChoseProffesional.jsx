@@ -1,6 +1,8 @@
 import "./ChoseProffesional.scss";
 
 import useProducts from "../../hooks/useProducts";
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
@@ -10,6 +12,7 @@ import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
 
 function ChoseProffesional() {
+  const { t } = useContext(LanguageContext);
   const dispatch = useDispatch();
 
   const handleAdd = (product) => {
@@ -22,7 +25,7 @@ function ChoseProffesional() {
   const products = useProducts();
   return (
     <div className="container-ChoseProffesional">
-      <h2>Выбор профессионалов</h2>
+      <h2>{t("products_block.choose")}</h2>
       <div className="ChoseProffesional-objs">
         {products.map((product) => (
           <div className="ChoseProffesional" key={product.id}>
@@ -74,14 +77,14 @@ function ChoseProffesional() {
               </div>
               <div className="ChoseProffesional_action">
                 <button className="btn-main" onClick={() => handleAdd(product)}>
-                  Купить в 1 клик
+                  {t("products_block.buy")}
                 </button>
                 <Link
                   to={`/desc/${product.id}`}
                   className="link-main"
                   onClick={() => dispatch(setCurrentProduct(product))}
                 >
-                  Подробнее
+                  {t("products_block.more")}
                 </Link>
               </div>
             </div>

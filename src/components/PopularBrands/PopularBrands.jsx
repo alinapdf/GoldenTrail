@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules"; // Импорт модуля Autoplay
 
@@ -6,21 +6,17 @@ import amazonLogo from "../../assets/img/amazon-logo.png";
 import "swiper/css";
 
 import "./PopularBrands.scss";
+import { LanguageContext } from "../../context/LanguageContext";
 
 const PopularBrands = () => {
+  const { t } = useContext(LanguageContext);
+  const data = t("popular_brands");
   return (
     <>
       <div className="PopularBrands-container">
         <div className="PopularBrands-Blocks">
-          <h2 className="H2">
-            Популярные бренды
-          </h2>
-          <p className="p">
-            Мы работаем с проверенными производителями, такими как Kiran Medical
-            Systems и Trivitron Healthcare. Это надёжная рентгенозащитная одежда
-            и качественные медицинские расходники для клиник и салонов,
-            косметологических учреждений.
-          </p>
+          <h2 className="H2">{data.title}</h2>
+          <p className="p">{data.desc}</p>
         </div>
       </div>
       <div className="popularBrands_container">

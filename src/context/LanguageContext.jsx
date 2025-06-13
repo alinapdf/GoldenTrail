@@ -5,34 +5,337 @@ const availableLanguages = ["az", "en", "ru"];
 
 const translations = {
   az: {
-    products: "Məhsullar",
-    about: "Haqqımızda",
-    contacts: "Əlaqə",
-    search: "Axtarış",
-    favorites: "Seçilmişlər",
-    cart: "Səbət",
-    account: "Hesab",
-    menu: "Menyu",
+    header: {
+      products: "Məhsullar",
+      about: "Haqqımızda",
+      contacts: "Əlaqə",
+      search: "Axtarış",
+      favorites: "Seçilmişlər",
+      cart: "Səbət",
+      account: "Hesab",
+      menu: "Menyu",
+    },
+    about_section: {
+      title: "Haqqımızda",
+      desc1:
+        "Golden Trail MMC 2022-ci ildən etibarən Azərbaycanda Trivitron Healthcare Pvt Ltd şirkətinin eksklüziv distribyutorudur. Bizim missiyamız insanların sağlamlığını qorumaqdır.",
+      desc2:
+        "Biz Kiran Medical Systems-in rentgenə qarşı qoruyucu geyimlərini təklif edirik ki, bu da tibbi personalı və pasiyentləri etibarlı qoruyur. Assortimentdə kişi və qadın modelləri, müxtəlif materiallar və fərdi ölçülərə uyğun tikilişlər mövcuddur.",
+      desc3:
+        "Həmçinin, biz tibb və kosmetologiya müəssisələri üçün dünya üzrə aparıcı istehsalçılardan birdəfəlik tibbi sərfiyyat materialları, antiseptiklər və dezinfeksiya vasitələri təqdim edirik.",
+      button: "Şirkət haqqında ətraflı",
+    },
+    advantages: {
+      title: "Məhsullarımızın üstünlükləri",
+      items: [
+        {
+          name: "Etibarlı qorunma",
+          desc: "Məhsullar müasir təhlükəsizlik standartlarına cavab verir və radiasiya, bakteriyalar və digər xarici təsirlərdən effektiv qoruyur.",
+        },
+        {
+          name: "Geniş assortiment",
+          desc: "Rentgenə qarşı qoruyucu geyimlərdən antiseptiklərə və birdəfəlik məhsullara qədər hər şey bir məkanda.",
+        },
+        {
+          name: "Müxtəlif sahələr üçün uyğundur",
+          desc: "Məhsullarımız tibb, kosmetologiya, sənaye və təhlükəsizlik xidmətlərində tələb olunur.",
+        },
+        {
+          name: "Rahatlıq və komfort",
+          desc: "Məhsullar hər detalı ilə düşünülüb: rahat kəsim, hipoallergen materiallar, asan qulluq.",
+        },
+      ],
+    },
+    popular_brands: {
+      title: "Məşhur brendlər",
+      desc:
+        "Biz Kiran Medical Systems və Trivitron Healthcare kimi etibarlı istehsalçılarla işləyirik. Bu, klinikalar və salonlar, kosmetoloji müəssisələr üçün etibarlı rentgen qoruyucu geyim və keyfiyyətli tibbi istehlak materiallarıdır.",
+    },
+    products_block: {
+      new: "Yeniliklər",
+      popular: "Məşhur məhsullar",
+      choose: "Peşəkarların seçimi",
+      best: "Satış hitləri",
+      buy: "1 kliklə al",
+      more: "Ətraflı",
+    },
+    wide_usage: {
+      title: "Geniş tətbiq sahəsi",
+      list: [
+        {
+          name: "Tibbi sahə:",
+          menu: [
+            "Tibb müəssisələri (dövlət və özəl klinikalar)",
+            "Radiologiya bölmələri",
+            "Stomatologiyalar",
+            "Şüa terapiya mərkəzləri",
+            "Baytarlıq klinikaları",
+          ],
+        },
+        {
+          name: "Kosmetologiya və gözəllik sənayesi:",
+          menu: [
+            "Kosmetoloji klinikalar",
+            "Estetik mərkəzlər",
+            "SPA salonları",
+            "Tatu salonları",
+            "Lazer epilyasiya salonları",
+          ],
+        },
+        {
+          name: "Təhlükəsizlik xidmətləri və sənaye:",
+          menu: [
+            "Radiasiyaya nəzarət xidmətləri",
+            "Radiasiya yayan avadanlıqları olan gömrük və logistika xidmətləri",
+          ],
+        },
+      ],
+    },
+    order_easily: {
+      title: "Asan sifariş edin",
+      subtitle: "Müraciətinizi göndərin, tezliklə sizinlə əlaqə saxlayaq",
+      name: "Ad",
+      phone: "Telefon",
+      email: "E-mail",
+      message: "Mesaj",
+      send: "Göndərmək",
+    },
+    reviews: {
+      title: "Müştərilər haqqımızda nə deyir",
+      slide_hint: "Bütün rəylərə baxmaq üçün sürüşdürün",
+      show_more: "Tam oxu",
+      hide: "Gizlət",
+    },
+    personal: {
+      title: "Şəxsi kabinet",
+      logout: "Çıxış",
+      cart: "Səbət",
+      favorites: "Seçilmişlər",
+      orders: "Sifarişlərim",
+      data: "Şəxsi məlumatlar",
+    },
   },
   en: {
-    products: "Products",
-    about: "About us",
-    contacts: "Contacts",
-    search: "Search",
-    favorites: "Favorites",
-    cart: "Cart",
-    account: "Account",
-    menu: "Menu",
+    header: {
+      products: "Products",
+      about: "About us",
+      contacts: "Contacts",
+      search: "Search",
+      favorites: "Favorites",
+      cart: "Cart",
+      account: "Account",
+      menu: "Menu",
+    },
+    about_section: {
+      title: "About us",
+      desc1:
+        "Since 2022 Golden Trail LLC has been the exclusive distributor of Trivitron Healthcare Pvt Ltd in Azerbaijan. Our mission is to protect people's health.",
+      desc2:
+        "We offer Kiran Medical Systems X-ray protective clothing that reliably protects medical staff and patients. The range includes men's and women's models, various materials and tailoring to individual measurements.",
+      desc3:
+        "We also supply disposable medical consumables, antiseptics and disinfectants from leading global manufacturers for medical and cosmetology institutions.",
+      button: "More about the company",
+    },
+    advantages: {
+      title: "Advantages of our products",
+      items: [
+        {
+          name: "Reliable protection",
+          desc: "The products meet modern safety standards and effectively protect from radiation, bacteria and other external factors.",
+        },
+        {
+          name: "Wide range",
+          desc: "From X-ray protective clothing to antiseptics and disposable products—all in one place.",
+        },
+        {
+          name: "Suitable for various fields",
+          desc: "Our products are in demand in medicine, cosmetology, industry and security services.",
+        },
+        {
+          name: "Convenience and comfort",
+          desc: "The products are thought out to details: comfortable cut, hypoallergenic materials, easy care.",
+        },
+      ],
+    },
+    popular_brands: {
+      title: "Popular brands",
+      desc:
+        "We work with trusted manufacturers such as Kiran Medical Systems and Trivitron Healthcare. They provide reliable X-ray protective clothing and quality medical consumables for clinics, salons and cosmetology institutions.",
+    },
+    products_block: {
+      new: "New arrivals",
+      popular: "Popular items",
+      choose: "Professionals' choice",
+      best: "Best sellers",
+      buy: "Buy in 1 click",
+      more: "More details",
+    },
+    wide_usage: {
+      title: "Wide application",
+      list: [
+        {
+          name: "Medical field:",
+          menu: [
+            "Medical institutions (public and private clinics)",
+            "Radiology departments",
+            "Dental clinics",
+            "Radiation therapy centers",
+            "Veterinary clinics",
+          ],
+        },
+        {
+          name: "Cosmetology and beauty industry:",
+          menu: [
+            "Cosmetology clinics",
+            "Aesthetic centers",
+            "SPA salons",
+            "Tattoo salons",
+            "Laser hair removal salons",
+          ],
+        },
+        {
+          name: "Security services and industry:",
+          menu: [
+            "Radiation control services",
+            "Customs and logistics services with radiation-emitting equipment",
+          ],
+        },
+      ],
+    },
+    order_easily: {
+      title: "Order easily",
+      subtitle: "Leave a request and we will contact you shortly",
+      name: "Name",
+      phone: "Phone",
+      email: "E-mail",
+      message: "Message",
+      send: "Send",
+    },
+    reviews: {
+      title: "What our clients say about us",
+      slide_hint: "Swipe to see all reviews",
+      show_more: "Read more",
+      hide: "Hide",
+    },
+    personal: {
+      title: "Personal account",
+      logout: "Logout",
+      cart: "Cart",
+      favorites: "Favorites",
+      orders: "My orders",
+      data: "Personal data",
+    },
   },
   ru: {
-    products: "Продукция",
-    about: "О нас",
-    contacts: "Контакты",
-    search: "Поиск",
-    favorites: "Избранное",
-    cart: "Корзина",
-    account: "Аккаунт",
-    menu: "Меню",
+    header: {
+      products: "Продукция",
+      about: "О нас",
+      contacts: "Контакты",
+      search: "Поиск",
+      favorites: "Избранное",
+      cart: "Корзина",
+      account: "Аккаунт",
+      menu: "Меню",
+    },
+    about_section: {
+      title: "О нас",
+      desc1:
+        "Компания Golden Trail MMC с 2022 года является эксклюзивным дистрибьютором Trivitron Healthcare Pvt Ltd в Азербайджане. Наша миссия — защита здоровья людей.",
+      desc2:
+        "Мы предлагаем рентгенозащитную одежду Kiran Medical Systems, которая обеспечивает надёжную защиту медицинского персонала и пациентов. В ассортименте — мужские и женские модели, различные материалы и пошив по индивидуальным меркам.",
+      desc3:
+        "Также мы поставляем одноразовые медицинские расходные материалы, антисептики и дезинфицирующие средства от ведущих мировых производителей для медицинских и косметологических учреждений.",
+      button: "Подробнее о компании",
+    },
+    advantages: {
+      title: "Преимущества нашей продукции",
+      items: [
+        {
+          name: "Надёжная защита",
+          desc: "Продукция отвечает современным стандартам безопасности и эффективно защищает от воздействия радиации, бактерий и других внешних факторов.",
+        },
+        {
+          name: "Широкий ассортимент",
+          desc: "От рентгенозащитной одежды до антисептиков и одноразовой продукции — всё в одном месте.",
+        },
+        {
+          name: "Подходит для разных сфер",
+          desc: "Наши товары востребованы в медицине, косметологии, промышленности и службах безопасности.",
+        },
+        {
+          name: "Удобство и комфорт",
+          desc: "Продукция продумана до мелочей: удобный крой, гипоаллергенные материалы, простой уход.",
+        },
+      ],
+    },
+    popular_brands: {
+      title: "Популярные бренды",
+      desc:
+        "Мы работаем с проверенными производителями, такими как Kiran Medical Systems и Trivitron Healthcare. Это надёжная рентгенозащитная одежда и качественные медицинские расходники для клиник и салонов, косметологических учреждений.",
+    },
+    products_block: {
+      new: "Новинки",
+      popular: "Популярные товары",
+      choose: "Выбор профессионалов",
+      best: "Хиты продаж",
+      buy: "Купить в 1 клик",
+      more: "Подробнее",
+    },
+    wide_usage: {
+      title: "Широкая сфера применения",
+      list: [
+        {
+          name: "Медицинская сфера:",
+          menu: [
+            "Медицинские учреждения (государственные и частные клиники)",
+            "Радиологические отделения",
+            "Стоматологии",
+            "Центры лучевой терапии",
+            "Ветеринарные клиники",
+          ],
+        },
+        {
+          name: "Косметология и бьюти-индустрия:",
+          menu: [
+            "Косметологические клиники",
+            "Эстетические центры",
+            "SPA-салоны",
+            "Тату-салоны",
+            "Салоны лазерной эпиляции",
+          ],
+        },
+        {
+          name: "Службы безопасности и промышленность:",
+          menu: [
+            "Службы радиационного контроля",
+            "Таможенные и логистические службы с оборудованием, излучающим радиацию",
+          ],
+        },
+      ],
+    },
+    order_easily: {
+      title: "Закажите легко",
+      subtitle: "Оставьте заявку и мы свяжемся с вами в ближайшее время",
+      name: "Имя",
+      phone: "Телефон",
+      email: "E-mail",
+      message: "Сообщение",
+      send: "Отправить",
+    },
+    reviews: {
+      title: "Что о нас говорят клиенты",
+      slide_hint: "Листайте чтобы посмотреть все отзывы",
+      show_more: "Читать полностью",
+      hide: "Скрыть",
+    },
+    personal: {
+      title: "Личный кабинет",
+      logout: "Выйти",
+      cart: "Корзина",
+      favorites: "Избранное",
+      orders: "Мои заказы",
+      data: "Персональные данные",
+    },
   },
 };
 
@@ -64,7 +367,15 @@ export const LanguageProvider = ({ children }) => {
     window.location.reload();
   };
 
-  const t = (key) => translations[language][key] || key;
+  const t = (key) => {
+    const parts = key.split('.');
+    let value = translations[language];
+    for (const part of parts) {
+      value = value?.[part];
+      if (value === undefined) break;
+    }
+    return value ?? key;
+  };
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

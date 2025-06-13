@@ -1,39 +1,21 @@
 import "./Advantages.scss";
-
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 import advantagesStars from "../../assets/img/advantagesStars.svg";
 
 function Advantages() {
-  const products = [
-    {
-      id: 1,
-      img: advantagesStars,
-      name: "Надёжная защита",
-      desc: "Продукция отвечает современным стандартам безопасности и эффективно защищает от воздействия радиации, бактерий и других внешних факторов.",
-    },
-    {
-      id: 2,
-      img: advantagesStars,
-      name: "Широкий ассортимент",
-      desc: "От рентгенозащитной одежды до антисептиков и одноразовой продукции — всё в одном месте.",
-    },
-    {
-      id: 3,
-      img: advantagesStars,
-      name: "Подходит для разных сфер",
-      desc: "Наши товары востребованы в медицине, косметологии, промышленности и службах безопасности.",
-    },
-    {
-      id: 4,
-      img: advantagesStars,
-      name: "Удобство и комфорт",
-      desc: "Продукция продумана до мелочей: удобный крой, гипоаллергенные материалы, простой уход.",
-    },
-  ];
+  const { t } = useContext(LanguageContext);
+  const data = t("advantages");
+  const products = data.items.map((item, idx) => ({
+    id: idx + 1,
+    img: advantagesStars,
+    ...item,
+  }));
 
   return (
     <div className="Advantages-wrapper">
       <div className="Advantages-inner">
-        <h2 className="h2">Преимущества нашей продукции</h2>
+        <h2 className="h2">{data.title}</h2>
         <div className="Advantages-objs">
           {products.map((product) => (
             <div className="Advantages-obj" key={product.id}>
