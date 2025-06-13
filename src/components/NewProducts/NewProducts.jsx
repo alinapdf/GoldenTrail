@@ -1,11 +1,5 @@
 import "./NewProducts.scss";
-import cap from "../../assets/img/disposableCap.png";
-import xalat from "../../assets/img/xalat.png";
-import mask from "../../assets/img/mask.png";
-import cart from "../../assets/img/cart.svg";
-import heart from "../../assets/img/heart.svg";
-import Heartb from "../../assets/img/heartb.svg";
-import cartb from "../../assets/img/cartb.svg";
+import useProducts from "../../hooks/useProducts";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
@@ -23,56 +17,7 @@ function NewProducts() {
   const handleAddFav = (product) => {
     dispatch(addFav(product));
   };
-  const products = [
-    {
-      id: 1,
-      name: "Халат хирургический одноразовый",
-      img: xalat,
-      images: [cart, heart, cartb, Heartb],
-      sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      colors: [
-        "rgba(29, 227, 137, 1)",
-        "rgba(105, 147, 254, 1)",
-        "rgba(191, 87, 120, 1)",
-      ],
-
-      mainPrice: "320 ₽",
-      oldPrice: "540 ₽",
-      is_new: "new",
-      is_bestSellers: false,
-      is_poplar: false,
-      desc: "Рентгенозащитный воротник щитовидной железы",
-    },
-    {
-      id: 2,
-      name: "Маски медицинские 3-х слойные (50 шт)",
-      img: mask,
-      images: [cart, heart, cartb, Heartb],
-      sizes: ["S", "M", "Xl"],
-      colors: [
-        "rgba(242, 219, 71, 1)",
-        "rgba(255, 151, 229, 1)",
-        "rgba(105, 147, 254, 1)",
-        "rgba(255, 255, 255, 1)",
-      ],
-      mainPrice: "250 ₽",
-      oldPrice: "380 ₽",
-      is_new: "popular",
-      desc: "Маски медицинские 3-х слойные (50 шт)",
-    },
-    {
-      id: 3,
-      name: "Шапочки одноразовые (100 шт)",
-      img: cap,
-      images: [cart, heart, cartb, Heartb],
-      sizes: ["S", "M", "Xl"],
-      colors: ["#ffffff"],
-      mainPrice: "180 ₽",
-      oldPrice: "",
-      is_new: "sale",
-      desc: "Шапочки одноразовые (100 шт)",
-    },
-  ];
+  const products = useProducts().filter((p) => p.is_new);
 
   return (
     <div className="container-newproducts">
@@ -85,7 +30,7 @@ function NewProducts() {
                 <div className="newProducts_img">
                   <img src={product.img} alt={product.name} />
                 </div>
-                <div className="newProducts_status">{product.is_new}</div>
+                <div className="newProducts_status">{product.status}</div>
                 <div className="newProducts_btns">
                   <button
                     className="newProducts_btn baasket"

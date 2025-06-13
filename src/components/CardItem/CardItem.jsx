@@ -1,10 +1,4 @@
 import "./CardItem.scss";
-import expr from "../CardItem/expr.png";
-import cart from "../../assets/img/cart.svg";
-import heart from "../../assets/img/heart.svg";
-import cartb from "../../assets/img/cartb.svg";
-import Heartb from "../../assets/img/heartb.svg";
-import percatki from "../CardItem/percatki.png";
 
 import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
@@ -12,6 +6,7 @@ import { setCurrentProduct } from "../../redux/CurrentProductSlice";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
 import { addFav } from "../../redux/AddFav";
+import useProducts from "../../hooks/useProducts";
 
 function CardItem() {
   const dispatch = useDispatch();
@@ -23,54 +18,7 @@ function CardItem() {
   const handleAddFav = (product) => {
     dispatch(addFav(product));
   };
-  const products = [
-    {
-      id: 1,
-      name: "Рентгенозащитный воротник щитовидной железы",
-      img: expr,
-      images: [cart, heart, cartb, Heartb],
-      sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      colors: [
-        "rgba(29, 227, 137, 1)",
-        "rgba(105, 147, 254, 1)",
-        "rgba(191, 87, 120, 1)",
-      ],
-
-      mainPrice: "9 300 ₽",
-      oldPrice: "12 400 ₽",
-      is_new: "New",
-      desc: "Рентгенозащитный воротник щитовидной железы",
-    },
-    {
-      id: 2,
-      name: "Перчатки нитриловые нестерильные (100 шт.)",
-      img: percatki,
-      images: [cart, heart, cartb, Heartb],
-      sizes: ["S", "M", "L"],
-      colors: [
-        "rgba(242, 219, 71, 1)",
-        "rgba(255, 151, 229, 1)",
-        "rgba(105, 147, 254, 1)",
-        "rgba(255, 255, 255, 1)",
-      ],
-      mainPrice: "9 300 ₽",
-      oldPrice: "12 400 ₽",
-      is_new: "popular",
-      desc: "Перчатки нитриловые нестерильные (100 шт.)",
-    },
-    {
-      id: 3,
-      name: "Перчатки нитриловые нестерильные (100 шт.)",
-      img: expr,
-      images: [cart, heart, cartb, Heartb],
-      sizes: [],
-      colors: ["#ffffff"],
-      mainPrice: "600 ₽",
-      oldPrice: "",
-      is_new: "sale",
-      desc: "Перчатки нитриловые нестерильные (100 шт.)",
-    },
-  ];
+  const products = useProducts().filter((p) => p.is_popular);
 
   return (
     <div className="container-productCard">
@@ -84,7 +32,7 @@ function CardItem() {
                 <div className="productCard_img">
                   <img src={product.img} alt={product.name} />
                 </div>
-                <div className="productCard_status">{product.is_new}</div>
+                <div className="productCard_status">{product.status}</div>
                 <div className="productCard_btns">
                   <button
                     className="productCard_btn baasket"

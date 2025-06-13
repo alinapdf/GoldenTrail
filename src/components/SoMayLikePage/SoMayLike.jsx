@@ -1,10 +1,4 @@
-import cart from "../../assets/img/cart.svg";
-import heart from "../../assets/img/heart.svg";
-import cartb from "../../assets/img/cartb.svg";
-import Heartb from "../../assets/img/heartb.svg";
-import SoManyLike from "../../assets/img/SoManyLike.png";
-import SoManyLike2 from "../../assets/img/SoManyLike2.png";
-import SoManyLike3 from "../../assets/img/SoManyLike3.png";
+import useProducts from "../../hooks/useProducts";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
@@ -16,44 +10,7 @@ function SoMayLike() {
   const handleAdd = (product) => {
     dispatch(addItem(product));
   };
-  const products = [
-    {
-      id: 1,
-      name: "Антисептик для рук 1 л",
-      img: SoManyLike,
-      images: [cart, heart, cartb, Heartb],
-      sizes: [],
-      colors: [],
-      mainPrice: "290 ₽",
-      oldPrice: "",
-      is_new: "New",
-      desc: "Антисептик для рук 1 л",
-    },
-    {
-      id: 2,
-      name: "Салфетки спиртовые (100 шт)",
-      img: SoManyLike2,
-      images: [cart, heart, cartb, Heartb],
-      sizes: [],
-      colors: [],
-      mainPrice: "180 ₽",
-      oldPrice: "",
-      is_new: "popular",
-      desc: "Салфетки спиртовые (100 шт)",
-    },
-    {
-      id: 3,
-      name: "Средство для дезинфекции поверхностей 5 л",
-      img: SoManyLike3,
-      images: [cart, heart, cartb, Heartb],
-      sizes: [],
-      colors: [],
-      mainPrice: "600 ₽",
-      oldPrice: "",
-      is_new: "sale",
-      desc: "Средство для дезинфекции поверхностей 5 л",
-    },
-  ];
+  const products = useProducts();
 
   return (
     <div className="container-SoMayLike">
@@ -66,7 +23,7 @@ function SoMayLike() {
                 <div className="SoMayLike_img">
                   <img src={product.img} alt={product.name} />
                 </div>
-                <div className="SoMayLike_status">{product.is_new}</div>
+                <div className="SoMayLike_status">{product.status}</div>
                 <div className="SoMayLike_btns">
                   <button
                     className="SoMayLike_btn baasket"
