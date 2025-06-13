@@ -87,6 +87,8 @@ const Reviews = () => {
     },
   ];
 
+  const [expandedMap, setExpandedMap] = useState({});
+
   return (
     <div className="reviewsContainer">
       <div className="container">
@@ -121,13 +123,14 @@ const Reviews = () => {
           className={styles.swiper_Review}
         >
           {comment.map((item) => {
-            const [expanded, setExpanded] = useState(false);
-
+            const isExpanded = expandedMap[item.id] || false;
             const shouldTruncate = item.comment.length > 180;
             const visibleText =
-              expanded || !shouldTruncate
+              isExpanded || !shouldTruncate
                 ? item.comment
                 : item.comment.slice(0, 110) + "...";
+            const toggleExpand = () =>
+              setExpandedMap((prev) => ({ ...prev, [item.id]: !isExpanded }));
 
             return (
               <SwiperSlide key={item.id} className={styles.swiperSlide_Review}>
@@ -147,10 +150,10 @@ const Reviews = () => {
                     {visibleText}
                     {shouldTruncate && (
                       <button
-                        onClick={() => setExpanded(!expanded)}
+                        onClick={toggleExpand}
                         className={styles.showMoreBtn}
                       >
-                        {expanded ? "Скрыть" : "Читать полностью"}
+                        {isExpanded ? "Скрыть" : "Читать полностью"}
                       </button>
                     )}
                   </p>
