@@ -1,4 +1,4 @@
-products = [
+export const products = [
   {
     id: 1,
     name: "",
@@ -15,3 +15,5 @@ products = [
     desc: "",
   },
 ];
+
+export default products;

@@ -4,7 +4,7 @@ import xalat from "../../assets/img/xalat.png";
 import mask from "../../assets/img/mask.png";
 import cart from "../../assets/img/cart.svg";
 import heart from "../../assets/img/heart.svg";
-import Heartb from "../../assets/img/Heartb.svg";
+import Heartb from "../../assets/img/heartb.svg";
 import cartb from "../../assets/img/cartb.svg";
 
 import { useDispatch } from "react-redux";
