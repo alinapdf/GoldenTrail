@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/img/Logo.svg";
 import "./LoginRegistration.scss";
-import { login, register } from "../../api/auth";
+import { login, register, me } from "../../api/auth";
+import { useNavigate } from "react-router-dom";
 
 function LoginRegistration() {
   const [isLoginActive, setIsLoginActive] = useState(true); // Track active tab (Login or Registration)
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const [regName, setRegName] = useState("");
-  const [regPhone, setRegPhone] = useState("");
+  const [regUsername, setRegUsername] = useState("");
+  const [regEmail, setRegEmail] = useState("");
   const [regPassword, setRegPassword] = useState("");
   const [regRepeat, setRegRepeat] = useState("");
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const user = await me();
+      if (user) navigate("/Busket");
+    };
+    checkAuth();
+  }, [navigate]);
 
   const handleTabSwitch = (tab) => {
     setIsLoginActive(tab === "login");
@@ -19,6 +30,7 @@ function LoginRegistration() {
   const handleLogin = async () => {
     try {
       await login({ email: loginEmail, password: loginPassword });
+      navigate('/Busket');
     } catch (err) {
       console.error(err);
     }
@@ -28,11 +40,12 @@ function LoginRegistration() {
     if (regPassword !== regRepeat) return;
     try {
       await register({
-        name: regName,
-        phone: regPhone,
+        username: regUsername,
+        email: regEmail,
         password: regPassword,
       });
       setIsLoginActive(true);
+      navigate('/Busket');
     } catch (err) {
       console.error(err);
     }
@@ -69,7 +82,7 @@ function LoginRegistration() {
           {isLoginActive && (
             <div className="LoginRegistration-Login">
               <input
-                placeholder="E-mail или телефон"
+                placeholder="E-mail"
                 value={loginEmail}
                 onChange={(e) => setLoginEmail(e.target.value)}
               />
@@ -90,14 +103,14 @@ function LoginRegistration() {
           {!isLoginActive && (
             <div className="LoginRegistration-Registration">
               <input
-                placeholder="Имя*"
-                value={regName}
-                onChange={(e) => setRegName(e.target.value)}
+                placeholder="Имя пользователя"
+                value={regUsername}
+                onChange={(e) => setRegUsername(e.target.value)}
               />
               <input
-                placeholder="+994-__-___-__-__"
-                value={regPhone}
-                onChange={(e) => setRegPhone(e.target.value)}
+                placeholder="E-mail"
+                value={regEmail}
+                onChange={(e) => setRegEmail(e.target.value)}
               />
               <input
                 placeholder="Введите пароль"
