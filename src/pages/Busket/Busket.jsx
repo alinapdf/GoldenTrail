@@ -4,6 +4,7 @@ import SelectedItem from "../../components/ObjectToBusket/SelectedItem";
 import PersonalAccount from "../../components/PersonalAccount/PersonalAccount";
 import SoMayLike from "../../components/SoMayLikePage/SoMayLike";
 import PersonalData from "../../components/PersonalData/PersonalData";
+import OrderItem from "../../components/myOrders/myOrders";
 
 function Busket() {
   const [activeSection, setActiveSection] = useState("cart");
@@ -18,6 +19,8 @@ function Busket() {
       {activeSection === "cart" && <SelectedItem />}
       {activeSection === "favorites" && <FavBusket />}
       {activeSection === "personal" && <PersonalData />}
+      {activeSection === "order" && <OrderItem />}
+
       <SoMayLike />
     </>
   );

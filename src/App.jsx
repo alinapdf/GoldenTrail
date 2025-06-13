@@ -4,6 +4,8 @@ import Busket from "./pages/Busket/Busket";
 import Home from "./pages/Home/Home";
 import Desc from "./pages/Desc/Desc";
 import { Routes, Route } from "react-router-dom";
+import LoginRegistration from "./components/LoginRegistration/LoginRegistration";
+import FilteredProducts from "./components/FilteredProducts/FilteredProducts";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/about" element={<AboutPages />} />
         <Route path="/Busket" element={<Busket />} />
         <Route path="/desc/:id" element={<Desc />} />
+        <Route path="/LR" element={<LoginRegistration />} />
+        <Route path="/Filter" element={<FilteredProducts />} />
       </Routes>
 
       <main>main</main>
