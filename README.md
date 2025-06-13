@@ -10,3 +10,10 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Backend API
+
+Authentication in this project expects a Laravel backend configured with [Laravel Sanctum](https://laravel.com/docs/sanctum). Before running the app, make sure your API is serving the `/sanctum/csrf-cookie` endpoint and standard `/login` and `/register` routes.
+
+Create a `.env` file based on `.env.example` (or manually) and set `VITE_API_BASE_URL` to the host of your API.
+
