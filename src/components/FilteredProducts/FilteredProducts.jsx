@@ -1,9 +1,19 @@
 import "./FilteredProducts.scss";
+import { useState } from "react";
 
 import up from "../../assets/img/up.svg";
 import vector from "../../assets/img/Vector.svg";
 
-import useProducts from "../../hooks/useProducts";
+import bahil from "../../assets/img/bahil.png";
+import Raspirator from "../../assets/img/Raspirator.png";
+import Truba from "../../assets/img/truba.png";
+import MMask from "../../assets/img/MMask.png";
+import Plenka from "../../assets/img/Plenka.png";
+import BlueRulon from "../../assets/img/BlueRulon.png";
+import cart from "../../assets/img/cart.svg";
+import heart from "../../assets/img/heart.svg";
+import cartb from "../../assets/img/cartb.svg";
+import Heartb from "../../assets/img/Heartb.svg";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
 import { addFav } from "../../redux/AddFav";
@@ -12,6 +22,8 @@ import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
 
 function FilteredProducts() {
+  const [showAllFilters, setShowAllFilters] = useState(false);
+
   const dispatch = useDispatch();
 
   const handleAdd = (product) => {
@@ -31,26 +43,32 @@ function FilteredProducts() {
             <img src={up} />
           </div>
         </div>
-        <div className="FilteredProducts-All">
-          <div className="FilteredProducts-All-name">Все фильтры</div>
+        <button
+          className="FilteredProducts-All"
+          onClick={() => setShowAllFilters((prev) => !prev)}
+        >
+          <span className="FilteredProducts-All-name">Все фильтры</span>
           <div>
             <img src={vector} />
           </div>
-        </div>
+        </button>
         <button className="FilteredProducts-delete">Очистить фильтры</button>
       </div>
-      <div className="FilteredProducts-All-buttns">
-        <button className="FilteredProducts-All-btn">Фартуки</button>
-        <button className="FilteredProducts-All-btn">Юбки и жителы</button>
-        <button className="FilteredProducts-All-btn">Защитные халаты</button>
-        <button className="FilteredProducts-All-btn">
-          Комбинированные костюмы
-        </button>
-        <button className="FilteredProducts-All-btn">
-          Брюшные и тазовые экраны
-        </button>
-        <button className="FilteredProducts-All-btn">Одеяла с защитой</button>
-      </div>
+      {showAllFilters && (
+        <div className="FilteredProducts-All-buttns">
+          <button className="FilteredProducts-All-btn">Фартуки</button>
+          <button className="FilteredProducts-All-btn">Юбки и жителы</button>
+          <button className="FilteredProducts-All-btn">Защитные халаты</button>
+          <button className="FilteredProducts-All-btn">
+            Комбинированные костюмы
+          </button>
+          <button className="FilteredProducts-All-btn">
+            Брюшные и тазовые экраны
+          </button>
+          <button className="FilteredProducts-All-btn">Одеяла с защитой</button>
+        </div>
+      )}
+
       <div className="FilteredProducts-objs">
         {products.map((product) => (
           <div className="FilteredProducts" key={product.id}>

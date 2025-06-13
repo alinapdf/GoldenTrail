@@ -1,5 +1,6 @@
 import About from "../../components/About/About";
 import Advantages from "../../components/Advantages/Advantages";
+import BanerReviews from "../../components/BanerReviews/BanerReviews";
 import BestSellers from "../../components/BestSellers/BestSellers";
 import CardItem from "../../components/CardItem/CardItem";
 import ChoseProffesional from "../../components/ChoseProffesional/ChoseProffesional";
@@ -13,6 +14,7 @@ import WideUsage from "../../components/WideUsage/WideUsage";
 function Home() {
   return (
     <>
+      <BanerReviews />
       <CardItem />
       <About />
       <PopularBrands />

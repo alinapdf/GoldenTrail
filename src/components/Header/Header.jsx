@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import { FiSearch, FiHeart, FiShoppingCart, FiUser } from "react-icons/fi";
-import { useState, useContext } from "react";
-import { LanguageContext } from "../../context/LanguageContext";
 import logo from "../../assets/img/Logo.svg";
 import "./Header.scss";
 
@@ -31,13 +28,13 @@ function Header() {
             <button className="icon-btn" aria-label={t("header.search")}>
               <FiSearch />
             </button>
-            <Link to="/favorites" className="icon-btn" aria-label={t("header.favorites")}> 
+            <Link to="/favorites" className="icon-btn" aria-label={t("header.favorites")}>
               <FiHeart />
             </Link>
-            <Link to="/busket" className="icon-btn" aria-label={t("header.cart")}> 
+            <Link to="/busket" className="icon-btn" aria-label={t("header.cart")}>
               <FiShoppingCart />
             </Link>
-            <Link to="/LR" className="icon-btn" aria-label={t("header.account")}> 
+            <Link to="/LR" className="icon-btn" aria-label={t("header.account")}>
               <FiUser />
             </Link>
           </div>

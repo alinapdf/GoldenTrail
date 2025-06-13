@@ -1,0 +1,94 @@
+@import "../../styles/utils/variables";
+
+.BanerReviewsWrapper {
+  background-color: rgba(18, 32, 45, 1);
+  .BanerReviewsContainer {
+    max-width: 1072px;
+    margin: 0 auto;
+    padding: 0 16px;
+    .heroSwiper {
+      width: 100%;
+    }
+    .heroBanner {
+      display: flex;
+      .heroSlide {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1072px;
+        margin: 0 auto;
+        padding: 0 16px;
+        .heroContent {
+          padding: 20px 0 0 0;
+
+          .heroBadge {
+            max-width: 279px;
+            font-family: $font-light;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 100%;
+            border-radius: 10px;
+            background-color: grey;
+            color: white;
+            padding: 6px;
+            text-align: center;
+            margin-bottom: 16px;
+          }
+          .heroTitle {
+            font-family: $font-bold;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 45px;
+            letter-spacing: 0%;
+            color: white;
+            margin-bottom: 32px;
+          }
+          .heroSubtitle {
+            color: white;
+            font-family: $font-regular;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing: 0%;
+          }
+          .heroBtn {
+            padding: 6px 28px;
+            background-color: rgba(220, 182, 90, 1);
+            font-family: $font-semibold;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            color: white;
+            margin-top: 40px;
+          }
+        }
+        .heroImgs {
+          position: relative;
+          width: 100%;
+          height: 500px;
+          background: radial-gradient(
+            ellipse at center,
+            rgba(210, 197, 197, 0.8) 0%,
+            rgba(219, 180, 89, 0.379) 70%
+          );
+          border-radius: 50%;
+
+          .heroImage {
+            position: absolute;
+            right: 90px;
+            bottom: 0;
+            width: 336px;
+            height: 416px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+}
