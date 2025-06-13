@@ -206,7 +206,7 @@ function PersonalData() {
     if (existingUser) {
       setUserInfo(existingUser);
     }
-  }, [users]);
+  }, [users, userInfo.email]);
 
   return (
     <div className="PersonalData-container">

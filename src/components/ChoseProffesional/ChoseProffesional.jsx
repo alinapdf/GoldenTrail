@@ -3,10 +3,10 @@ import "./ChoseProffesional.scss";
 import cart from "../../assets/img/cart.svg";
 import heart from "../../assets/img/heart.svg";
 import cartb from "../../assets/img/cartb.svg";
-import Heartb from "../../assets/img/Heartb.svg";
+import Heartb from "../../assets/img/heartb.svg";
 import Man from "../../assets/img/Man.png";
-import Glasses from "../../assets/img/Glasses.png";
-import Door from "../../assets/img/Door.png";
+import Glasses from "../../assets/img/glasses.png";
+import Door from "../../assets/img/door.png";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
