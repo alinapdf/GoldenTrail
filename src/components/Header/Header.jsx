@@ -35,7 +35,7 @@ function Header() {
                 <Link to={"/busket"}>
                   <img src={cart} />
                 </Link>
-                <Link to={"/LR"}>x</Link>
+                <Link to={"/LR"}>x</Link> <Link to={"/Filter"}>Filter</Link>
               </div>
               <div className="headerMan_right">
                 <div className="headerMan_language">

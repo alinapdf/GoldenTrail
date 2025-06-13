@@ -13,6 +13,7 @@
   align-items: flex-start;
   font-family: sans-serif;
   border-bottom: 1px solid rgba(127, 127, 127, 1);
+  margin-top: 36px;
 }
 
 .order-left {
@@ -147,6 +148,12 @@
               text-transform: uppercase;
               color: rgba(34, 34, 34, 1);
             }
+            .Order-color {
+              width: 18px;
+              height: 18px;
+              background-color: rgba(105, 147, 254, 1);
+              border-radius: 100%;
+            }
           }
         }
       }
@@ -199,6 +206,7 @@
     align-items: flex-start;
     font-family: sans-serif;
     border-bottom: 1px solid rgba(127, 127, 127, 1);
+    margin-top: 93px;
     .order-left-Cancelled {
       display: flex;
       flex-direction: column;
@@ -240,15 +248,124 @@
         }
       }
     }
-    .order-right-Cancelled{
-      .order-status-Cancelled{
-        .order-circle-Cancelled{
-
+    .order-right-Cancelled {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .order-status-Cancelled {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        .order-circle-Cancelled {
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+          background-color: rgba(240, 97, 87, 1);
         }
-        .order-payment-Cancelled{
-          
+        .order-payment-Cancelled {
+          font-family: $font-medium;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          color: rgba(18, 32, 45, 1);
         }
       }
     }
+  }
+}
+
+.order-container-delivery {
+  padding: 26px 0px 16px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: sans-serif;
+  border-bottom: 1px solid rgba(127, 127, 127, 1);
+  margin-top: 93px;
+  .order-left-delivery {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .order-number-delivery {
+      font-family: $font-medium;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      margin-right: 12px;
+      .copy-icon {
+        font-size: 16px;
+        margin-left: 12px;
+        cursor: pointer;
+        color: #777;
+      }
+    }
+    .order-info-delivery {
+      font-size: 14px;
+      display: flex;
+      gap: 12px;
+      color: #444;
+      .order-data-delivery {
+        font-family: $font-medium;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: rgba(127, 127, 127, 1);
+      }
+      .order-price-delivery {
+        font-family: $font-medium;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: rgba(127, 127, 127, 1);
+      }
+    }
+  }
+  .order-right-delivery {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    .order-status-delivery {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      .order-circle-delivery {
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        background-color: rgba(170, 210, 105, 1);
+      }
+      .order-payment-delivery {
+        font-family: $font-medium;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: rgba(18, 32, 45, 1);
+      }
+    }
+  }
+}
+
+.copy-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 64px;
+
+  .btn {
+    font-family: $font-regular;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 21px 87px;
+    text-align: center;
+    background-color: rgba(127, 127, 127, 1);
+    color: rgba(255, 255, 255, 1);
+
+   
   }
 }

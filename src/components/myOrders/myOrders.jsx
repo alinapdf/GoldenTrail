@@ -19,6 +19,7 @@ function OrderItem() {
 
   return (
     <div className="order-wrapper">
+      <h2>Мои заказы[3]</h2>
       <div className="order-container">
         <div className="order-left">
           <div className="order-number">
@@ -59,7 +60,7 @@ function OrderItem() {
                   <div className="Order-info-item">
                     <div className="Order">
                       <div className="Order-word">Цвет</div>
-                      <div></div>
+                      <div className="Order-color"></div>
                     </div>
                     <div className="Order">
                       <div className="Order-word">Размер</div>
@@ -122,7 +123,7 @@ function OrderItem() {
                     <div className="Order-info-item">
                       <div className="Order">
                         <div className="Order-word">Цвет</div>
-                        <div></div>
+                        <div className="Order-color"></div>
                       </div>
                       <div className="Order">
                         <div className="Order-word">Размер</div>
@@ -145,22 +146,22 @@ function OrderItem() {
         )}
       </div>
 
-      <div className="order-container">
-        <div className="order-left">
-          <div className="order-number">
-            Заказ номер 03-123-0505
+      <div className="order-container-delivery">
+        <div className="order-left-delivery">
+          <div className="order-number-delivery">
+            Заказ номер 01-123-1504
             <FaRegCopy className="copy-icon" />
           </div>
-          <div className="order-info">
-            <span className="order-data">от 05.05.2025</span>
-            <span className="order-price">9 350 ₽</span>
+          <div className="order-info-delivery">
+            <span className="order-data-delivery">от 15.04.2025 на </span>
+            <span className="order-price-delivery">7 000 ₽</span>
           </div>
         </div>
 
-        <div className="order-right">
-          <label className="order-status">
-            <span className="order-circle"></span>
-            <span className="order-payment">Доставлен</span>
+        <div className="order-right-delivery">
+          <label className="order-status-delivery">
+            <span className="order-circle-delivery"></span>
+            <span className="order-payment-delivery">Доставлен</span>
           </label>
           <button className="toggle-btn" onClick={toggleAccordion3}>
             <img
@@ -185,7 +186,7 @@ function OrderItem() {
                   <div className="Order-info-item">
                     <div className="Order">
                       <div className="Order-word">Цвет</div>
-                      <div></div>
+                      <div className="Order-color"></div>
                     </div>
                     <div className="Order">
                       <div className="Order-word">Размер</div>
@@ -206,6 +207,10 @@ function OrderItem() {
           ))}
         </div>
       )}
+
+      <div className="copy-button-wrapper">
+        <button className="btn">Скопировано</button>
+      </div>
     </div>
   );
 }

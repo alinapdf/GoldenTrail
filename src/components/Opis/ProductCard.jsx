@@ -7,6 +7,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
+import Heart from "../../assets/img/heartb.svg";
+import cart from "../../assets/img/cartb.svg";
+
 import styles from "./ProductCard.module.css";
 
 const ProductCard = () => {
@@ -115,7 +118,16 @@ const ProductCard = () => {
             )}
           </div>
 
-          <button className={styles.buyButton}>Купить в 1 клик</button>
+          <div className={styles.btns}>
+            <button className={styles.buyButton}>Купить в 1 клик</button>
+            <button className={styles.cartBtn}>
+              <img src={cart} />
+            </button>
+            <button className={styles.cartBtn}>
+              <img src={Heart} />
+            </button>
+          </div>
+
           <p className={styles.guarantee}>✓ Гарантия 2 года</p>
         </div>
       </div>

@@ -1,6 +1,11 @@
 import "./FavBusket.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFav } from "../../redux/AddFav";
+import {
+  removeFav,
+  clearFav,
+  increaseQuantity,
+  decreaseQuantity,
+} from "../../redux/AddFav";
 import { addItem } from "../../redux/CardSlice";
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
@@ -19,8 +24,9 @@ function FavBusket() {
   };
 
   const total = favorites.reduce((sum, item) => {
-    const price = parseFloat(item.mainPrice.replace(/\s|₽/g, ""));
-    return sum + price * item.quantity;
+    const price = parseFloat((item.mainPrice || "0").replace(/\s|₽/g, ""));
+    const quantity = item.quantity || 1;
+    return sum + price * quantity;
   }, 0);
 
   const categories = [
@@ -37,7 +43,6 @@ function FavBusket() {
             <div className="FavBusket-Empty">
               <p>В избранном пока ничего нет</p>
             </div>
-
             <div className="FavBusket-categories-list">
               {categories.map((category) => (
                 <div
@@ -65,7 +70,7 @@ function FavBusket() {
                       <ul className="FavBusket-Menu">
                         <li className="FavBusket-Item-Size">
                           <div>Размер</div>
-                          <div>{item.sizes[0] || "-"}</div>
+                          <div>{item.sizes?.[0] || "-"}</div>
                         </li>
                         <li className="FavBusket-Item-Quantity">
                           <div>Количество</div>

@@ -1,17 +1,23 @@
+@import "../../styles/utils/variables";
+
 .LoginRegistration-wrapper {
   background-color: rgba(18, 32, 45, 1);
-  padding: 300px 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   .LoginRegistration-Container {
     max-width: 1072px;
     margin: 0 auto;
-
+    width: 512px;
     .LoginRegistration-Logo {
-      width: 216px;
+      width: 100%;
       height: 25px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin-bottom: 40px;
       img {
-        width: 100%;
         height: 100%;
         object-fit: cover;
       }
@@ -29,7 +35,7 @@
 
         .LoginRegistration-BtnL,
         .LoginRegistration-BtnR {
-          font-family: Nunito Sans;
+          font-family: $font-bold;
           font-weight: 700;
           font-size: 36px;
           line-height: 100%;
@@ -65,10 +71,11 @@
           font-size: 16px;
           color: rgba(255, 255, 255, 1);
           width: 100%;
+          font-family: $font-semibold;
         }
 
         .LoginRegistration-btn2 {
-          font-family: Nunito Sans;
+          font-family: $font-semibold;
           font-weight: 600;
           font-size: 12px;
           text-align: center;
