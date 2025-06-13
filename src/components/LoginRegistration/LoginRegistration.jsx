@@ -7,6 +7,7 @@ function LoginRegistration() {
   const [isLoginActive, setIsLoginActive] = useState(true); // Track active tab (Login or Registration)
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [regUsername, setRegUsername] = useState("");
   const [regEmail, setRegEmail] = useState("");
   const [regPassword, setRegPassword] = useState("");
   const [regRepeat, setRegRepeat] = useState("");
@@ -27,6 +28,7 @@ function LoginRegistration() {
     if (regPassword !== regRepeat) return;
     try {
       await register({
+        username: regUsername,
         email: regEmail,
         password: regPassword,
       });
@@ -87,6 +89,11 @@ function LoginRegistration() {
           {/* Registration Form */}
           {!isLoginActive && (
             <div className="LoginRegistration-Registration">
+              <input
+                placeholder="Имя пользователя"
+                value={regUsername}
+                onChange={(e) => setRegUsername(e.target.value)}
+              />
               <input
                 placeholder="E-mail"
                 value={regEmail}

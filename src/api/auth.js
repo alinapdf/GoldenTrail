@@ -20,6 +20,7 @@ async function request(path, options = {}) {
 }
 
 export async function login(credentials) {
+  await getCsrfCookie();
   const data = await request('/login', {
     method: 'POST',
     body: JSON.stringify(credentials),
