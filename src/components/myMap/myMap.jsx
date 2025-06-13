@@ -1,5 +1,5 @@
 import React from "react";
-import "./MyMap.scss";
+import "./myMap.scss";
 import tel from "../../assets/img/telefon.svg";
 import clock from "../../assets/img/clock.svg";
 import gmail from "../../assets/img/gmail.svg";

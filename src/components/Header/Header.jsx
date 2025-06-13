@@ -1,5 +1,8 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { FiSearch, FiHeart, FiShoppingCart, FiUser } from "react-icons/fi";
 import logo from "../../assets/img/Logo.svg";
+import { LanguageContext } from "../../context/LanguageContext";
 import "./Header.scss";
 
 function Header() {

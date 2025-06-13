@@ -4,16 +4,7 @@ import { useState } from "react";
 import up from "../../assets/img/up.svg";
 import vector from "../../assets/img/Vector.svg";
 
-import bahil from "../../assets/img/bahil.png";
-import Raspirator from "../../assets/img/Raspirator.png";
-import Truba from "../../assets/img/truba.png";
-import MMask from "../../assets/img/MMask.png";
-import Plenka from "../../assets/img/Plenka.png";
-import BlueRulon from "../../assets/img/BlueRulon.png";
-import cart from "../../assets/img/cart.svg";
-import heart from "../../assets/img/heart.svg";
-import cartb from "../../assets/img/cartb.svg";
-import Heartb from "../../assets/img/Heartb.svg";
+import useProducts from "../../hooks/useProducts";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
 import { addFav } from "../../redux/AddFav";
