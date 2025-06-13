@@ -15,6 +15,14 @@ const translations = {
       account: "Hesab",
       menu: "Menyu",
     },
+    footer: {
+      menu: "Menyu",
+      personal: "Şəxsi kabinet",
+      login_registration: "Giriş/Qeydiyyat",
+      cart: "Səbət",
+      favorites: "Seçilmişlər",
+      about: "Haqqımızda",
+    },
     about_section: {
       title: "Haqqımızda",
       desc1:
@@ -188,6 +196,14 @@ const translations = {
       account: "Account",
       menu: "Menu",
     },
+    footer: {
+      menu: "Menu",
+      personal: "Personal account",
+      login_registration: "Login/Registration",
+      cart: "Cart",
+      favorites: "Favorites",
+      about: "About us",
+    },
     about_section: {
       title: "About us",
       desc1:
@@ -360,6 +376,14 @@ const translations = {
       cart: "Корзина",
       account: "Аккаунт",
       menu: "Меню",
+    },
+    footer: {
+      menu: "Меню",
+      personal: "Личный кабинет",
+      login_registration: "Вход/Регистрация",
+      cart: "Корзина",
+      favorites: "Избранное",
+      about: "О нас",
     },
     about_section: {
       title: "О нас",
