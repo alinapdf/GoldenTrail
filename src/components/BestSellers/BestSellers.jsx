@@ -3,13 +3,13 @@ import "./BestSellers.scss";
 import bahil from "../../assets/img/bahil.png";
 import Raspirator from "../../assets/img/Raspirator.png";
 import Truba from "../../assets/img/truba.png";
-import MMask from "../../assets/img/MMask.png";
-import Plenka from "../../assets/img/Plenka.png";
-import BlueRulon from "../../assets/img/BlueRulon.png";
+import MMask from "../../assets/img/mmask.png";
+import Plenka from "../../assets/img/plenka.png";
+import BlueRulon from "../../assets/img/bluerulon.png";
 import cart from "../../assets/img/cart.svg";
 import heart from "../../assets/img/heart.svg";
 import cartb from "../../assets/img/cartb.svg";
-import Heartb from "../../assets/img/Heartb.svg";
+import Heartb from "../../assets/img/heartb.svg";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";

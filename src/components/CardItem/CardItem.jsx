@@ -3,7 +3,7 @@ import expr from "../CardItem/expr.png";
 import cart from "../../assets/img/cart.svg";
 import heart from "../../assets/img/heart.svg";
 import cartb from "../../assets/img/cartb.svg";
-import Heartb from "../../assets/img/Heartb.svg";
+import Heartb from "../../assets/img/heartb.svg";
 import percatki from "../CardItem/percatki.png";
 
 import { Link } from "react-router-dom";
