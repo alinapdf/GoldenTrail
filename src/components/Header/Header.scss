@@ -12,6 +12,10 @@
   padding: 16px 0;
 }
 
+.header-main {
+  position: relative;
+}
+
 .header-main__nav {
   display: flex;
   gap: 24px;
@@ -70,11 +74,35 @@
   display: block;
 }
 
+.header-main__nav.open {
+  display: flex;
+}
+
 @media (max-width: 768px) {
-  .header-main__nav {
+  .header-main__language {
     display: none;
   }
+
+  .header-main__nav {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    width: 100%;
+    background-color: $color-blue;
+    display: none;
+  }
+
   .header-main__burger {
     display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-main__actions {
+    gap: 8px;
   }
 }

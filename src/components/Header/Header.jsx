@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { FiSearch, FiHeart, FiShoppingCart, FiUser } from "react-icons/fi";
+import { useState } from "react";
 import logo from "../../assets/img/Logo.svg";
 import "./Header.scss";
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="header-main">
@@ -11,7 +14,7 @@ function Header() {
           <Link className="header-main__logo" to="/">
             <img src={logo} alt="Golden Trail" />
           </Link>
-          <nav className="header-main__nav">
+          <nav className={`header-main__nav ${menuOpen ? "open" : ""}`}> 
             <a href="#" className="header-main__link">
               Продукция
             </a>
@@ -42,7 +45,11 @@ function Header() {
               <button>EN</button>
               <button className="active">RU</button>
             </div>
-            <button className="header-main__burger" aria-label="Меню">
+            <button
+              className="header-main__burger"
+              aria-label="Меню"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
               <span></span>
               <span></span>
               <span></span>
