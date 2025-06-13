@@ -3,16 +3,7 @@ import "./FilteredProducts.scss";
 import up from "../../assets/img/up.svg";
 import vector from "../../assets/img/Vector.svg";
 
-import bahil from "../../assets/img/bahil.png";
-import Raspirator from "../../assets/img/Raspirator.png";
-import Truba from "../../assets/img/truba.png";
-import MMask from "../../assets/img/mmask.png";
-import Plenka from "../../assets/img/plenka.png";
-import BlueRulon from "../../assets/img/bluerulon.png";
-import cart from "../../assets/img/cart.svg";
-import heart from "../../assets/img/heart.svg";
-import cartb from "../../assets/img/cartb.svg";
-import Heartb from "../../assets/img/heartb.svg";
+import useProducts from "../../hooks/useProducts";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
 import { addFav } from "../../redux/AddFav";
@@ -29,100 +20,7 @@ function FilteredProducts() {
   const handleAddFav = (product) => {
     dispatch(addFav(product));
   };
-  const products = [
-    {
-      id: 1,
-      name: "Бахилы плотные (100 пар)",
-      img: bahil,
-      images: [cart, heart, cartb, Heartb],
-      sizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      colors: [
-        "rgba(29, 227, 137, 1)",
-        "rgba(105, 147, 254, 1)",
-        "rgba(191, 87, 120, 1)",
-      ],
-
-      mainPrice: "350 ₽",
-      oldPrice: "640 ₽",
-      is_new: "New",
-      desc: "Бахилы плотные (100 пар)",
-    },
-    {
-      id: 2,
-      name: "Респиратор FFP2/FFP3",
-      img: Raspirator,
-      images: [cart, heart, cartb, Heartb],
-      sizes: ["S", "M", "Xl"],
-      colors: [
-        "rgba(242, 219, 71, 1)",
-        "rgba(255, 151, 229, 1)",
-        "rgba(105, 147, 254, 1)",
-        "rgba(255, 255, 255, 1)",
-      ],
-      mainPrice: "9 300 ₽",
-      oldPrice: "",
-      is_new: "popular",
-      desc: "Респиратор FFP2/FFP3",
-    },
-    {
-      id: 3,
-      name: "Экран лицевой защитный",
-      img: MMask,
-      images: [cart, heart, cartb, Heartb],
-      sizes: ["S", "M", "Xl"],
-      colors: [
-        "rgba(242, 219, 71, 1)",
-        "rgba(255, 151, 229, 1)",
-        "rgba(105, 147, 254, 1)",
-        "rgba(255, 255, 255, 1)",
-      ],
-      mainPrice: "210 ₽",
-      oldPrice: "",
-      is_new: "sale",
-      desc: "Экран лицевой защитный",
-    },
-    {
-      id: 4,
-      name: "УФ-лампа бактерицидная",
-      img: Truba,
-      images: [cart, heart, cartb, Heartb],
-      sizes: [],
-      colors: ["#ffffff"],
-      mainPrice: "2 200 ₽",
-      oldPrice: "",
-      is_new: "New",
-      desc: "УФ-лампа бактерицидная",
-    },
-    {
-      id: 5,
-      name: "Пленка пищевая для обертываний",
-      img: Plenka,
-      images: [cart, heart, cartb, Heartb],
-      sizes: [],
-      colors: ["#ffffff"],
-      mainPrice: "150 ₽",
-      oldPrice: "",
-      is_new: "popular",
-      desc: "Пленка пищевая для обертываний",
-    },
-    {
-      id: 6,
-      name: "Простыни одноразовые в рулоне",
-      img: BlueRulon,
-      images: [cart, heart, cartb, Heartb],
-      sizes: [],
-      colors: [
-        "rgba(242, 219, 71, 1)",
-        "rgba(255, 151, 229, 1)",
-        "rgba(105, 147, 254, 1)",
-        "rgba(255, 255, 255, 1)",
-      ],
-      mainPrice: "300 ₽",
-      oldPrice: "",
-      is_new: "sale",
-      desc: "Простыни одноразовые в рулоне",
-    },
-  ];
+  const products = useProducts();
   return (
     <div className="FilteredProducts-container">
       <h2>Рентгенозащитная продукция</h2>
@@ -161,7 +59,7 @@ function FilteredProducts() {
                 <div className="FilteredProducts_img">
                   <img src={product.img} alt={product.name} />
                 </div>
-                <div className="FilteredProducts_status">{product.is_new}</div>
+                <div className="FilteredProducts_status">{product.status}</div>
                 <div className="FilteredProducts_btns">
                   <button
                     className="FilteredProducts_btn baasket "
