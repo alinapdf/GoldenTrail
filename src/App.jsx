@@ -3,13 +3,25 @@ import AboutPages from "./pages/About/About";
 import Busket from "./pages/Busket/Busket";
 import Home from "./pages/Home/Home";
 import Desc from "./pages/Desc/Desc";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import LoginRegistration from "./components/LoginRegistration/LoginRegistration";
 import FilteredProducts from "./components/FilteredProducts/FilteredProducts";
+import { useEffect, useState } from "react";
+import LoadingOverlay from "./components/LoadingOverlay/LoadingOverlay";
 
 function App() {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, [location]);
+
   return (
     <>
+      {loading && <LoadingOverlay />}
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
