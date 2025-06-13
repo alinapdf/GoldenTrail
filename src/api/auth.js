@@ -7,6 +7,9 @@ async function request(path, options = {}) {
     Accept: 'application/json',
     ...(options.headers || {}),
   };
+  const language =
+    localStorage.getItem('language') || navigator.language?.slice(0, 2);
+  if (language) headers['Accept-Language'] = language;
   if (token) headers['Authorization'] = `Bearer ${token}`;
   const match = document.cookie.match(/XSRF-TOKEN=([^;]+)/);
   if (match) headers['X-XSRF-TOKEN'] = decodeURIComponent(match[1]);
