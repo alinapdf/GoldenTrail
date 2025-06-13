@@ -49,7 +49,7 @@ function LoginRegistration() {
           {/* Registration Form */}
           {!isLoginActive && (
             <div className="LoginRegistration-Registration">
-              <input placeholder="Имя*" />
+              <input placeholder="E-mail*" type="email" />
               <input placeholder="+994-__-___-__-__" />
               <input placeholder="Введите пароль" />
               <input placeholder="Повторите пароль" />

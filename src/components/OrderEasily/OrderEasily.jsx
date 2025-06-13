@@ -8,7 +8,7 @@ function OrderEasily() {
         <p>Оставьте заявку и мы свяжемся с вами в ближайшее время</p>
       </div>
       <div className="OrderEasily-Registration">
-        <input placeholder="Имя*" />
+        <input placeholder="E-mail*" type="email" />
         <input placeholder="+994-__-___-__-__" />
         <input placeholder="Введите пароль" />
         <input placeholder="Повторите пароль" />

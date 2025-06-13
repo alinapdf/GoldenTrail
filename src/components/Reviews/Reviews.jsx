@@ -87,6 +87,44 @@ const Reviews = () => {
     },
   ];
 
+  const ReviewSlide = ({ item }) => {
+    const [expanded, setExpanded] = useState(false);
+    const shouldTruncate = item.comment.length > 180;
+    const visibleText =
+      expanded || !shouldTruncate
+        ? item.comment
+        : item.comment.slice(0, 110) + "...";
+
+    return (
+      <SwiperSlide key={item.id} className={styles.swiperSlide_Review}>
+        <div className={styles.SwiperCommentBlock}>
+          <div className={styles.SwiperCommentHeader}>
+            <div className={styles.SwiperCommentUser}>
+              <img src={item.imgLogo} alt="Лого" className="Logo" />
+              <div>
+                <div className="UserName">{item.name}</div>
+                <img src={item.stars} alt="Оценка" className="Stars" />
+              </div>
+            </div>
+            <div className="UserDate">{item.data}</div>
+          </div>
+
+          <p className="Comment">
+            {visibleText}
+            {shouldTruncate && (
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className={styles.showMoreBtn}
+              >
+                {expanded ? "Скрыть" : "Читать полностью"}
+              </button>
+            )}
+          </p>
+        </div>
+      </SwiperSlide>
+    );
+  };
+
   return (
     <div className="reviewsContainer">
       <div className="container">
@@ -120,44 +158,9 @@ const Reviews = () => {
           }}
           className={styles.swiper_Review}
         >
-          {comment.map((item) => {
-            const [expanded, setExpanded] = useState(false);
-
-            const shouldTruncate = item.comment.length > 180;
-            const visibleText =
-              expanded || !shouldTruncate
-                ? item.comment
-                : item.comment.slice(0, 110) + "...";
-
-            return (
-              <SwiperSlide key={item.id} className={styles.swiperSlide_Review}>
-                <div className={styles.SwiperCommentBlock}>
-                  <div className={styles.SwiperCommentHeader}>
-                    <div className={styles.SwiperCommentUser}>
-                      <img src={item.imgLogo} alt="Лого" className="Logo" />
-                      <div>
-                        <div className="UserName">{item.name}</div>
-                        <img src={item.stars} alt="Оценка" className="Stars" />
-                      </div>
-                    </div>
-                    <div className="UserDate">{item.data}</div>
-                  </div>
-
-                  <p className="Comment">
-                    {visibleText}
-                    {shouldTruncate && (
-                      <button
-                        onClick={() => setExpanded(!expanded)}
-                        className={styles.showMoreBtn}
-                      >
-                        {expanded ? "Скрыть" : "Читать полностью"}
-                      </button>
-                    )}
-                  </p>
-                </div>
-              </SwiperSlide>
-            );
-          })}
+          {comment.map((item) => (
+            <ReviewSlide key={item.id} item={item} />
+          ))}
         </Swiper>
       </div>
     </div>

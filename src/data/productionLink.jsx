@@ -1,4 +1,4 @@
-productionLink = [
+export const productionLink = [
   {
     sectionName: "Рентгенозащитная продукция",
     sectionCategories: [
