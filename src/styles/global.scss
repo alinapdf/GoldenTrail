@@ -2,7 +2,7 @@
 @import "base/typography";
 @import "utils/variables";
 @import "components/buttons";
-@import "leaflet/dist/leaflet.css";
+@import "../../node_modules/leaflet/dist/leaflet.css";
 
 * {
   transition: all 0.5s ease;
