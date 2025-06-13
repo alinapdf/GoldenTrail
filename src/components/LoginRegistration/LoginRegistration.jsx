@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/img/Logo.svg";
 import "./LoginRegistration.scss";
-import { login, register } from "../../api/auth";
+import { login, register, me } from "../../api/auth";
+import { useNavigate } from "react-router-dom";
 
 function LoginRegistration() {
   const [isLoginActive, setIsLoginActive] = useState(true); // Track active tab (Login or Registration)
@@ -12,6 +13,16 @@ function LoginRegistration() {
   const [regPassword, setRegPassword] = useState("");
   const [regRepeat, setRegRepeat] = useState("");
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const user = await me();
+      if (user) navigate("/Busket");
+    };
+    checkAuth();
+  }, [navigate]);
+
   const handleTabSwitch = (tab) => {
     setIsLoginActive(tab === "login");
   };
@@ -19,6 +30,7 @@ function LoginRegistration() {
   const handleLogin = async () => {
     try {
       await login({ email: loginEmail, password: loginPassword });
+      navigate('/Busket');
     } catch (err) {
       console.error(err);
     }
@@ -33,6 +45,7 @@ function LoginRegistration() {
         password: regPassword,
       });
       setIsLoginActive(true);
+      navigate('/Busket');
     } catch (err) {
       console.error(err);
     }

@@ -45,4 +45,12 @@ export async function register(info) {
   return data;
 }
 
+export async function me() {
+  try {
+    return await request('/api/me');
+  } catch (err) {
+    return null;
+  }
+}
+
 export { API_BASE_URL };
