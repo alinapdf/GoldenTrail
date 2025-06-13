@@ -7,6 +7,9 @@ import { Routes, Route } from "react-router-dom";
 import LoginRegistration from "./components/LoginRegistration/LoginRegistration";
 import FilteredProducts from "./components/FilteredProducts/FilteredProducts";
 import ResetParol from "./components/LoginRegistration/ResetParol/ResetParol";
+import ErrorBlock from "./components/Error/Error";
+import Footer from "./components/Footer/Footer";
+import MyMap from "./components/myMap/myMap";
 
 function App() {
   return (
@@ -20,10 +23,10 @@ function App() {
         <Route path="/LR" element={<LoginRegistration />} />
         <Route path="/Filter" element={<FilteredProducts />} />
         <Route path="/LR/ResetParol" element={<ResetParol />} />
+        <Route path="/Error" element={<ErrorBlock />} />
       </Routes>
-
-      <main>main</main>
-      <footer>footer</footer>
+      <MyMap />
+      <Footer />
     </>
   );
 }
