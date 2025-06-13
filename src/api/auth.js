@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 async function request(path, options = {}) {
   const token = localStorage.getItem('token');
@@ -25,7 +25,7 @@ export async function login(credentials) {
 }
 
 export async function getCsrfToken() {
-  const resp = await fetch(`${API_BASE_URL}/csrf-token`, {
+  const resp = await fetch(`${API_BASE_URL}/sanctum/csrf-cookie`, {
     credentials: 'include',
   });
   if (!resp.ok) throw new Error('Network request failed');
