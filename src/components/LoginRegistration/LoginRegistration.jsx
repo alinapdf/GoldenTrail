@@ -7,8 +7,7 @@ function LoginRegistration() {
   const [isLoginActive, setIsLoginActive] = useState(true); // Track active tab (Login or Registration)
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const [regName, setRegName] = useState("");
-  const [regPhone, setRegPhone] = useState("");
+  const [regEmail, setRegEmail] = useState("");
   const [regPassword, setRegPassword] = useState("");
   const [regRepeat, setRegRepeat] = useState("");
 
@@ -28,8 +27,7 @@ function LoginRegistration() {
     if (regPassword !== regRepeat) return;
     try {
       await register({
-        name: regName,
-        phone: regPhone,
+        email: regEmail,
         password: regPassword,
       });
       setIsLoginActive(true);
@@ -69,7 +67,7 @@ function LoginRegistration() {
           {isLoginActive && (
             <div className="LoginRegistration-Login">
               <input
-                placeholder="E-mail или телефон"
+                placeholder="E-mail"
                 value={loginEmail}
                 onChange={(e) => setLoginEmail(e.target.value)}
               />
@@ -90,14 +88,9 @@ function LoginRegistration() {
           {!isLoginActive && (
             <div className="LoginRegistration-Registration">
               <input
-                placeholder="Имя*"
-                value={regName}
-                onChange={(e) => setRegName(e.target.value)}
-              />
-              <input
-                placeholder="+994-__-___-__-__"
-                value={regPhone}
-                onChange={(e) => setRegPhone(e.target.value)}
+                placeholder="E-mail"
+                value={regEmail}
+                onChange={(e) => setRegEmail(e.target.value)}
               />
               <input
                 placeholder="Введите пароль"
