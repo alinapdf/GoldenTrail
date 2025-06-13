@@ -1,11 +1,11 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
 
 async function request(path, options = {}) {
   const token = localStorage.getItem('token');
-  const csrfToken = localStorage.getItem('csrfToken');
   const headers = { 'Content-Type': 'application/json', ...(options.headers || {}) };
   if (token) headers['Authorization'] = `Bearer ${token}`;
-  if (csrfToken) headers['X-CSRF-Token'] = csrfToken;
+  const match = document.cookie.match(/XSRF-TOKEN=([^;]+)/);
+  if (match) headers['X-XSRF-TOKEN'] = decodeURIComponent(match[1]);
   const resp = await fetch(`${API_BASE_URL}${path}`, {
     credentials: 'include',
     ...options,
@@ -24,19 +24,15 @@ export async function login(credentials) {
   return data;
 }
 
-export async function getCsrfToken() {
-  const resp = await fetch(`${API_BASE_URL}/sanctum/csrf-cookie`, {
+export async function getCsrfCookie() {
+  await fetch(`${API_BASE_URL}/sanctum/csrf-cookie`, {
     credentials: 'include',
   });
-  if (!resp.ok) throw new Error('Network request failed');
-  const data = await resp.json();
-  if (data.csrfToken) localStorage.setItem('csrfToken', data.csrfToken);
-  return data.csrfToken;
 }
 
 export async function register(info) {
-  await getCsrfToken();
-  const data = await request('/register', {
+  await getCsrfCookie();
+  const data = await request('/api/register', {
     method: 'POST',
     body: JSON.stringify(info),
   });
