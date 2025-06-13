@@ -45,28 +45,34 @@ function PersonalAccount({ setActiveSection, activeSection }) {
           >
             Корзина
           </button>
-          <button
-            className={`Busket-container-button ${
-              activeSection === "favorites" ? "active" : ""
-            }`}
-            onClick={() => setActiveSection("favorites")}
-          >
-            Избранное
-          </button>
-          <button
-            className={`Busket-container-button
-           ${activeSection === "order" ? "active" : ""}`}
-            onClick={() => setActiveSection("order")}
-          >
-            Мои заказы
-          </button>
-          <button
-            className={`Busket-container-button
-           ${activeSection === "personal" ? "active" : ""}`}
-            onClick={() => setActiveSection("personal")}
-          >
-            Персональные данные
-          </button>
+          {authenticated && (
+            <>
+              <button
+                className={`Busket-container-button ${
+                  activeSection === "favorites" ? "active" : ""
+                }`}
+                onClick={() => setActiveSection("favorites")}
+              >
+                Избранное
+              </button>
+              <button
+                className={`Busket-container-button ${
+                  activeSection === "order" ? "active" : ""
+                }`}
+                onClick={() => setActiveSection("order")}
+              >
+                Мои заказы
+              </button>
+              <button
+                className={`Busket-container-button ${
+                  activeSection === "personal" ? "active" : ""
+                }`}
+                onClick={() => setActiveSection("personal")}
+              >
+                Персональные данные
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

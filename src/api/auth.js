@@ -55,6 +55,7 @@ export async function me() {
   try {
     return await request('/api/me');
   } catch (err) {
+    console.error(err);
     return null;
   }
 }
