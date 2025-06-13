@@ -40,6 +40,18 @@ p {
   padding: 0 16px;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+
 .btn-main {
   background-color: rgba(18, 32, 45, 1);
   padding: 6px 28px;

@@ -206,3 +206,36 @@ h2 {
     border-bottom: 2px solid rgba(220, 182, 90, 1);
   }
 }
+
+@media (max-width: 768px) {
+  .productCard {
+    flex-direction: column;
+    align-items: center;
+  }
+  .imageSection,
+  .infoSection {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .btns .buyButton {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .btns {
+    flex-direction: column;
+  }
+  .btns .cartBtn {
+    width: 100%;
+  }
+  .infoSection h1 {
+    font-size: 20px;
+  }
+  .currentPrice {
+    font-size: 20px;
+  }
+  .oldPrice {
+    font-size: 14px;
+  }
+}
