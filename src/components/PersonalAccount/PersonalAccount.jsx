@@ -25,7 +25,13 @@ function PersonalAccount({ setActiveSection, activeSection }) {
           >
             Избранное
           </button>
-          <button className="Busket-container-button">Мои заказы</button>
+          <button
+            className={`Busket-container-button
+           ${activeSection === "order" ? "active" : ""}`}
+            onClick={() => setActiveSection("order")}
+          >
+            Мои заказы
+          </button>
           <button
             className={`Busket-container-button
            ${activeSection === "personal" ? "active" : ""}`}

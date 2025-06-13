@@ -22,6 +22,7 @@
   height: auto;
   object-fit: cover;
   border-radius: 12px;
+  background-color: rgba(217, 217, 217, 1);
 }
 
 .thumbSwiper {
@@ -175,22 +176,6 @@
   text-decoration: line-through;
 }
 
-.buyButton {
-  background-color: #111;
-  color: #fff;
-  font-size: 16px;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 16px;
-  transition: background 0.2s;
-}
-
-.buyButton:hover {
-  background-color: #000;
-}
-
 .guarantee {
   font-size: 14px;
   color: #444;
@@ -198,4 +183,26 @@
 
 h2 {
   margin-bottom: 20px;
+}
+
+.btns {
+  display: flex;
+  gap: 12px;
+  .buyButton {
+    background-color: rgba(18, 32, 45, 1);
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 0px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 16px;
+    min-width: 422px;
+    border-bottom: 2px solid rgba(220, 182, 90, 1);
+  }
+  .cartBtn {
+    width: 34px;
+    height: 34px;
+    background-color: rgba(127, 127, 127, 1);
+    border-bottom: 2px solid rgba(220, 182, 90, 1);
+  }
 }
