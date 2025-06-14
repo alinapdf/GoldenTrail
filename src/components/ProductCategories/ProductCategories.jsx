@@ -1,5 +1,5 @@
 import "./ProductCategories.scss";
-
+import { Link } from "react-router-dom";
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
 import dezenfekiciya from "../../assets/img/dezenfekciya.png";
@@ -25,7 +25,11 @@ function ProductCategories() {
             style={{ backgroundImage: `url(${category.bg})` }}
           >
             <h3 className="product-category-name">{category.name}</h3>
-            <button className="btn-main btn">{t("busket.go_to_catalog")}</button>
+            <Link to={"/Filter"}>
+              <button className="btn-main btn">
+                {t("busket.go_to_catalog")}
+              </button>
+            </Link>
           </div>
         ))}
       </div>
