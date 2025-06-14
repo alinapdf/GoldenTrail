@@ -7,30 +7,33 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
+import BuyModal from "../../components/BuyModal/BuyModal";
 import Heart from "../../assets/img/heartb.svg";
 import cart from "../../assets/img/cartb.svg";
 
 import styles from "./ProductCard.module.css";
 
 const ProductCard = () => {
-  const product = useSelector((state) => state.currentProduct.product);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const [quantity, setQuantity] = useState(1);
-  const [selectedColor, setSelectedColor] = useState(
-    product?.colors?.[0] || ""
-  );
-  const [selectedSize, setSelectedSize] = useState(product?.sizes?.[0] || "");
+  // const product = useSelector((state) => state.currentProduct.product);
 
-  if (!product) {
-    return <div className={styles.ProductWrapper}>Товар не выбран</div>;
-  }
+  // const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  // const [quantity, setQuantity] = useState(1);
+  // const [selectedColor, setSelectedColor] = useState(
+  //   product?.colors?.[0] || ""
+  // );
+  // const [selectedSize, setSelectedSize] = useState(product?.sizes?.[0] || "");
+
+  // if (!product) {
+  //   return <div className={styles.ProductWrapper}>Товар не выбран</div>;
+  // }
 
   return (
     <div className={styles.ProductWrapper}>
       <div className={styles.productCard}>
         <div className={styles.imageSection}>
-          <Swiper
+          {/* <Swiper
             modules={[Navigation, Thumbs]}
             thumbs={{ swiper: thumbsSwiper }}
             navigation
@@ -116,10 +119,16 @@ const ProductCard = () => {
             {product.oldPrice && (
               <div className={styles.oldPrice}>{product.oldPrice}</div>
             )}
-          </div>
+          </div> */}
 
           <div className={styles.btns}>
-            <button className={styles.buyButton}>Купить в 1 клик</button>
+            <button
+              className={styles.buyButton}
+              onClick={() => setIsModalOpen(true)}
+            >
+              Купить в 1 клик
+            </button>
+
             <button className={styles.cartBtn}>
               <img src={cart} />
             </button>
@@ -159,6 +168,8 @@ const ProductCard = () => {
           Рентгенозащитный воротник — 1 шт Упаковка с инструкцией по уходу
         </p>
       </div>
+
+      {isModalOpen && <BuyModal onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 };
