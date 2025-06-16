@@ -1,0 +1,27 @@
+.Error-Container {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+  margin-top: 14px;
+  text-align: center;
+}
+.Error-Container .Error-Imgs {
+  position: relative;
+}
+.Error-Container .Error-Imgs .Error {
+  position: absolute;
+  bottom: 40px;
+  right: 47%;
+}
+.Error-Container h2 {
+  font-family: Nunito Sans;
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+}
+.Error-Container p {
+  font-size: 15px;
+}
+.Error-Container .btn-main {
+  margin-top: 62px;
+}/*# sourceMappingURL=Error.css.map */

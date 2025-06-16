@@ -34,6 +34,10 @@
   overflow: hidden;
 }
 .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_top .ChoseProffesional_main-info .ChoseProffesional_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -45,7 +49,7 @@
   left: 19px;
   background-color: rgb(220, 182, 90);
   padding: 2px 15px;
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-SemiBold", sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 100%;
@@ -97,7 +101,7 @@
   display: flex;
   gap: 23px;
   margin-top: 10px;
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-Medium", sans-serif;
   font-weight: 500;
   font-size: 14px;
   text-align: center;
@@ -115,13 +119,13 @@
   gap: 12px;
 }
 .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_bottom-info .ChoseProffesional_price .ChoseProffesional_price_main-price {
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-Bold", sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: rgb(34, 34, 34);
 }
 .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_bottom-info .ChoseProffesional_price .ChoseProffesional_price_old-price {
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-Medium", sans-serif;
   font-weight: 500;
   font-size: 18px;
   text-decoration: line-through;
@@ -143,7 +147,7 @@
   justify-content: space-between;
 }
 .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_action a {
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-Medium", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
@@ -195,7 +199,7 @@
     left: 18px;
     background-color: rgb(220, 182, 90);
     padding: 2px 15px;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-SemiBold", sans-serif;
     font-weight: 600;
     font-size: 20px;
     line-height: 100%;
@@ -247,7 +251,7 @@
     display: flex;
     gap: 20px;
     margin-top: 12px;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 14px;
     text-align: center;
@@ -262,13 +266,13 @@
     gap: 12px;
   }
   .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_bottom-info .ChoseProffesional_price .ChoseProffesional_price_main-price {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Bold", sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: rgb(34, 34, 34);
   }
   .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_bottom-info .ChoseProffesional_price .ChoseProffesional_price_old-price {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 18px;
     text-decoration: line-through;
@@ -292,13 +296,13 @@
   .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_action .btn-main {
     background-color: rgb(18, 32, 45);
     padding: 6px 28px;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-SemiBold", sans-serif;
     font-weight: 600;
     font-size: 16px;
     color: rgb(255, 255, 255);
   }
   .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_action a {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
@@ -349,7 +353,7 @@
     left: 8px;
     background-color: rgb(220, 182, 90);
     padding: 4px;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-SemiBold", sans-serif;
     font-weight: 600;
     font-size: 12px;
     line-height: 100%;
@@ -401,7 +405,7 @@
     display: flex;
     gap: 15px;
     margin-top: 8px;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 10px;
     text-align: center;
@@ -416,12 +420,12 @@
     gap: 12px;
   }
   .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_bottom-info .ChoseProffesional_price .ChoseProffesional_price_main-price {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Bold", sans-serif;
     font-weight: 700;
     font-size: 14px;
   }
   .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_bottom-info .ChoseProffesional_price .ChoseProffesional_price_old-price {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 14px;
     text-decoration: line-through;
@@ -441,7 +445,7 @@
     margin-top: 12px;
   }
   .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_action .btn-main {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-SemiBold", sans-serif;
     font-weight: 600;
     font-size: 14px;
     padding: 6px 22px;
@@ -450,7 +454,7 @@
   }
   .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_bottom .ChoseProffesional_action a {
     display: none;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;

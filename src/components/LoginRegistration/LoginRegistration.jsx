@@ -5,7 +5,7 @@ import { login, register, me } from "../../api/auth";
 import { useNavigate } from "react-router-dom";
 
 function LoginRegistration() {
-  const [isLoginActive, setIsLoginActive] = useState(true); // Track active tab (Login or Registration)
+  const [isLoginActive, setIsLoginActive] = useState(true);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [regUsername, setRegUsername] = useState("");

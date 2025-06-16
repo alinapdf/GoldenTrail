@@ -1,0 +1,418 @@
+.FilteredProducts-container {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+  margin-top: 128px;
+}
+.FilteredProducts-container .FilteredProducts-Buttons {
+  display: flex;
+  gap: 20px;
+}
+.FilteredProducts-container .FilteredProducts-Buttons .FilteredProducts-filter {
+  background-color: rgb(236, 236, 236);
+  min-width: 200px;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.25%;
+  display: flex;
+  justify-content: space-between;
+  padding: 11px;
+}
+.FilteredProducts-container .FilteredProducts-Buttons .FilteredProducts-filter .FilteredProducts-name {
+  align-self: center;
+}
+.FilteredProducts-container .FilteredProducts-Buttons .FilteredProducts-All {
+  background-color: rgb(18, 32, 45);
+  min-width: 158px;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.25%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 11px;
+}
+.FilteredProducts-container .FilteredProducts-Buttons .FilteredProducts-All .FilteredProducts-All-name {
+  align-self: center;
+}
+.FilteredProducts-container .FilteredProducts-Buttons .FilteredProducts-delete {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: rgb(34, 34, 34);
+  align-self: flex-end;
+}
+.FilteredProducts-container .FilteredProducts-All-buttns {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.FilteredProducts-container .FilteredProducts-All-buttns .FilteredProducts-All-btn {
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(255, 255, 255);
+  background-color: rgb(127, 127, 127);
+  padding: 6px 28px;
+  min-width: 195px;
+  height: 34px;
+}
+
+.FilteredProducts-objs {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.FilteredProducts-objs .FilteredProducts {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  height: 490px;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top {
+  margin-bottom: 23px;
+  width: 336px;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info {
+  position: relative;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgb(18, 32, 45);
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info .FilteredProducts_img {
+  background-color: rgb(217, 217, 217);
+  width: 336px;
+  height: 278px;
+  position: relative;
+  overflow: hidden;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info .FilteredProducts_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info .FilteredProducts_status {
+  position: absolute;
+  top: 19px;
+  left: 19px;
+  background-color: rgb(220, 182, 90);
+  padding: 2px 15px;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: white;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info .FilteredProducts_btns {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info .FilteredProducts_btns .FilteredProducts_btn.baasket {
+  width: 40px;
+  background-image: url("../../assets/img/cart.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+  padding: 24px 0px 14px 0px;
+  border: none;
+  cursor: pointer;
+  transition: background-image 0.2s ease-in-out;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info .FilteredProducts_btns .FilteredProducts_btn.baasket:hover {
+  background-image: url("../../assets/img/cartb.svg");
+  background-color: rgb(18, 32, 45);
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info .FilteredProducts_btns .FilteredProducts_btn.fav {
+  width: 40px;
+  background-image: url("../../assets/img/heart.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+  padding: 24px 0px 14px 0px;
+  border: none;
+  cursor: pointer;
+  transition: background-image 0.2s ease-in-out;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info .FilteredProducts_btns .FilteredProducts_btn.fav:hover {
+  background-image: url("../../assets/img/heartb.svg");
+  background-color: rgb(18, 32, 45);
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_sizes {
+  display: flex;
+  gap: 23px;
+  margin-top: 10px;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_bottom .FilteredProducts_bottom-info {
+  display: flex;
+  justify-content: space-between;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_bottom .FilteredProducts_bottom-info .FilteredProducts_price {
+  display: flex;
+  gap: 12px;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_bottom .FilteredProducts_bottom-info .FilteredProducts_price .FilteredProducts_price_main-price {
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: rgb(34, 34, 34);
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_bottom .FilteredProducts_bottom-info .FilteredProducts_price .FilteredProducts_price_old-price {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: line-through;
+  color: rgb(236, 236, 236);
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_bottom .FilteredProducts_bottom-info .FilteredProducts_colors {
+  display: flex;
+  gap: 9px;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_bottom .FilteredProducts_bottom-info .FilteredProducts_colors .FilteredProducts_color-item span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_bottom .FilteredProducts_action {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_bottom .FilteredProducts_action a {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  align-self: flex-end;
+  list-style: none;
+}
+
+.FilterSidebar {
+  position: fixed;
+  top: 57px;
+  left: 0;
+  width: 712px;
+  height: 100%;
+  background: white;
+  z-index: 1000;
+  padding: 64px 37px 64px 201px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+.FilterSidebar .FilterSidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.FilterSidebar .FilterSidebar-header h2 {
+  margin-bottom: 0px;
+}
+.FilterSidebar .FilterSidebar-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.FilterSidebar .FilterSidebar-section {
+  margin-bottom: 24px;
+}
+.FilterSidebar .FilterSidebar-section h3 {
+  margin-bottom: 18px;
+}
+.FilterSidebar .FilterSidebar-section .FilterSidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.FilterSidebar .FilterSidebar-section .FilterSidebar-menu .FilterSidebar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.FilterSidebar .FilterSidebar-section .FilterSidebar-menu .FilterSidebar-menu-item .custom-checkbox-square input {
+  display: none;
+}
+.FilterSidebar .FilterSidebar-section .FilterSidebar-menu .FilterSidebar-menu-item .custom-checkbox-square span {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #aaa;
+  background: #d9d9d9;
+  display: inline-block;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+.FilterSidebar .FilterSidebar-section .FilterSidebar-menu .FilterSidebar-menu-item .custom-checkbox-square .active {
+  background: #ffffff;
+  border-color: #333;
+}
+.FilterSidebar .FilterSidebar-section .FilterSidebar-menu .FilterSidebar-menu-item .section-label-text {
+  font-size: 14px;
+  color: #333;
+}
+.FilterSidebar .FilterSidebar-section-color {
+  margin-top: 59px;
+}
+.FilterSidebar .FilterSidebar-section-color h3 {
+  margin-bottom: 20px;
+}
+.FilterSidebar .FilterSidebar-section-color .FilterSidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.FilterSidebar .FilterSidebar-section-color .FilterSidebar-menu .FilterSidebar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.FilterSidebar .FilterSidebar-section-color .FilterSidebar-menu .FilterSidebar-menu-item .custom-checkbox-static input {
+  display: none;
+}
+.FilterSidebar .FilterSidebar-section-color .FilterSidebar-menu .FilterSidebar-menu-item .custom-checkbox-static .checkbox-square {
+  width: 16px;
+  height: 16px;
+  background: #d9d9d9;
+  border: 1px solid #aaa;
+  display: inline-block;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+.FilterSidebar .FilterSidebar-section-color .FilterSidebar-menu .FilterSidebar-menu-item .color-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: inline-block;
+}
+.FilterSidebar .FilterSidebar-section-size {
+  margin-top: 59px;
+}
+.FilterSidebar .FilterSidebar-section-size h3 {
+  margin-bottom: 20px;
+}
+.FilterSidebar .FilterSidebar-section-size .size-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.FilterSidebar .FilterSidebar-section-size .size-list .size-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.FilterSidebar .FilterSidebar-section-size .size-list .size-item .size-square {
+  width: 12px;
+  height: 12px;
+  background: #d9d9d9;
+  border-radius: 2px;
+}
+.FilterSidebar .FilterSidebar-section-size .size-list .size-item .size-label {
+  font-size: 14px;
+  color: #1a1a1a;
+}
+.FilterSidebar .FilterSidebar-section-price {
+  margin-top: 59px;
+}
+.FilterSidebar .FilterSidebar-section-price h3 {
+  margin-bottom: 20px;
+}
+.FilterSidebar .FilterSidebar-section-price .price-inputs-single {
+  margin-bottom: 12px;
+  text-align: right;
+}
+.FilterSidebar .FilterSidebar-section-price .price-inputs-single input {
+  width: 100px;
+  padding: 6px 8px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+.FilterSidebar .FilterSidebar-section-price .price-range {
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 2px;
+  background: #ccc;
+  outline: none;
+}
+.FilterSidebar .FilterSidebar-section-price .price-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
+  margin-top: -6px;
+}
+.FilterSidebar .FilterSidebar-section-price .price-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
+}
+.FilterSidebar .clear-filters {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  margin-top: 92px;
+}/*# sourceMappingURL=FilteredProducts.css.map */

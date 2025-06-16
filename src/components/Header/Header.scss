@@ -10,10 +10,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 0;
+  position: relative;
 }
 
 .header-main {
   position: relative;
+  border-bottom: 1px solid white;
+  padding: 0 16px;
 }
 
 .header-main__nav {
@@ -76,6 +79,85 @@
 
 .header-main__nav.open {
   display: flex;
+}
+
+.search {
+  background-color: #12202d;
+  padding: 16px 0;
+
+  .searchContainer {
+    width: 100%;
+  }
+
+  .searchBox {
+    position: relative;
+    width: 100%;
+  }
+
+  .searchInput {
+    width: 100%;
+    padding: 12px 50px 12px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    background: #fff;
+    font-family: inherit;
+  }
+
+  .searchClose {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+  }
+}
+
+.productsDropdown-wrapper {
+  background-color: #12202d;
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 36px;
+  .productsDropdown {
+    width: 100%;
+    .productsDropdown-block {
+      .productsDropdownInner {
+        display: flex;
+        .h2-title {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          margin-right: 112px;
+          min-width: 237px;
+          .title {
+            font-family: $font-semibold;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+          }
+        }
+        .productsDropdownInner-menu {
+          display: flex;
+          flex-direction: column;
+          gap: 22px;
+          margin-right: 22px;
+          min-width: 336px;
+          .productsDropdownInner-menu-item {
+            font-family: $font-regular;
+            font-weight: 400;
+            font-size: 16px;
+          }
+        }
+        .searchClose {
+          align-self: baseline;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {

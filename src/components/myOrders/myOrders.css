@@ -1,0 +1,362 @@
+.order-wrapper {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.order-container {
+  padding: 26px 0px 16px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: sans-serif;
+  border-bottom: 1px solid rgb(127, 127, 127);
+  margin-top: 36px;
+}
+
+.order-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-number {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-right: 12px;
+}
+.order-number .copy-icon {
+  font-size: 16px;
+  margin-left: 12px;
+  cursor: pointer;
+  color: #777;
+}
+
+.order-info {
+  font-size: 14px;
+  display: flex;
+  gap: 12px;
+  color: #444;
+}
+.order-info .order-data {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(127, 127, 127);
+}
+.order-info .order-price {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(127, 127, 127);
+}
+
+.order-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.order-status {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.order-status .order-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: rgb(236, 236, 236);
+}
+.order-status .order-payment {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(18, 32, 45);
+}
+
+.toggle-btn {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.myorders-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 16px;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.myorders-blocks .myorders-block {
+  display: flex;
+  justify-content: space-between;
+}
+.myorders-blocks .myorders-block .order-info-block {
+  display: flex;
+  gap: 16px;
+}
+.myorders-blocks .myorders-block .order-info-block .order-info-img {
+  width: 92px;
+  height: 92px;
+  background-color: rgb(217, 217, 217);
+}
+.myorders-blocks .myorders-block .order-info-block .order-info-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.myorders-blocks .myorders-block .order-info-block .Order-info-items h2 {
+  font-size: 20px;
+}
+.myorders-blocks .myorders-block .order-info-block .Order-info-items .Order-info-item {
+  display: flex;
+  gap: 43px;
+}
+.myorders-blocks .myorders-block .order-info-block .Order-info-items .Order-info-item .Order {
+  display: flex;
+  min-width: 105px;
+  justify-content: space-between;
+}
+.myorders-blocks .myorders-block .order-info-block .Order-info-items .Order-info-item .Order .Order-word {
+  font-family: Nunito Sans;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(127, 127, 127);
+}
+.myorders-blocks .myorders-block .order-info-block .Order-info-items .Order-info-item .Order .Order-means {
+  font-family: Nunito Sans;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(34, 34, 34);
+}
+.myorders-blocks .myorders-block .order-info-block .Order-info-items .Order-info-item .Order .Order-color {
+  width: 18px;
+  height: 18px;
+  background-color: rgb(105, 147, 254);
+  border-radius: 100%;
+}
+.myorders-blocks .myorders-block .Order-Prices {
+  display: flex;
+  gap: 28px;
+}
+.myorders-blocks .myorders-block .Order-Prices .Order-old-price {
+  font-family: Nunito Sans;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  text-decoration: line-through;
+  color: rgb(127, 127, 127);
+}
+.myorders-blocks .myorders-block .Order-Prices .Order-new-price {
+  font-family: Nunito Sans;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  color: rgb(18, 32, 45);
+}
+
+.myorders-blocks.hide {
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+.toggle-arrow {
+  transition: transform 0.7s ease;
+}
+
+.toggle-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.order-containers-Cancelled .order-container-Cancelled {
+  padding: 26px 0px 16px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: sans-serif;
+  border-bottom: 1px solid rgb(127, 127, 127);
+  margin-top: 93px;
+}
+.order-containers-Cancelled .order-container-Cancelled .order-left-Cancelled {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.order-containers-Cancelled .order-container-Cancelled .order-left-Cancelled .order-number-Cancelled {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-right: 12px;
+}
+.order-containers-Cancelled .order-container-Cancelled .order-left-Cancelled .order-number-Cancelled .copy-icon {
+  font-size: 16px;
+  margin-left: 12px;
+  cursor: pointer;
+  color: #777;
+}
+.order-containers-Cancelled .order-container-Cancelled .order-left-Cancelled .order-info-Cancelled {
+  font-size: 14px;
+  display: flex;
+  gap: 12px;
+  color: #444;
+}
+.order-containers-Cancelled .order-container-Cancelled .order-left-Cancelled .order-info-Cancelled .order-data-Cancelled {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(127, 127, 127);
+}
+.order-containers-Cancelled .order-container-Cancelled .order-left-Cancelled .order-info-Cancelled .order-price-Cancelled {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(127, 127, 127);
+}
+.order-containers-Cancelled .order-container-Cancelled .order-right-Cancelled {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.order-containers-Cancelled .order-container-Cancelled .order-right-Cancelled .order-status-Cancelled {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.order-containers-Cancelled .order-container-Cancelled .order-right-Cancelled .order-status-Cancelled .order-circle-Cancelled {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: rgb(240, 97, 87);
+}
+.order-containers-Cancelled .order-container-Cancelled .order-right-Cancelled .order-status-Cancelled .order-payment-Cancelled {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(18, 32, 45);
+}
+
+.order-container-delivery {
+  padding: 26px 0px 16px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: sans-serif;
+  border-bottom: 1px solid rgb(127, 127, 127);
+  margin-top: 93px;
+}
+.order-container-delivery .order-left-delivery {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.order-container-delivery .order-left-delivery .order-number-delivery {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-right: 12px;
+}
+.order-container-delivery .order-left-delivery .order-number-delivery .copy-icon {
+  font-size: 16px;
+  margin-left: 12px;
+  cursor: pointer;
+  color: #777;
+}
+.order-container-delivery .order-left-delivery .order-info-delivery {
+  font-size: 14px;
+  display: flex;
+  gap: 12px;
+  color: #444;
+}
+.order-container-delivery .order-left-delivery .order-info-delivery .order-data-delivery {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(127, 127, 127);
+}
+.order-container-delivery .order-left-delivery .order-info-delivery .order-price-delivery {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(127, 127, 127);
+}
+.order-container-delivery .order-right-delivery {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.order-container-delivery .order-right-delivery .order-status-delivery {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.order-container-delivery .order-right-delivery .order-status-delivery .order-circle-delivery {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: rgb(170, 210, 105);
+}
+.order-container-delivery .order-right-delivery .order-status-delivery .order-payment-delivery {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(18, 32, 45);
+}
+
+.copy-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 64px;
+}
+.copy-button-wrapper .btn {
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 21px 87px;
+  text-align: center;
+  background-color: rgb(127, 127, 127);
+  color: rgb(255, 255, 255);
+}/*# sourceMappingURL=myOrders.css.map */

@@ -1,0 +1,121 @@
+.PersonalData-container {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+  margin-top: 64px;
+}
+.PersonalData-container .PersonalData-Inputs-Buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 512px;
+  margin-top: 64px;
+}
+.PersonalData-container .PersonalData-Inputs-Buttons .PersonalData-input {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+.PersonalData-container .PersonalData-Inputs-Buttons .PersonalData-input input {
+  height: 34px;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  gap: 10px;
+  background-color: rgb(236, 236, 236);
+}
+.PersonalData-container .PersonalData-Inputs-Buttons .PersonalData-input input:hover {
+  border: 1px solid rgb(34, 34, 34);
+}
+.PersonalData-container .PersonalData-Inputs-Buttons .Change {
+  align-self: flex-end;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: rgb(0, 0, 0);
+}
+.PersonalData-container .PersonalData-Inputs-Buttons .btn-main-busket {
+  background-color: rgb(127, 127, 127);
+  padding: 6px 28px;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(220, 182, 90);
+  width: 100%;
+  margin-top: 36px;
+}
+.PersonalData-container .PersonalData-Inputs-Buttons .btn-main-busket:hover {
+  background-color: rgb(18, 32, 45);
+}
+.PersonalData-container .PersonalData-Inputs-Block-Add {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.PersonalData-container .PersonalData-Inputs-Block-Add .PersonalData-Inputs-Add {
+  min-width: 512px;
+  margin-top: 64px;
+}
+.PersonalData-container .PersonalData-Inputs-Block-Add .PersonalData-Inputs-Add .PersonalData-Name {
+  display: flex;
+  justify-content: space-between;
+}
+.PersonalData-container .PersonalData-Inputs-Block-Add .PersonalData-Inputs-Add .PersonalData-input {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+  margin-top: 36px;
+}
+.PersonalData-container .PersonalData-Inputs-Block-Add .PersonalData-Inputs-Add .PersonalData-input input {
+  height: 34px;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  gap: 10px;
+  background-color: rgb(236, 236, 236);
+}
+.PersonalData-container .PersonalData-Inputs-Block-Add .PersonalData-Inputs-Add .PersonalData-input input:hover {
+  border: 1px solid rgb(34, 34, 34);
+}
+.PersonalData-container .PersonalData-Inputs-Block-Add .PersonalData-Inputs-Add .btn-main-busket {
+  background-color: rgb(127, 127, 127);
+  padding: 6px 28px;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(220, 182, 90);
+  width: 100%;
+  margin-top: 36px;
+}
+.PersonalData-container .PersonalData-Inputs-Block-Add .PersonalData-Inputs-Add .btn-main-busket:hover {
+  background-color: rgb(18, 32, 45);
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+input.filled {
+  border: 1px solid rgb(34, 34, 34);
+}/*# sourceMappingURL=PersonalData.css.map */

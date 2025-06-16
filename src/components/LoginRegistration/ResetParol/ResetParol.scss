@@ -24,7 +24,6 @@
     }
 
     .ResetParol-Block {
-      width: 512px;
       background-color: rgba(255, 255, 255, 1);
       padding: 20px;
       margin-top: 28px;
@@ -56,6 +55,70 @@
         margin-top: 28px;
         p {
           text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ResetParol-wrapper {
+    background-color: rgba(18, 32, 45, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    .ResetParol-Container {
+      max-width: 1072px;
+      margin: 0 auto;
+      width: 512px;
+      .ResetParol-Logo {
+        width: 100%;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .ResetParol-Block {
+        width: 512px;
+        background-color: rgba(255, 255, 255, 1);
+        padding: 20px;
+        margin-top: 28px;
+        h2 {
+          text-align: center;
+        }
+        .ResetParol-inputs {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          input {
+            padding: 6px 0px 6px 12px;
+            background-color: rgba(236, 236, 236, 1);
+          }
+          .ResetParol-btn {
+            background-color: rgba(18, 32, 45, 1);
+            padding: 6px 28px;
+            font-weight: 600;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 1);
+            width: 100%;
+            font-family: $font-semibold;
+          }
+        }
+        .ResetParol-Ok {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 28px;
+          p {
+            text-align: center;
+          }
         }
       }
     }

@@ -4,6 +4,7 @@
   max-width: 1072px;
   margin: 0 auto;
   padding: 0 16px;
+  margin-top: 128px;
   .FilteredProducts-Buttons {
     display: flex;
     gap: 20px;
@@ -227,5 +228,218 @@
         }
       }
     }
+  }
+}
+
+.FilterSidebar {
+  position: fixed;
+  top: 57px;
+  left: 0;
+  width: 712px;
+  height: 100%;
+  background: white;
+  z-index: 1000;
+  padding: 64px 37px 64px 201px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+
+  .FilterSidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    h2 {
+      margin-bottom: 0px;
+    }
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  }
+
+  .FilterSidebar-section {
+    margin-bottom: 24px;
+
+    h3 {
+      margin-bottom: 18px;
+    }
+
+    .FilterSidebar-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .FilterSidebar-menu-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        .custom-checkbox-square {
+          input {
+            display: none;
+          }
+
+          span {
+            width: 16px;
+            height: 16px;
+            border: 1px solid #aaa;
+            background: #d9d9d9;
+            display: inline-block;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+          }
+
+          .active {
+            background: #ffffff;
+            border-color: #333;
+          }
+        }
+
+        .section-label-text {
+          font-size: 14px;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .FilterSidebar-section-color {
+    margin-top: 59px;
+    h3 {
+      margin-bottom: 20px;
+    }
+    .FilterSidebar-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .FilterSidebar-menu-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        .custom-checkbox-static {
+          input {
+            display: none;
+          }
+
+          .checkbox-square {
+            width: 16px;
+            height: 16px;
+            background: #d9d9d9;
+            border: 1px solid #aaa;
+            display: inline-block;
+            border-radius: 4px;
+            margin-right: 6px;
+          }
+        }
+
+        .color-dot {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          border: 1px solid #ccc;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .FilterSidebar-section-size {
+    margin-top: 59px;
+    h3 {
+      margin-bottom: 20px;
+    }
+    .size-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .size-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+
+        .size-square {
+          width: 12px;
+          height: 12px;
+          background: #d9d9d9;
+          border-radius: 2px;
+        }
+
+        .size-label {
+          font-size: 14px;
+          color: #1a1a1a;
+        }
+      }
+    }
+  }
+  .FilterSidebar-section-price {
+    margin-top: 59px;
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    .price-inputs-single {
+      margin-bottom: 12px;
+      text-align: right;
+
+      input {
+        width: 100px;
+        padding: 6px 8px;
+        font-size: 14px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #fff;
+      }
+    }
+
+    .price-range {
+      width: 100%;
+      appearance: none;
+      height: 2px;
+      background: #ccc;
+      outline: none;
+
+      &::-webkit-slider-thumb {
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #000;
+        cursor: pointer;
+        margin-top: -6px;
+      }
+
+      &::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #000;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .clear-filters {
+    font-family: $font-medium;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-offset: 0%;
+    text-decoration-thickness: 0%;
+    text-decoration-skip-ink: auto;
+    margin-top: 92px;
   }
 }

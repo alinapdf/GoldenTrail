@@ -1,0 +1,225 @@
+.container-FavBusket {
+  max-width: 1072px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.container-FavBusket .FavBusket-Block {
+  margin-top: 64px;
+  align-items: flex-start;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard {
+  display: flex;
+  flex-direction: column;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Left-Block {
+  display: flex;
+  gap: 16px;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Left-Block .FavBusket-img {
+  width: 160px;
+  height: 160px;
+  background-color: rgb(236, 236, 236);
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Left-Block .FavBusket-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Left-Block .FavBusket-Blok-desc .h3 {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  width: 336px;
+  margin-bottom: 25px;
+  color: rgb(34, 34, 34);
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Left-Block .FavBusket-Blok-desc .FavBusket-Menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Left-Block .FavBusket-Blok-desc .FavBusket-Menu .FavBusket-Item-Size {
+  display: flex;
+  justify-content: space-between;
+  max-width: 128px;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Left-Block .FavBusket-Blok-desc .FavBusket-Menu .FavBusket-Item-Quantity {
+  display: flex;
+  justify-content: space-between;
+  max-width: 128px;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Total-Price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Total-Price .FavBusket-New-Price {
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  text-align: right;
+  margin-bottom: 7px;
+  color: rgb(18, 32, 45);
+  white-space: nowrap;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Total-Price .FavBusket-Old-Price {
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  text-decoration: line-through;
+  color: rgb(127, 127, 127);
+  margin-bottom: 12px;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Total-Price .FavBusket-Buttons {
+  margin-bottom: 14px;
+  margin-top: 12px;
+  width: 70px;
+  height: 30px;
+  display: flex;
+  background-color: rgb(236, 236, 236);
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Total-Price .FavBusket-Buttons .FavBusket-decrease {
+  width: 100%;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Total-Price .FavBusket-Buttons .FavBusket-increase {
+  width: 100%;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Total-Price .FavBusket-Buttons .FavBusket-Quantity {
+  align-content: center;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Total-Price .Del-Add {
+  display: flex;
+  gap: 20px;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Total-Price .Del-Add .deleete {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: rgb(34, 34, 34);
+  align-self: end;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-newcard .FavBusket-Block-Obj .FavBusket-Total-Price .Del-Add .btn {
+  background-color: rgb(18, 32, 45);
+  padding: 6px 28px;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(220, 182, 90);
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-Total-Price {
+  padding: 18px;
+  background-color: rgb(236, 236, 236);
+  margin-bottom: 18px;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-Total-Price .FavBusket-Block-Total {
+  display: flex;
+  justify-content: space-between;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-Total-Price .FavBusket-Block-Total .FavBusket-Total {
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(18, 32, 45);
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-Total-Price .FavBusket-Block-Total .FavBusket-Price {
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  color: rgb(18, 32, 45);
+  white-space: nowrap;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-Total-Price .Delivery-texts {
+  display: flex;
+  justify-content: space-between;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-Total-Price .Delivery-texts .Delivery-text {
+  color: rgb(127, 127, 127);
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Block-Total-Price .Delivery-texts .delivery {
+  color: rgb(127, 127, 127);
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Buttons .FavBusket-Buttons-add {
+  display: flex;
+  gap: 16px;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Buttons .FavBusket-Buttons-add .btn {
+  background-color: rgb(18, 32, 45);
+  padding: 6px 28px;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(220, 182, 90);
+  margin-bottom: 18px;
+}
+.container-FavBusket .FavBusket-Block .FavBusket-Buttons .delete {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+.container-FavBusket .FavBusket-categories-list {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+.container-FavBusket .FavBusket-categories-list .FavBusket-category-card {
+  background-color: rgb(217, 217, 217);
+  position: relative;
+  background-position: bottom 0px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  border-bottom: 2px solid rgb(18, 32, 45);
+  width: 336px;
+  height: 225px;
+}
+.container-FavBusket .FavBusket-categories-list .FavBusket-category-card .FavBusket-category-name {
+  word-break: normal;
+  position: absolute;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+}
+.container-FavBusket .FavBusket-categories-list .FavBusket-category-card .btn {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+}/*# sourceMappingURL=FavBusket.css.map */
