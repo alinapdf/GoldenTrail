@@ -1,4 +1,4 @@
-@import "../../styles/utils/variables";
+@use "../../styles/utils/variables" as *;
 
 .Footer-wrapper {
   background-color: rgba(18, 32, 45, 1);

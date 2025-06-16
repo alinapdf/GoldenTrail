@@ -1,4 +1,4 @@
-@import "../../styles/utils/variables";
+@use "../../styles/utils/variables" as *;
 
 .header {
   background-color: $color-blue;
