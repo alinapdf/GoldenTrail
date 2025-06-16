@@ -1,4 +1,4 @@
-@import "../../styles/utils/variables";
+@use "../../styles/utils/variables" as *;
 
 .FilteredProducts-container {
   max-width: 1072px;
@@ -160,7 +160,7 @@
             transition: background-image 0.2s ease-in-out;
 
             &:hover {
-              background-image: url("../../assets/img/heartb.svg");
+              background-image: url("../../assets/img/Heartb.svg");
               background-color: rgba(18, 32, 45, 1);
             }
           }

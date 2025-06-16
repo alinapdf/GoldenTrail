@@ -164,7 +164,7 @@
   transition: background-image 0.2s ease-in-out;
 }
 .FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info .FilteredProducts_btns .FilteredProducts_btn.fav:hover {
-  background-image: url("../../assets/img/heartb.svg");
+  background-image: url("../../assets/img/Heartb.svg");
   background-color: rgb(18, 32, 45);
 }
 .FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_sizes {

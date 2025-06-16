@@ -94,7 +94,7 @@
   transition: background-image 0.2s ease-in-out;
 }
 .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_top .ChoseProffesional_main-info .ChoseProffesional_btns .ChoseProffesional_btn.fav:hover {
-  background-image: url("../../assets/img/heartb.svg");
+  background-image: url("../../assets/img/Heartb.svg");
   background-color: rgb(18, 32, 45);
 }
 .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_top .ChoseProffesional_sizes {

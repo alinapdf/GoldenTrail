@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import BuyModal from "../../components/BuyModal/BuyModal";
-import Heart from "../../assets/img/heartb.svg";
+import Heart from "../../assets/img/Heartb.svg";
 import cart from "../../assets/img/cartb.svg";
 
 import styles from "./ProductCard.module.css";

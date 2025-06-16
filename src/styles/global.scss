@@ -1,7 +1,7 @@
-@import "base/reset";
-@import "base/typography";
-@import "utils/variables";
-@import "components/buttons";
+@use "base/reset";
+@use "base/typography";
+@use "utils/variables" as *;
+@use "components/buttons";
 @import "../../node_modules/leaflet/dist/leaflet.css";
 
 * {

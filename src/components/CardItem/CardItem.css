@@ -86,7 +86,7 @@
   transition: background-image 0.2s ease-in-out;
 }
 .container-productCard .productCard-objs .productCard .productCard_top .productCard_main-info .productCard_btns .productCard_btn.fav:hover {
-  background-image: url("../../assets/img/heartb.svg");
+  background-image: url("../../assets/img/Heartb.svg");
   background-color: rgb(18, 32, 45);
 }
 .container-productCard .productCard-objs .productCard .productCard_top .productCard_sizes {
