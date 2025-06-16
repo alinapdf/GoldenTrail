@@ -6,6 +6,7 @@ import { LanguageContext } from "../../context/LanguageContext";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
+import { addCartItem } from "../../api/cart";
 import { addFav } from "../../redux/AddFav";
 
 import { Link } from "react-router-dom";
@@ -15,8 +16,13 @@ function ChoseProffesional() {
   const { t } = useContext(LanguageContext);
   const dispatch = useDispatch();
 
-  const handleAdd = (product) => {
+  const handleAdd = async (product) => {
     dispatch(addItem(product));
+    try {
+      await addCartItem(product);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handleAddFav = (product) => {

@@ -7,6 +7,7 @@ import { setCurrentProduct } from "../../redux/CurrentProductSlice";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
+import { addCartItem } from "../../api/cart";
 import { addFav } from "../../redux/AddFav";
 import useProducts from "../../hooks/useProducts";
 
@@ -14,8 +15,13 @@ function CardItem() {
   const { t } = useContext(LanguageContext);
   const dispatch = useDispatch();
 
-  const handleAdd = (product) => {
+  const handleAdd = async (product) => {
     dispatch(addItem(product));
+    try {
+      await addCartItem(product);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handleAddFav = (product) => {
