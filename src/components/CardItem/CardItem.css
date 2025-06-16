@@ -30,7 +30,10 @@
   height: 278px;
 }
 .container-productCard .productCard-objs .productCard .productCard_top .productCard_main-info .productCard_img img {
-  height: 278px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .container-productCard .productCard-objs .productCard .productCard_top .productCard_main-info .productCard_status {
   position: absolute;
@@ -38,7 +41,7 @@
   left: 19px;
   background-color: rgb(220, 182, 90);
   padding: 2px 15px;
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-SemiBold", sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 100%;
@@ -90,7 +93,7 @@
   display: flex;
   gap: 23px;
   margin-top: 10px;
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-Medium", sans-serif;
   font-weight: 500;
   font-size: 14px;
   text-align: center;
@@ -105,13 +108,13 @@
   gap: 12px;
 }
 .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_bottom-info .productCard_price .productCard_price_main-price {
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-Bold", sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: rgb(34, 34, 34);
 }
 .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_bottom-info .productCard_price .productCard_price_old-price {
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-Medium", sans-serif;
   font-weight: 500;
   font-size: 18px;
   text-decoration: line-through;
@@ -135,13 +138,13 @@
 .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_action .btn-main {
   background-color: rgb(18, 32, 45);
   padding: 6px 28px;
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-SemiBold", sans-serif;
   font-weight: 600;
   font-size: 16px;
   color: rgb(255, 255, 255);
 }
 .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_action a {
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-Medium", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
@@ -192,7 +195,7 @@
     left: 18px;
     background-color: rgb(220, 182, 90);
     padding: 2px 15px;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-SemiBold", sans-serif;
     font-weight: 600;
     font-size: 20px;
     line-height: 100%;
@@ -244,7 +247,7 @@
     display: flex;
     gap: 20px;
     margin-top: 12px;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 14px;
     text-align: center;
@@ -259,13 +262,13 @@
     gap: 12px;
   }
   .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_bottom-info .productCard_price .productCard_price_main-price {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Bold", sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: rgb(34, 34, 34);
   }
   .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_bottom-info .productCard_price .productCard_price_old-price {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 18px;
     text-decoration: line-through;
@@ -289,13 +292,13 @@
   .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_action .btn-main {
     background-color: rgb(18, 32, 45);
     padding: 6px 28px;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-SemiBold", sans-serif;
     font-weight: 600;
     font-size: 16px;
     color: rgb(255, 255, 255);
   }
   .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_action a {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
@@ -346,7 +349,7 @@
     left: 8px;
     background-color: rgb(220, 182, 90);
     padding: 4px;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-SemiBold", sans-serif;
     font-weight: 600;
     font-size: 12px;
     line-height: 100%;
@@ -398,7 +401,7 @@
     display: flex;
     gap: 15px;
     margin-top: 8px;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 10px;
     text-align: center;
@@ -413,12 +416,12 @@
     gap: 12px;
   }
   .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_bottom-info .productCard_price .productCard_price_main-price {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Bold", sans-serif;
     font-weight: 700;
     font-size: 14px;
   }
   .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_bottom-info .productCard_price .productCard_price_old-price {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 14px;
     text-decoration: line-through;
@@ -438,7 +441,7 @@
     margin-top: 12px;
   }
   .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_action .btn-main {
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-SemiBold", sans-serif;
     font-weight: 600;
     font-size: 14px;
     padding: 6px 22px;
@@ -447,7 +450,7 @@
   }
   .container-productCard .productCard-objs .productCard .productCard_bottom .productCard_action a {
     display: none;
-    font-family: Nunito Sans;
+    font-family: "NunitoSans-Medium", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;

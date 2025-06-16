@@ -3,42 +3,243 @@
   margin: 0 auto;
   padding: 0 16px;
 }
-.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj {
+.container-SelectedItem .SelectedItem-categories-list {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+.container-SelectedItem .SelectedItem-categories-list .SelectedItem-category-card {
+  background-color: rgb(217, 217, 217);
+  position: relative;
+  background-position: bottom 0px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  border-bottom: 2px solid rgb(18, 32, 45);
+  width: 336px;
+  height: 225px;
+}
+.container-SelectedItem .SelectedItem-categories-list .SelectedItem-category-card .SelectedItem-category-name {
+  word-break: normal;
+  position: absolute;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+}
+.container-SelectedItem .SelectedItem-categories-list .SelectedItem-category-card .btn {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+}
+.container-SelectedItem .SelectedItem-Block {
+  margin-top: 64px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard {
+  display: flex;
+  flex-direction: column;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Block-Left {
   display: flex;
   gap: 16px;
 }
-.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-img {
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Block-Left .SelectedItem-img {
   width: 160px;
   height: 160px;
   background-color: rgb(236, 236, 236);
 }
-.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-Blok-desc .h3 {
-  font-family: Nunito Sans;
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Block-Left .SelectedItem-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Block-Left .SelectedItem-Blok-desc .h3 {
+  font-family: "NunitoSans-Medium", sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
   width: 336px;
   margin-bottom: 25px;
+  color: rgb(34, 34, 34);
 }
-.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-Blok-desc .SelectedItem-Menu {
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Block-Left .SelectedItem-Blok-desc .SelectedItem-Menu {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-Blok-desc .SelectedItem-Menu .SelectedItem-Item-Size {
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Block-Left .SelectedItem-Blok-desc .SelectedItem-Menu .SelectedItem-Item-Size {
   display: flex;
   justify-content: space-between;
   max-width: 128px;
 }
-.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-Blok-desc .SelectedItem-Menu .SelectedItem-Item-Quantity {
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Block-Left .SelectedItem-Blok-desc .SelectedItem-Menu .SelectedItem-Item-Quantity {
   display: flex;
   justify-content: space-between;
   max-width: 128px;
 }
-.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Obj .SelectedItem-Total-Price .SelectedItem-New-Price {
-  font-family: Nunito Sans;
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Total-Price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Total-Price .SelectedItem-New-Price {
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  text-align: right;
+  margin-bottom: 7px;
+  color: rgb(18, 32, 45);
+  white-space: nowrap;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Total-Price .SelectedItem-Old-Price {
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  text-decoration: line-through;
+  color: rgb(127, 127, 127);
+  margin-bottom: 12px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Total-Price .SelectedItem-Buttons {
+  margin-bottom: 14px;
+  margin-top: 12px;
+  width: 70px;
+  height: 30px;
+  display: flex;
+  background-color: rgb(236, 236, 236);
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Total-Price .SelectedItem-Buttons .SelectedItem-decrease {
+  width: 100%;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Total-Price .SelectedItem-Buttons .SelecctedItem-increase {
+  width: 100%;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Total-Price .SelectedItem-Buttons .SelectedItem-Quantity {
+  align-content: center;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-newcard .SelectedItem-Block-Obj .SelectedItem-Total-Price .deleete {
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: rgb(34, 34, 34);
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Total-Price {
+  padding: 18px;
+  background-color: rgb(236, 236, 236);
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Total-Price .SelectedItem-Block-Discount {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Total-Price .SelectedItem-Block-Discount .SelectedItem-Discount {
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(127, 127, 127);
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Total-Price .SelectedItem-Block-Discount .SelectedItem-Discount-total {
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  color: rgb(127, 127, 127);
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Total-Price .SelectedItem-Block-Total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Total-Price .SelectedItem-Block-Total .SelectedItem-Total {
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgb(18, 32, 45);
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Total-Price .SelectedItem-Block-Total .SelectedItem-Total-Ptice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Total-Price .SelectedItem-Block-Total .SelectedItem-Total-Ptice .SelectedItem-Price {
+  font-family: "NunitoSans-Bold", sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 100%;
   letter-spacing: 0%;
   text-align: right;
+  color: rgb(18, 32, 45);
+  white-space: nowrap;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Total-Price .btn {
+  width: 100%;
+  background-color: rgb(18, 32, 45);
+  padding: 6px 28px;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(220, 182, 90);
+  margin-bottom: 18px;
+}
+.container-SelectedItem .SelectedItem-Block .SelectedItem-Block-Total-Price .Delivery-text {
+  color: rgb(127, 127, 127);
+}
+
+.product-categories-list {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+.product-categories-list .product-category-card {
+  background-color: rgb(217, 217, 217);
+  position: relative;
+  background-position: bottom 0px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  border-bottom: 2px solid rgb(18, 32, 45);
+  width: 336px;
+  height: 225px;
+}
+.product-categories-list .product-category-card .product-category-name {
+  word-break: normal;
+  position: absolute;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+}
+.product-categories-list .product-category-card .btn {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
 }/*# sourceMappingURL=SelectedItem.css.map */

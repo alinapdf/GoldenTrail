@@ -22,7 +22,7 @@
 .product-categories .product-categories-list .product-category-card .product-category-name {
   word-break: normal;
   position: absolute;
-  font-family: Nunito Sans;
+  font-family: "NunitoSans-Medium", sans-serif;
   font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
@@ -55,6 +55,32 @@
     border-bottom: 2px solid rgb(18, 32, 45);
     width: 608px;
     height: 228px;
+  }
+}
+@media screen and (max-width: 677px) {
+  .product-categories {
+    margin: 0 auto;
+    padding: 0 68px;
+    margin-top: 100px;
+  }
+  .product-categories h2 {
+    padding: 0 12px;
+  }
+  .product-categories .product-categories-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+  }
+  .product-categories .product-categories-list .product-category-card {
+    background-color: rgb(217, 217, 217);
+    position: relative;
+    background-position: bottom 0px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    border-bottom: 2px solid rgb(18, 32, 45);
+    width: 508px;
+    height: 228px;
+    padding: 0 15px;
   }
 }
 @media screen and (max-width: 360px) {
