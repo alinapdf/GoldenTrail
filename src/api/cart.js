@@ -45,3 +45,24 @@ export async function addCartItem(item) {
   if (!resp.ok) throw new Error('Network request failed');
   return resp.json();
 }
+
+export async function fetchCartItems() {
+  const token = localStorage.getItem('token');
+  if (!token) return [];
+  await getCsrfCookie();
+  const headers = {
+    Accept: 'application/json',
+  };
+  const language = localStorage.getItem('language') || navigator.language?.slice(0, 2);
+  if (language) headers['X-Language'] = language;
+  headers['Authorization'] = `Bearer ${token}`;
+  const match = document.cookie.match(/XSRF-TOKEN=([^;]+)/);
+  if (match) headers['X-XSRF-TOKEN'] = decodeURIComponent(match[1]);
+  const resp = await fetch(`${API_BASE_URL}/api/cart`, {
+    method: 'GET',
+    credentials: 'include',
+    headers,
+  });
+  if (!resp.ok) throw new Error('Network request failed');
+  return resp.json();
+}
