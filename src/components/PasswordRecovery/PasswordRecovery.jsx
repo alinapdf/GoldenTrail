@@ -1,8 +1,10 @@
 import logo from "../../assets/img/Logo.svg";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 import "./PasswordRecovery.scss";
 
 function PasswordRecovery() {
+  const { t } = useContext(LanguageContext);
   const [isSent, setIsSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
@@ -26,19 +28,19 @@ function PasswordRecovery() {
         </div>
 
         <div className="PasswordRecovery-Block">
-          <h2>Восстановление пароля</h2>
+          <h2>{t("auth.password_recovery.title")}</h2>
 
           {!isSent ? (
             <div className="PasswordRecovery-inputs">
               <input
-                placeholder="Новый пароль"
+                placeholder={t("auth.password_recovery.new_password")}
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 disabled={loading}
               />
               <input
-                placeholder="E-mail или телефон"
+                placeholder={t("auth.password_recovery.email_or_phone")}
                 type="text"
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
@@ -49,13 +51,15 @@ function PasswordRecovery() {
                 onClick={handleReset}
                 disabled={loading}
               >
-                {loading ? "Отправка..." : "Восстановить"}
+                {loading
+                  ? t("auth.password_recovery.sending")
+                  : t("auth.password_recovery.recover")}
               </button>
             </div>
           ) : (
             <div className="PasswordRecovery-Ok">
-              <p>Мы отправили вам письмо-инструкцию на ваш email</p>
-              <p>Следуйте им, чтобы восстановить пароль</p>
+              <p>{t("auth.password_recovery.sent1")}</p>
+              <p>{t("auth.password_recovery.sent2")}</p>
             </div>
           )}
         </div>

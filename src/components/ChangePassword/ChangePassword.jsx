@@ -1,8 +1,10 @@
 import logo from "../../assets/img/Logo.svg";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 import "./ChangePassword.scss";
 
 function ChangePassword() {
+  const { t } = useContext(LanguageContext);
   const [isSent, setIsSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
@@ -26,19 +28,19 @@ function ChangePassword() {
         </div>
 
         <div className="ChangePassword-Block">
-          <h2>Изменение пароля</h2>
+          <h2>{t("auth.change_password.title")}</h2>
 
           {!isSent ? (
             <div className="ChangePassword-inputs">
               <input
-                placeholder="Новый пароль"
+                placeholder={t("auth.change_password.new_password")}
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 disabled={loading}
               />
               <input
-                placeholder="Подтвердите пароль"
+                placeholder={t("auth.change_password.confirm_password")}
                 type="text"
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
@@ -49,13 +51,17 @@ function ChangePassword() {
                 onClick={handleReset}
                 disabled={loading}
               >
-                {loading ? "Отправка..." : "Изменить"}
+                {loading
+                  ? t("auth.change_password.sending")
+                  : t("auth.change_password.change")}
               </button>
             </div>
           ) : (
             <div className="ChangePassword-Ok">
-              <p>Ваш пароль успешно изменен!</p>
-              <button className="ChangePassword-btn">На главную</button>
+              <p>{t("auth.change_password.success")}</p>
+              <button className="ChangePassword-btn">
+                {t("auth.change_password.to_home")}
+              </button>
             </div>
           )}
         </div>

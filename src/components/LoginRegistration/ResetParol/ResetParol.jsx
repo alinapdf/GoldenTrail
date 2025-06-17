@@ -1,8 +1,10 @@
 import "./ResetParol.scss";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { LanguageContext } from "../../../context/LanguageContext";
 import logo from "../../../assets/img/Logo.svg";
 
 function ResetParol() {
+  const { t } = useContext(LanguageContext);
   const [isSent, setIsSent] = useState(false);
   const [loading, setLoading] = useState(false); 
   const [inputValue, setInputValue] = useState(""); 
@@ -25,12 +27,12 @@ function ResetParol() {
         </div>
 
         <div className="ResetParol-Block">
-          <h2>Восстановление пароля</h2>
+          <h2>{t("auth.password_recovery.title")}</h2>
 
           {!isSent ? (
             <div className="ResetParol-inputs">
               <input
-                placeholder="E-mail или телефон"
+                placeholder={t("auth.password_recovery.email_or_phone")}
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 disabled={loading}
@@ -40,13 +42,15 @@ function ResetParol() {
                 onClick={handleReset}
                 disabled={loading}
               >
-                {loading ? "Отправка..." : "Восстановить"}
+                {loading
+                  ? t("auth.password_recovery.sending")
+                  : t("auth.password_recovery.recover")}
               </button>
             </div>
           ) : (
             <div className="ResetParol-Ok">
-              <p>Мы отправили вам письмо-инструкцию на ваш email</p>
-              <p>Следуйте им, чтобы восстановить пароль</p>
+              <p>{t("auth.password_recovery.sent1")}</p>
+              <p>{t("auth.password_recovery.sent2")}</p>
             </div>
           )}
         </div>

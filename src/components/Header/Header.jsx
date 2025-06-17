@@ -102,7 +102,11 @@ function Header() {
         <div className="search">
           <div className="searchContainer container">
             <div className="searchBox">
-              <input type="text" placeholder="Поиск" className="searchInput" />
+              <input
+                type="text"
+                placeholder={t("header.search")}
+                className="searchInput"
+              />
               <button
                 className="searchClose"
                 onClick={() => setIsSearchOpen(false)}

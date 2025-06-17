@@ -1,34 +1,29 @@
 // components/BuyModal.jsx
-import React from "react";
+import React, { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 import "./BuyModal.scss";
 
 const BuyModal = ({ onClose }) => {
+  const { t } = useContext(LanguageContext);
   return (
     <div className="overlay">
       <div className="modal">
-        <div className="modal-title">Купить в 1 клик</div>
-        <p>
-          Оставьте контактные данные — мы свяжемся с вами для подтверждения и
-          уточнения деталей.
-        </p>
+        <div className="modal-title">{t("auth.buy_modal.title")}</div>
+        <p>{t("auth.buy_modal.desc")}</p>
 
         <form className="form">
-          <input type="text" placeholder="Имя*" required />
-          <input type="tel" placeholder="+994-__-___-__-__" required />
-          <input type="email" placeholder="E-mail*" required />
-          <textarea placeholder="Комментарий к заказу" />
+          <input type="text" placeholder={t("auth.buy_modal.name")} required />
+          <input type="tel" placeholder={t("auth.buy_modal.phone")} required />
+          <input type="email" placeholder={t("auth.buy_modal.email")} required />
+          <textarea placeholder={t("auth.buy_modal.comment")} />
 
           <label className="checkboxLabel">
             <input type="checkbox" required />
-            <div className="chek-span">
-              
-              Соглашаюсь на обработку <span>персональных данных</span> и с
-              условиями <span>публичной оферты</span>
-            </div>
+            <div className="chek-span">{t("auth.buy_modal.agree")}</div>
           </label>
 
           <button type="submit" className="submitBtn">
-            Войти
+            {t("auth.buy_modal.submit")}
           </button>
         </form>
 
