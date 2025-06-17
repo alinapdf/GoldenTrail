@@ -2,7 +2,7 @@ import useProducts from "../../hooks/useProducts";
 
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
-import { addCartItem } from "../../api/cart";
+import { addCartItem, productToCartItem } from "../../api/cart";
 import { useContext } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 
@@ -14,7 +14,8 @@ function SoMayLike() {
   const handleAdd = async (product) => {
     dispatch(addItem(product));
     try {
-      await addCartItem(product);
+      const item = productToCartItem(product);
+      await addCartItem(item);
     } catch (err) {
       console.error(err);
     }

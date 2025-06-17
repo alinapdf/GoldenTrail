@@ -7,7 +7,7 @@ import {
   decreaseQuantity,
 } from "../../redux/AddFav";
 import { addItem } from "../../redux/CardSlice";
-import { addCartItem } from "../../api/cart";
+import { addCartItem, productToCartItem } from "../../api/cart";
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
 import dezenfekiciya from "../../assets/img/dezenfekciya.png";
@@ -26,7 +26,8 @@ function FavBusket() {
   const handleAdd = async (product) => {
     dispatch(addItem(product));
     try {
-      await addCartItem(product);
+      const item = productToCartItem(product);
+      await addCartItem(item);
     } catch (err) {
       console.error(err);
     }
