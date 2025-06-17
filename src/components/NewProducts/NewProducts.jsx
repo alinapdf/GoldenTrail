@@ -1,6 +1,6 @@
 import "./NewProducts.scss";
 import useProducts from "../../hooks/useProducts";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 
 import { useDispatch } from "react-redux";
@@ -14,87 +14,95 @@ function NewProducts() {
   const { t } = useContext(LanguageContext);
   const dispatch = useDispatch();
 
-  const handleAdd = async (product) => {
-    dispatch(addItem(product));
-    try {
-      const item = productToCartItem(product);
-      await addCartItem(item);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   const handleAddFav = (product) => {
     dispatch(addFav(product));
   };
   const products = useProducts().filter((p) => p.is_new);
+
+  const Item = ({ product }) => {
+    const [size, setSize] = useState(product.sizes?.[0] || "");
+    const [color, setColor] = useState(product.colors?.[0] || "");
+
+    const handleAdd = async () => {
+      const selected = { ...product, selectedSize: size, selectedColor: color };
+      dispatch(addItem(selected));
+      try {
+        const item = productToCartItem(selected, { size, color });
+        await addCartItem(item);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    return (
+      <div className="newProducts" key={product.id}>
+        <div className="newProducts_top">
+          <div className="newProducts_main-info">
+            <div className="newProducts_img">
+              <img src={product.img} alt={product.name} />
+            </div>
+            <div className="newProducts_status">{product.status}</div>
+            <div className="newProducts_btns">
+              <button className="newProducts_btn baasket" onClick={handleAdd}></button>
+              <button className="newProducts_btn fav" onClick={() => handleAddFav(product)}></button>
+            </div>
+          </div>
+          <h3>{product.name}</h3>
+          <ul className="newProducts_sizes">
+            {product.sizes.map((s, index) => (
+              <li
+                className={`newProducts_size-item${s === size ? " active" : ""}`}
+                style={s === size ? { border: "1px solid #000" } : {}}
+                onClick={() => setSize(s)}
+                key={index}
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="newProducts_bottom">
+          <div className="newProducts_bottom-info">
+            <div className="newProducts_price">
+              <div className="newProducts_price_main-price">{product.mainPrice}</div>
+              {product.oldPrice && <div className="newProducts_price_old-price">{product.oldPrice}</div>}
+            </div>
+            <ul className="newProducts_colors">
+              {product.colors.map((c, index) => (
+                <li
+                  className={`newProducts_color-item${c === color ? " active" : ""}`}
+                  onClick={() => setColor(c)}
+                  key={index}
+                >
+                  <span
+                    style={{
+                      background: c,
+                      border: c === color ? "1px solid #000" : "none",
+                    }}
+                  ></span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="newProducts_action">
+            <button className="btn-main" onClick={handleAdd}>
+              {t("products_block.buy")}
+            </button>
+            <Link to={`/desc/${product.id}`} className="link-main" onClick={() => dispatch(setCurrentProduct(product))}>
+              {t("products_block.more")}
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="container-newproducts">
       <h2>{t("products_block.new")}</h2>
       <div className="newProducts-objs">
         {products.map((product) => (
-          <div className="newProducts" key={product.id}>
-            <div className="newProducts_top">
-              <div className="newProducts_main-info">
-                <div className="newProducts_img">
-                  <img src={product.img} alt={product.name} />
-                </div>
-                <div className="newProducts_status">{product.status}</div>
-                <div className="newProducts_btns">
-                  <button
-                    className="newProducts_btn baasket"
-                    onClick={() => handleAdd(product)}
-                  ></button>
-                  <button
-                    className="newProducts_btn fav"
-                    onClick={() => handleAddFav(product)}
-                  ></button>
-                </div>
-              </div>
-              <h3>{product.name}</h3>
-              <ul className="newProducts_sizes">
-                {product.sizes.map((size, index) => (
-                  <li className="newProducts_size-item" key={index}>
-                    {size}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="newProducts_bottom">
-              <div className="newProducts_bottom-info">
-                <div className="newProducts_price">
-                  <div className="newProducts_price_main-price">
-                    {product.mainPrice}
-                  </div>
-                  {product.oldPrice && (
-                    <div className="newProducts_price_old-price">
-                      {product.oldPrice}
-                    </div>
-                  )}
-                </div>
-                <ul className="newProducts_colors">
-                  {product.colors.map((color, index) => (
-                    <li className="newProducts_color-item" key={index}>
-                      <span style={{ background: color }}></span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="newProducts_action">
-                <button className="btn-main" onClick={() => handleAdd(product)}>
-                  {t("products_block.buy")}
-                </button>
-                <Link
-                  to={`/desc/${product.id}`}
-                  className="link-main"
-                  onClick={() => dispatch(setCurrentProduct(product))}
-                >
-                  {t("products_block.more")}
-                </Link>
-              </div>
-            </div>
-          </div>
+          <Item key={product.id} product={product} />
         ))}
       </div>
     </div>
