@@ -4,17 +4,33 @@ import {
   removeItem,
   increaseQuantity,
   decreaseQuantity,
+  setItems,
 } from "../../redux/CardSlice";
+import { fetchCartItems } from "../../api/cart";
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
 import dezenfekiciya from "../../assets/img/dezenfekciya.png";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 
 function SelectedItem() {
   const { t } = useContext(LanguageContext);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const data = await fetchCartItems();
+        if (Array.isArray(data)) {
+          dispatch(setItems(data));
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    load();
+  }, [dispatch]);
 
   const handleRemove = (id) => {
     dispatch(removeItem(id));
