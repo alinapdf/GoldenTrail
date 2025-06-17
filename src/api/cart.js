@@ -1,11 +1,13 @@
-import { API_BASE_URL, getCsrfCookie, request } from './auth';
+import { getCsrfCookie, request } from './auth';
 import { formatImageUrl } from './images';
 
 export function productToCartItem(product, opts = {}) {
-  const quantity = opts.quantity ?? product.quantity ?? 1;
-  const getId = (v) => {
-    if (!v) return null;
-    return typeof v === 'object' ? v.id ?? v.value ?? v.key : v;
+  const quantity = Number(opts.quantity ?? product.quantity ?? 1) || 1;
+  const parseId = (v) => {
+    if (v == null || v === '') return null;
+    if (typeof v === 'object') v = v.id ?? v.value ?? v.key;
+    const n = Number(v);
+    return Number.isNaN(n) ? null : n;
   };
 
   const colorSrc =
@@ -23,8 +25,8 @@ export function productToCartItem(product, opts = {}) {
   return {
     product_id: product.id,
     quantity,
-    product_color_id: getId(colorSrc),
-    product_size_id: getId(sizeSrc),
+    product_color_id: parseId(colorSrc),
+    product_size_id: parseId(sizeSrc),
     price: parsePrice(product.mainPrice ?? product.price),
   };
 }
