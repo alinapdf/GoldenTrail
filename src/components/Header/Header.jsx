@@ -1,8 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiSearch, FiHeart, FiShoppingCart, FiUser } from "react-icons/fi";
 import logo from "../../assets/img/Logo.svg";
 import { LanguageContext } from "../../context/LanguageContext";
+import { fetchCategories } from "../../api/categories";
 import "./Header.scss";
 
 function Header() {
@@ -10,6 +11,13 @@ function Header() {
   const { language, setLanguage, t } = useContext(LanguageContext);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isSearchOpenProducts, setIsSearchOpenProducts] = useState(false);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetchCategories()
+      .then((data) => setCategories(data))
+      .catch((err) => console.error(err));
+  }, [language]);
 
   return (
     <header className="header">
@@ -125,38 +133,21 @@ function Header() {
             <div className="productsDropdown-block">
               <div className="productsDropdownInner ">
                 <div className="h2-title">
-                  <div className="title">Рентгенозащитная продукция</div>
-                  <div className="title">Одноразовая продукция</div>
+                  {categories.map((cat) => (
+                    <div key={cat.id} className="title">
+                      {cat.name}
+                    </div>
+                  ))}
                 </div>
-                <ul className="productsDropdownInner-menu">
-                  <li className="productsDropdownInner-menu-item">Фартуки</li>
-                  <li className="productsDropdownInner-menu-item">
-                    Юбки и жилеты
-                  </li>
-                  <li className="productsDropdownInner-menu-item">
-                    Защитные халаты
-                  </li>
-                  <li className="productsDropdownInner-menu-item">
-                    Комбинированные костюмы
-                  </li>
-                  <li className="productsDropdownInner-menu-item">
-                    Брюшные и тазовые экраны
-                  </li>
-                </ul>
-                <ul className="productsDropdownInner-menu">
-                  <li className="productsDropdownInner-menu-item">
-                    Одеяла с защитой
-                  </li>
-                  <li className="productsDropdownInner-menu-item">
-                    Колпаки и шапки
-                  </li>
-                  <li className="productsDropdownInner-menu-item">
-                    Рентгенозащитные перчатки
-                  </li>
-                  <li className="productsDropdownInner-menu-item">
-                    Защитные очки
-                  </li>
-                </ul>
+                {categories.map((cat) => (
+                  <ul key={cat.id} className="productsDropdownInner-menu">
+                    {cat.children?.map((child) => (
+                      <li key={child.id} className="productsDropdownInner-menu-item">
+                        {child.name || child.slug}
+                      </li>
+                    ))}
+                  </ul>
+                ))}
                 <button
                   className="searchClose"
                   onClick={() => setIsSearchOpenProducts(false)}
