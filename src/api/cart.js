@@ -56,3 +56,24 @@ export async function fetchCartItems() {
   }
   return data;
 }
+
+export async function removeCartItem(id) {
+  const token = localStorage.getItem('token');
+  if (!token) return null;
+  await getCsrfCookie();
+  return request(`/api/cart/${id}`, { method: 'DELETE' });
+}
+
+export async function incrementCartItem(id) {
+  const token = localStorage.getItem('token');
+  if (!token) return null;
+  await getCsrfCookie();
+  return request(`/api/cart/${id}/increment`, { method: 'POST' });
+}
+
+export async function decrementCartItem(id) {
+  const token = localStorage.getItem('token');
+  if (!token) return null;
+  await getCsrfCookie();
+  return request(`/api/cart/${id}/decrement`, { method: 'POST' });
+}
