@@ -37,6 +37,86 @@ function FilteredProducts() {
         console.error(err);
       }
     };
+
+    return (
+      <div className="FilteredProducts" key={product.id}>
+        <div className="FilteredProducts_top">
+          <div className="FilteredProducts_main-info">
+            <div className="FilteredProducts_img">
+              <img src={product.img} alt={product.name} />
+            </div>
+            <div className="FilteredProducts_status">{product.status}</div>
+            <div className="FilteredProducts_btns">
+              <button
+                className="FilteredProducts_btn baasket "
+                onClick={handleAdd}
+              ></button>
+              <button
+                className="FilteredProducts_btn fav"
+                onClick={() => handleAddFav(product)}
+              ></button>
+            </div>
+          </div>
+          <h3>{product.name}</h3>
+          <ul className="FilteredProducts_sizes">
+            {product.sizes.map((s, index) => (
+              <li
+                className={`FilteredProducts_size-item${s === size ? " active" : ""}`}
+                style={s === size ? { border: "1px solid #000" } : {}}
+                onClick={() => setSize(s)}
+                key={index}
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="FilteredProducts_bottom">
+          <div className="FilteredProducts_bottom-info">
+            <div className="FilteredProducts_price">
+              <div className="FilteredProducts_price_main-price">
+                {product.mainPrice}
+              </div>
+              {product.oldPrice && (
+                <div className="FilteredProducts_price_old-price">
+                  {product.oldPrice}
+                </div>
+              )}
+            </div>
+            <ul className="FilteredProducts_colors">
+              {product.colors.map((c, index) => (
+                <li
+                  className={`FilteredProducts_color-item${c === color ? " active" : ""}`}
+                  onClick={() => setColor(c)}
+                  key={index}
+                >
+                  <span
+                    style={{
+                      background: c,
+                      border: c === color ? "1px solid #000" : "none",
+                    }}
+                  ></span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="FilteredProducts_action">
+            <button className="btn-main" onClick={handleAdd}>
+              Купить в 1 клик
+            </button>
+            <Link
+              to={`/desc/${product.id}`}
+              className="link-main"
+              onClick={() => dispatch(setCurrentProduct(product))}
+            >
+              Подробнее
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="FilteredProducts-container">
       <h2>Рентгенозащитная продукция</h2>
