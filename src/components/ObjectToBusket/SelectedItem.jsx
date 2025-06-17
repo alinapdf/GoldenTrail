@@ -6,7 +6,12 @@ import {
   decreaseQuantity,
   setItems,
 } from "../../redux/CardSlice";
-import { fetchCartItems } from "../../api/cart";
+import {
+  fetchCartItems,
+  removeCartItem,
+  incrementCartItem,
+  decrementCartItem,
+} from "../../api/cart";
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
 import dezenfekiciya from "../../assets/img/dezenfekciya.png";
@@ -32,8 +37,31 @@ function SelectedItem() {
     load();
   }, [dispatch]);
 
-  const handleRemove = (key) => {
+  const handleRemove = async (id, key) => {
     dispatch(removeItem(key));
+    try {
+      await removeCartItem(id);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleIncrease = async (id, key) => {
+    dispatch(increaseQuantity(key));
+    try {
+      await incrementCartItem(id);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDecrease = async (id, key) => {
+    dispatch(decreaseQuantity(key));
+    try {
+      await decrementCartItem(id);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const total = cart.reduce((sum, item) => {
@@ -110,7 +138,12 @@ function SelectedItem() {
                     )}
                     <div className="SelectedItem-Buttons">
                       <button
-                        onClick={() => dispatch(decreaseQuantity(item._key || item.id || item.product_id))}
+                        onClick={() =>
+                          handleDecrease(
+                            item.id || item.product_id,
+                            item._key || item.id || item.product_id,
+                          )
+                        }
                         className="SelectedItem-decrease"
                       >
                         -
@@ -119,7 +152,12 @@ function SelectedItem() {
                         {item.quantity}
                       </span>
                       <button
-                        onClick={() => dispatch(increaseQuantity(item._key || item.id || item.product_id))}
+                        onClick={() =>
+                          handleIncrease(
+                            item.id || item.product_id,
+                            item._key || item.id || item.product_id,
+                          )
+                        }
                         className="SelecctedItem-increase"
                       >
                         +
@@ -127,7 +165,12 @@ function SelectedItem() {
                     </div>
                     <button
                       className="deleete"
-                      onClick={() => handleRemove(item._key || item.id || item.product_id)}
+                      onClick={() =>
+                        handleRemove(
+                          item.id || item.product_id,
+                          item._key || item.id || item.product_id,
+                        )
+                      }
                     >
                       {t("busket.delete")}
                     </button>
