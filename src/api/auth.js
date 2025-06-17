@@ -1,5 +1,18 @@
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+const API_BASE_URL = (() => {
+  const raw = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+  try {
+    const url = new URL(raw);
+    if (
+      window?.location.hostname === 'localhost' &&
+      url.hostname !== 'localhost'
+    ) {
+      url.hostname = 'localhost';
+    }
+    return url.toString().replace(/\/$/, '');
+  } catch {
+    return raw;
+  }
+})();
 
 async function request(path, options = {}) {
   const token = localStorage.getItem('token');
