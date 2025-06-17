@@ -73,7 +73,7 @@ function FavBusket() {
           <>
             <div className="FavBusket-Block-newcard">
               {favorites.map((item) => (
-                <div className="FavBusket-Block-Obj" key={item.id}>
+                <div className="FavBusket-Block-Obj" key={item._key || item.id}>
                   <div className="FavBusket-Left-Block">
                     <div className="FavBusket-img">
                       <img src={item.img} alt={item.name} />
@@ -83,7 +83,11 @@ function FavBusket() {
                       <ul className="FavBusket-Menu">
                         <li className="FavBusket-Item-Size">
                           <div>{t("busket.size")}</div>
-                          <div>{item.sizes?.[0] || "-"}</div>
+                          <div>{item.selectedSize || item.size || item.sizes?.[0] || '-'}</div>
+                        </li>
+                        <li className="FavBusket-Item-Color">
+                          <div>{t("orders_page.color")}</div>
+                          <div>{item.selectedColor || item.color || item.colors?.[0] || '-'}</div>
                         </li>
                         <li className="FavBusket-Item-Quantity">
                           <div>{t("busket.quantity")}</div>
@@ -99,7 +103,7 @@ function FavBusket() {
                     )}
                     <div className="FavBusket-Buttons">
                       <button
-                        onClick={() => dispatch(decreaseQuantity(item.id))}
+                        onClick={() => dispatch(decreaseQuantity(item._key || item.id))}
                         className="FavBusket-decrease"
                       >
                         -
@@ -108,7 +112,7 @@ function FavBusket() {
                         {item.quantity}
                       </span>
                       <button
-                        onClick={() => dispatch(increaseQuantity(item.id))}
+                        onClick={() => dispatch(increaseQuantity(item._key || item.id))}
                         className="FavBusket-increase"
                       >
                         +
@@ -117,7 +121,7 @@ function FavBusket() {
                     <div className="Del-Add">
                       <button
                         className="deleete"
-                        onClick={() => handleRemove(item.id)}
+                        onClick={() => handleRemove(item._key || item.id)}
                       >
                         {t("busket.delete")}
                       </button>
