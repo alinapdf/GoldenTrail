@@ -37,8 +37,9 @@ function SelectedItem() {
   };
 
   const total = cart.reduce((sum, item) => {
-    const price = parseFloat(item.mainPrice.replace(/\s|₽/g, ""));
-    return sum + price * item.quantity;
+    const raw = item.mainPrice ?? item.price ?? '0';
+    const price = parseFloat(String(raw).replace(/\s|₽/g, ""));
+    return sum + price * (item.quantity || 1);
   }, 0);
 
   const categories = [
@@ -75,17 +76,17 @@ function SelectedItem() {
           <div className="SelectedItem-Block">
             <div className="SelectedItem-Block-newcard">
               {cart.map((item) => (
-                <div className="SelectedItem-Block-Obj" key={item.id}>
+                <div className="SelectedItem-Block-Obj" key={item.id || item.product_id}>
                   <div className="SelectedItem-Block-Left">
                     <div className="SelectedItem-img">
-                      <img src={item.img} alt={item.name} />
+                      <img src={item.img || item.image} alt={item.name} />
                     </div>
                     <div className="SelectedItem-Blok-desc">
                       <h3 className="h3">{item.name}</h3>
                       <ul className="SelectedItem-Menu">
                         <li className="SelectedItem-Item-Size">
                           <div>{t("busket.size")}</div>
-                          <div>{item.sizes[0] || "-"}</div>
+                          <div>{item.sizes?.[0] || "-"}</div>
                         </li>
                         <li className="SelectedItem-Item-Quantity">
                           <div>{t("busket.quantity")}</div>
@@ -96,7 +97,7 @@ function SelectedItem() {
                   </div>
                   <div className="SelectedItem-Total-Price">
                     <div className="SelectedItem-New-Price">
-                      {item.mainPrice}
+                      {item.mainPrice ?? item.price}
                     </div>
                     {item.oldPrice && (
                       <div className="SelectedItem-Old-Price">
@@ -105,7 +106,7 @@ function SelectedItem() {
                     )}
                     <div className="SelectedItem-Buttons">
                       <button
-                        onClick={() => dispatch(decreaseQuantity(item.id))}
+                        onClick={() => dispatch(decreaseQuantity(item.id || item.product_id))}
                         className="SelectedItem-decrease"
                       >
                         -
@@ -114,7 +115,7 @@ function SelectedItem() {
                         {item.quantity}
                       </span>
                       <button
-                        onClick={() => dispatch(increaseQuantity(item.id))}
+                        onClick={() => dispatch(increaseQuantity(item.id || item.product_id))}
                         className="SelecctedItem-increase"
                       >
                         +
@@ -122,7 +123,7 @@ function SelectedItem() {
                     </div>
                     <button
                       className="deleete"
-                      onClick={() => handleRemove(item.id)}
+                      onClick={() => handleRemove(item.id || item.product_id)}
                     >
                       {t("busket.delete")}
                     </button>
