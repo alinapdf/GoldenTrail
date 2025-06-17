@@ -24,6 +24,12 @@ const translations = {
       about: "Haqqımızda",
       development: "Sayt idarelab.az tərəfindən hazırlanıb",
     },
+    hero: {
+      badge: "Fərdi tikiliş. Zəmanət — 1 il.",
+      title: "Tibb personalı üçün etibarlı qorunma",
+      subtitle: "Kiran-dan rentgenə qarşı fartuklar, yaxalıqlar və eynəklər",
+      go_to_catalog: "Kataloqa keç",
+    },
     about_section: {
       title: "Haqqımızda",
       desc1:
@@ -251,6 +257,12 @@ const translations = {
       about: "About us",
       development: "Website by idarelab.az",
     },
+    hero: {
+      badge: "Custom tailoring. 1-year warranty.",
+      title: "Reliable protection for medical staff",
+      subtitle: "X-ray aprons, collars and glasses from Kiran",
+      go_to_catalog: "Go to catalog",
+    },
     about_section: {
       title: "About us",
       desc1:
@@ -477,6 +489,12 @@ const translations = {
       favorites: "Избранное",
       about: "О нас",
       development: "Разработка сайта idarelab.az",
+    },
+    hero: {
+      badge: "Индивидуальный пошив. Гарантия — 1 год.",
+      title: "Надёжная защита для медперсонала",
+      subtitle: "Рентгенозащитные фартуки, воротники и очки от Kiran",
+      go_to_catalog: "Перейти в каталог",
     },
     about_section: {
       title: "О нас",

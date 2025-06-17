@@ -5,9 +5,11 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
 import heroImg from "../../assets/img/girlBaner.png";
-import Square from "../../assets/img/Square.png";
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageContext";
 
 function BanerReviews() {
+  const { t } = useContext(LanguageContext);
   return (
     <div className="BanerReviewsWrapper">
       <div className="BanerReviewsContainer">
@@ -22,16 +24,10 @@ function BanerReviews() {
               <SwiperSlide key={i}>
                 <div className="heroSlide">
                   <div className="heroContent">
-                    <div className="heroBadge">
-                      Индивидуальный пошив. Гарантия — 1 год.
-                    </div>
-                    <h2 className="heroTitle">
-                      Надёжная защита для медперсонала
-                    </h2>
-                    <p className="heroSubtitle">
-                      Рентгенозащитные фартуки, воротники и очки от Kiran
-                    </p>
-                    <button className="heroBtn">Перейти в каталог</button>
+                    <div className="heroBadge">{t("hero.badge")}</div>
+                    <h2 className="heroTitle">{t("hero.title")}</h2>
+                    <p className="heroSubtitle">{t("hero.subtitle")}</p>
+                    <button className="heroBtn">{t("hero.go_to_catalog")}</button>
                   </div>
                   <div className="heroImgs">                  
                      
