@@ -34,7 +34,8 @@ function FavBusket() {
   };
 
   const total = favorites.reduce((sum, item) => {
-    const price = parseFloat((item.mainPrice || "0").replace(/\s|₽/g, ""));
+    const raw = item.mainPrice ?? item.price ?? "0";
+    const price = parseFloat(String(raw).replace(/\s|₽/g, ""));
     const quantity = item.quantity || 1;
     return sum + price * quantity;
   }, 0);
