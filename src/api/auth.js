@@ -1,10 +1,16 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+const rawBase = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+const tmpUrl = new URL(rawBase);
+if (tmpUrl.hostname === '127.0.0.1') {
+  tmpUrl.hostname = 'localhost';
+}
+const API_BASE_URL = tmpUrl.toString().replace(/\/$/, '');
 
 async function request(path, options = {}) {
   const token = localStorage.getItem('token');
   const headers = {
     'Content-Type': 'application/json',
     Accept: 'application/json',
+    'X-Requested-With': 'XMLHttpRequest',
     ...(options.headers || {}),
   };
   const language =
@@ -63,4 +69,4 @@ export async function me() {
   }
 }
 
-export { API_BASE_URL };
+export { API_BASE_URL, request };
