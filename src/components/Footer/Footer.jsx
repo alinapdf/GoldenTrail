@@ -61,9 +61,7 @@ function Footer() {
               <img src={Logo} />
             </div>
             <div className="Footer-nav-data">2025</div>
-            <div className="Footer-nav-sayt">
-              Разработка сайта <span>idarelab.az</span>
-            </div>
+            <div className="Footer-nav-sayt">{t("footer.development")}</div>
           </div>
         </div>
       </div>

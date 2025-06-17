@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import logo from "../../assets/img/Logo.svg";
 import "./LoginRegistration.scss";
 import { login, register, me } from "../../api/auth";
 import { useNavigate } from "react-router-dom";
+import { LanguageContext } from "../../context/LanguageContext";
 
 function LoginRegistration() {
+  const { t } = useContext(LanguageContext);
   const [isLoginActive, setIsLoginActive] = useState(true);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -66,7 +68,7 @@ function LoginRegistration() {
               }`}
               onClick={() => handleTabSwitch("login")}
             >
-              Вход
+              {t("auth.login_reg.login")}
             </button>
             <button
               className={`LoginRegistration-BtnR ${
@@ -74,7 +76,7 @@ function LoginRegistration() {
               }`}
               onClick={() => handleTabSwitch("register")}
             >
-              Регистрация
+              {t("auth.login_reg.registration")}
             </button>
           </div>
 
@@ -82,20 +84,22 @@ function LoginRegistration() {
           {isLoginActive && (
             <div className="LoginRegistration-Login">
               <input
-                placeholder="E-mail"
+                placeholder={t("auth.login_reg.email")}
                 value={loginEmail}
                 onChange={(e) => setLoginEmail(e.target.value)}
               />
               <input
-                placeholder="Пароль"
+                placeholder={t("auth.login_reg.password")}
                 type="password"
                 value={loginPassword}
                 onChange={(e) => setLoginPassword(e.target.value)}
               />
               <button className="LoginRegistration-btn" onClick={handleLogin}>
-                Войти
+                {t("auth.login_reg.login_button")}
               </button>
-              <button className="LoginRegistration-btn2">Забыли пароль?</button>
+              <button className="LoginRegistration-btn2">
+                {t("auth.login_reg.forgot_password")}
+              </button>
             </div>
           )}
 
@@ -103,32 +107,32 @@ function LoginRegistration() {
           {!isLoginActive && (
             <div className="LoginRegistration-Registration">
               <input
-                placeholder="Имя пользователя"
+                placeholder={t("auth.login_reg.username")}
                 value={regUsername}
                 onChange={(e) => setRegUsername(e.target.value)}
               />
               <input
-                placeholder="E-mail"
+                placeholder={t("auth.login_reg.email")}
                 value={regEmail}
                 onChange={(e) => setRegEmail(e.target.value)}
               />
               <input
-                placeholder="Введите пароль"
+                placeholder={t("auth.login_reg.enter_password")}
                 type="password"
                 value={regPassword}
                 onChange={(e) => setRegPassword(e.target.value)}
               />
               <input
-                placeholder="Повторите пароль"
+                placeholder={t("auth.login_reg.repeat_password")}
                 type="password"
                 value={regRepeat}
                 onChange={(e) => setRegRepeat(e.target.value)}
               />
               <button className="LoginRegistration-btn" onClick={handleRegister}>
-                Зарегистрироваться
+                {t("auth.login_reg.register_button")}
               </button>
               <button className="LoginRegistration-btn2" onClick={() => handleTabSwitch('login')}>
-                Уже есть аккаунт? Войти
+                {t("auth.login_reg.already_login")}
               </button>
             </div>
           )}
