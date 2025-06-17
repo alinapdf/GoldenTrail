@@ -1,4 +1,5 @@
 import { API_BASE_URL, getCsrfCookie, request } from './auth';
+import { formatImageUrl } from './images';
 
 export function productToCartItem(product, opts = {}) {
   const quantity = opts.quantity || 1;
@@ -37,5 +38,12 @@ export async function fetchCartItems() {
   const token = localStorage.getItem('token');
   if (!token) return [];
   await getCsrfCookie();
-  return request('/api/cart');
+  const data = await request('/api/cart');
+  if (Array.isArray(data)) {
+    return data.map((item) => ({
+      ...item,
+      image: formatImageUrl(item.image),
+    }));
+  }
+  return data;
 }
