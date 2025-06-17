@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchProducts } from '../api/products';
+import { formatImageUrl } from '../api/images';
 
 function transform(product) {
   const status = product.is_new
@@ -12,8 +13,8 @@ function transform(product) {
   return {
     id: product.id,
     name: product.title,
-    img: product.image,
-    images: [],
+    img: formatImageUrl(product.image),
+    images: (product.images || []).map(formatImageUrl),
     sizes: product.sizes || [],
     colors: product.colors || [],
     mainPrice: product.price,
