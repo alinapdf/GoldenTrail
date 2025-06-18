@@ -6,6 +6,7 @@ import { LanguageContext } from "../../context/LanguageContext";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
 import { addCartItem, productToCartItem } from "../../api/cart";
+import { optionKey, optionValue, optionLabel } from "../../utils/options";
 import { addFav } from "../../redux/AddFav";
 import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
@@ -27,7 +28,10 @@ function NewProducts() {
       const selected = { ...product, selectedSize: size, selectedColor: color };
       dispatch(addItem(selected));
       try {
-        const item = productToCartItem(selected, { size, color });
+        const item = productToCartItem(selected, {
+          size: optionKey(size),
+          color: optionKey(color),
+        });
         await addCartItem(item);
       } catch (err) {
         console.error(err);
@@ -51,12 +55,18 @@ function NewProducts() {
           <ul className="newProducts_sizes">
             {product.sizes.map((s, index) => (
               <li
-                className={`newProducts_size-item${s === size ? " active" : ""}`}
-                style={s === size ? { border: "1px solid #000" } : {}}
+                className={`newProducts_size-item${
+                  optionKey(s) === optionKey(size) ? " active" : ""
+                }`}
+                style={
+                  optionKey(s) === optionKey(size)
+                    ? { border: "1px solid #000" }
+                    : {}
+                }
                 onClick={() => setSize(s)}
                 key={index}
               >
-                {s}
+                {optionLabel(s)}
               </li>
             ))}
           </ul>
@@ -70,14 +80,19 @@ function NewProducts() {
             <ul className="newProducts_colors">
               {product.colors.map((c, index) => (
                 <li
-                  className={`newProducts_color-item${c === color ? " active" : ""}`}
+                  className={`newProducts_color-item${
+                    optionKey(c) === optionKey(color) ? " active" : ""
+                  }`}
                   onClick={() => setColor(c)}
                   key={index}
                 >
                   <span
                     style={{
-                      background: c,
-                      border: c === color ? "1px solid #000" : "none",
+                      background: optionValue(c),
+                      border:
+                        optionKey(c) === optionKey(color)
+                          ? "1px solid #000"
+                          : "none",
                     }}
                   ></span>
                 </li>
