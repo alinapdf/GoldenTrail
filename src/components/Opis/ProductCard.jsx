@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Thumbs } from 'swiper/modules';
 
@@ -10,9 +10,12 @@ import BuyModal from '../../components/BuyModal/BuyModal';
 import Heart from '../../assets/img/Heartb.svg';
 import cart from '../../assets/img/cartb.svg';
 
+import { LanguageContext } from '../../context/LanguageContext';
+
 import styles from './ProductCard.module.css';
 
 const ProductCard = ({ product }) => {
+  const { t } = useContext(LanguageContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -25,7 +28,9 @@ const ProductCard = ({ product }) => {
   }, [product]);
 
   if (!product) {
-    return <div className={styles.ProductWrapper}>Товар не выбран</div>;
+    return (
+      <div className={styles.ProductWrapper}>{t('product_page.product_not_selected')}</div>
+    );
   }
 
   return (
@@ -63,11 +68,11 @@ const ProductCard = ({ product }) => {
 
         <div className={styles.infoSection}>
           <h1>{product.name}</h1>
-          <p className={styles.inStock}>🟢 В наличии</p>
+          <p className={styles.inStock}>🟢 {t('product_page.in_stock')}</p>
 
           {product.colors?.length > 0 && (
             <div className={styles.optionBlock}>
-              <span>Цвет:</span>
+              <span>{t('busket.color')}:</span>
               <div className={styles.colorOptions}>
                 {product.colors.map((color, index) => (
                   <button
@@ -85,7 +90,7 @@ const ProductCard = ({ product }) => {
 
           {product.sizes?.length > 0 && (
             <div className={styles.optionBlock}>
-              <span>Размер:</span>
+              <span>{t('busket.size')}:</span>
               <div className={styles.sizeOptions}>
                 {product.sizes.map((size, index) => (
                   <button
@@ -103,7 +108,7 @@ const ProductCard = ({ product }) => {
           )}
 
           <div className={styles.optionBlock}>
-            <span>Количество:</span>
+            <span>{t('busket.quantity')}:</span>
             <div className={styles.quantity}>
               <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>-
               </button>
@@ -124,7 +129,7 @@ const ProductCard = ({ product }) => {
               className={styles.buyButton}
               onClick={() => setIsModalOpen(true)}
             >
-              Купить в 1 клик
+              {t('products_block.buy')}
             </button>
 
             <button className={styles.cartBtn}>
@@ -135,11 +140,11 @@ const ProductCard = ({ product }) => {
             </button>
           </div>
 
-          <p className={styles.guarantee}>✓ Гарантия 2 года</p>
+          <p className={styles.guarantee}>✓ {t('product_page.guarantee')}</p>
         </div>
       </div>
 
-      <h2>Описание</h2>
+      <h2>{t('product_page.description')}</h2>
       <div>
         <p>{product.desc}</p>
       </div>

@@ -192,6 +192,13 @@ const translations = {
       quantity: "Say",
       copied: "Kopyalandı",
     },
+    product_page: {
+      in_stock: "Stokda",
+      guarantee: "2 il zəmanət",
+      description: "Təsvir",
+      loading: "Yüklənir...",
+      product_not_selected: "Məhsul seçilməyib",
+    },
     auth: {
       login_reg: {
         login: "Giriş",
@@ -426,6 +433,13 @@ const translations = {
       quantity: "Quantity",
       copied: "Copied",
     },
+    product_page: {
+      in_stock: "In stock",
+      guarantee: "2-year warranty",
+      description: "Description",
+      loading: "Loading...",
+      product_not_selected: "Product not selected",
+    },
     auth: {
       login_reg: {
         login: "Login",
@@ -659,6 +673,13 @@ const translations = {
       size: "Размер",
       quantity: "Количество",
       copied: "Скопировано",
+    },
+    product_page: {
+      in_stock: "В наличии",
+      guarantee: "Гарантия 2 года",
+      description: "Описание",
+      loading: "Загрузка...",
+      product_not_selected: "Товар не выбран",
     },
     auth: {
       login_reg: {
