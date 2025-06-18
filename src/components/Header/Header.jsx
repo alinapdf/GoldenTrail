@@ -4,6 +4,9 @@ import { FiSearch, FiHeart, FiShoppingCart, FiUser } from "react-icons/fi";
 import logo from "../../assets/img/Logo.svg";
 import { LanguageContext } from "../../context/LanguageContext";
 import { fetchCategories } from "../../api/categories";
+import useProducts from "../../hooks/useProducts";
+import { useDispatch } from "react-redux";
+import { setCurrentProduct } from "../../redux/CurrentProductSlice";
 import "./Header.scss";
 
 function Header() {
@@ -12,12 +15,27 @@ function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isSearchOpenProducts, setIsSearchOpenProducts] = useState(false);
   const [categories, setCategories] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const products = useProducts();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetchCategories()
       .then((data) => setCategories(data))
       .catch((err) => console.error(err));
   }, [language]);
+
+  useEffect(() => {
+    if (!searchQuery) {
+      setSearchResults([]);
+      return;
+    }
+    const q = searchQuery.toLowerCase();
+    setSearchResults(
+      products.filter((p) => p.name.toLowerCase().includes(q))
+    );
+  }, [searchQuery, products]);
 
   return (
     <header className="header">
@@ -114,15 +132,38 @@ function Header() {
                 type="text"
                 placeholder={t("header.search")}
                 className="searchInput"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button
                 className="searchClose"
-                onClick={() => setIsSearchOpen(false)}
+                onClick={() => {
+                  setIsSearchOpen(false);
+                  setSearchQuery("");
+                }}
                 aria-label="Закрыть"
               >
                 ×
               </button>
             </div>
+            {searchResults.length > 0 && (
+              <ul className="searchResults">
+                {searchResults.map((product) => (
+                  <li key={product.id} className="searchResultItem">
+                    <Link
+                      to={`/desc/${product.id}`}
+                      onClick={() => {
+                        dispatch(setCurrentProduct(product));
+                        setIsSearchOpen(false);
+                        setSearchQuery("");
+                      }}
+                    >
+                      {product.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       )}

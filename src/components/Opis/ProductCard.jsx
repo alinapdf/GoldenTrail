@@ -1,38 +1,43 @@
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Thumbs } from "swiper/modules";
+import React, { useState, useEffect, useContext } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Thumbs } from 'swiper/modules';
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
 
-import BuyModal from "../../components/BuyModal/BuyModal";
-import Heart from "../../assets/img/Heartb.svg";
-import cart from "../../assets/img/cartb.svg";
+import BuyModal from '../../components/BuyModal/BuyModal';
+import Heart from '../../assets/img/Heartb.svg';
+import cart from '../../assets/img/cartb.svg';
 
-import styles from "./ProductCard.module.css";
+import { LanguageContext } from '../../context/LanguageContext';
 
-const ProductCard = () => {
+import styles from './ProductCard.module.css';
+
+const ProductCard = ({ product }) => {
+  const { t } = useContext(LanguageContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const [selectedColor, setSelectedColor] = useState(product?.colors?.[0] || '');
+  const [selectedSize, setSelectedSize] = useState(product?.sizes?.[0] || '');
 
-  // const product = useSelector((state) => state.currentProduct.product);
+  useEffect(() => {
+    setSelectedColor(product?.colors?.[0] || '');
+    setSelectedSize(product?.sizes?.[0] || '');
+  }, [product]);
 
-  // const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  // const [quantity, setQuantity] = useState(1);
-  // const [selectedColor, setSelectedColor] = useState(
-  //   product?.colors?.[0] || ""
-  // );
-  // const [selectedSize, setSelectedSize] = useState(product?.sizes?.[0] || "");
-
-  // if (!product) {
-  //   return <div className={styles.ProductWrapper}>Товар не выбран</div>;
-  // }
+  if (!product) {
+    return (
+      <div className={styles.ProductWrapper}>{t('product_page.product_not_selected')}</div>
+    );
+  }
 
   return (
     <div className={styles.ProductWrapper}>
       <div className={styles.productCard}>
         <div className={styles.imageSection}>
-          {/* <Swiper
+          <Swiper
             modules={[Navigation, Thumbs]}
             thumbs={{ swiper: thumbsSwiper }}
             navigation
@@ -40,7 +45,7 @@ const ProductCard = () => {
           >
             {product.images?.map((img, idx) => (
               <SwiperSlide key={idx}>
-                <img src={product.img} alt={`Product ${idx}`} />
+                <img src={img} alt={`Product ${idx}`} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -55,7 +60,7 @@ const ProductCard = () => {
           >
             {product.images?.map((img, idx) => (
               <SwiperSlide key={idx}>
-                <img src={product.img} alt={`Thumb ${idx}`} />
+                <img src={img} alt={`Thumb ${idx}`} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -63,17 +68,17 @@ const ProductCard = () => {
 
         <div className={styles.infoSection}>
           <h1>{product.name}</h1>
-          <p className={styles.inStock}>🟢 В наличии</p>
+          <p className={styles.inStock}>🟢 {t('product_page.in_stock')}</p>
 
           {product.colors?.length > 0 && (
             <div className={styles.optionBlock}>
-              <span>Цвет:</span>
+              <span>{t('busket.color')}:</span>
               <div className={styles.colorOptions}>
                 {product.colors.map((color, index) => (
                   <button
                     key={index}
                     className={`${styles.colorDot} ${
-                      selectedColor === color ? styles.active : ""
+                      selectedColor === color ? styles.active : ''
                     }`}
                     style={{ background: color }}
                     onClick={() => setSelectedColor(color)}
@@ -85,13 +90,13 @@ const ProductCard = () => {
 
           {product.sizes?.length > 0 && (
             <div className={styles.optionBlock}>
-              <span>Размер:</span>
+              <span>{t('busket.size')}:</span>
               <div className={styles.sizeOptions}>
                 {product.sizes.map((size, index) => (
                   <button
                     key={index}
                     className={`${styles.sizeBtn} ${
-                      selectedSize === size ? styles.active : ""
+                      selectedSize === size ? styles.active : ''
                     }`}
                     onClick={() => setSelectedSize(size)}
                   >
@@ -103,10 +108,9 @@ const ProductCard = () => {
           )}
 
           <div className={styles.optionBlock}>
-            <span>Количество:</span>
+            <span>{t('busket.quantity')}:</span>
             <div className={styles.quantity}>
-              <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>
-                −
+              <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>-
               </button>
               <input type="number" value={quantity} readOnly />
               <button onClick={() => setQuantity(quantity + 1)}>+</button>
@@ -118,14 +122,14 @@ const ProductCard = () => {
             {product.oldPrice && (
               <div className={styles.oldPrice}>{product.oldPrice}</div>
             )}
-          </div> */}
+          </div>
 
           <div className={styles.btns}>
             <button
               className={styles.buyButton}
               onClick={() => setIsModalOpen(true)}
             >
-              Купить в 1 клик
+              {t('products_block.buy')}
             </button>
 
             <button className={styles.cartBtn}>
@@ -136,36 +140,13 @@ const ProductCard = () => {
             </button>
           </div>
 
-          <p className={styles.guarantee}>✓ Гарантия 2 года</p>
+          <p className={styles.guarantee}>✓ {t('product_page.guarantee')}</p>
         </div>
       </div>
 
-      <h2>Описание</h2>
+      <h2>{t('product_page.description')}</h2>
       <div>
-        <p>
-          Назначение Рентгенозащитный воротник предназначен для защиты
-          щитовидной железы от воздействия ионизирующего излучения при
-          проведении рентгенологических, томографических и флюороскопических
-          процедур. Особенно важен при длительных обследованиях или работе в
-          зонах повышенной радиационной нагрузки. Описание и особенности
-          Изготовлен из специализированного защитного материала с высоким
-          содержанием свинца или его аналогов, обеспечивающего эффективное
-          поглощение рентгеновского излучения. Имеет эргономичную форму, которая
-          плотно прилегает к шее и закрывает область щитовидной железы без
-          дискомфорта. Внешняя оболочка выполнена из износостойкого и легко
-          очищаемого материала, устойчивого к медицинским дезинфицирующим
-          средствам. Надежная система фиксации — на липучке или с застёжкой —
-          позволяет быстро надевать и снимать воротник. Обеспечивает эффективную
-          защиту в соответствии с международными стандартами радиационной
-          безопасности. Область применения Рентген-кабинеты Операционные
-          Стоматологические кабинеты Ветеринарные клиники Косметологические
-          процедуры с применением флюороскопии Мобильные диагностические службы
-          Преимущества Лёгкий вес и комфорт при длительном ношении Универсальный
-          размер для большинства пользователей Надёжная защита чувствительной
-          области Подходит для медицинских и косметологических учреждений
-          Соответствие требованиям по радиационной защите Комплектация
-          Рентгенозащитный воротник — 1 шт Упаковка с инструкцией по уходу
-        </p>
+        <p>{product.desc}</p>
       </div>
 
       {isModalOpen && <BuyModal onClose={() => setIsModalOpen(false)} />}

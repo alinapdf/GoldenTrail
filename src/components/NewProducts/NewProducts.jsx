@@ -11,6 +11,7 @@ import { addFav } from "../../redux/AddFav";
 import { addFavorite, productToFavorite } from "../../api/favorites";
 import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
+import BuyModal from "../BuyModal/BuyModal";
 
 function NewProducts() {
   const { t } = useContext(LanguageContext);
@@ -32,6 +33,7 @@ function NewProducts() {
   const Item = ({ product }) => {
     const [size, setSize] = useState(product.sizes?.[0] || "");
     const [color, setColor] = useState(product.colors?.[0] || "");
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleAdd = async () => {
       const selected = { ...product, selectedSize: size, selectedColor: color };
@@ -118,12 +120,13 @@ function NewProducts() {
             </ul>
           </div>
           <div className="newProducts_action">
-            <button className="btn-main" onClick={handleAdd}>
+            <button className="btn-main" onClick={() => setIsModalOpen(true)}>
               {t("products_block.buy")}
             </button>
             <Link to={`/desc/${product.id}`} className="link-main" onClick={() => dispatch(setCurrentProduct(product))}>
               {t("products_block.more")}
             </Link>
+            {isModalOpen && <BuyModal onClose={() => setIsModalOpen(false)} />}
           </div>
         </div>
       </div>
