@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs } from "swiper/modules";
 
@@ -9,11 +9,13 @@ import "swiper/css/thumbs";
 import BuyModal from "../../components/BuyModal/BuyModal";
 import Heart from "../../assets/img/Heartb.svg";
 import cart from "../../assets/img/cartb.svg";
+import { LanguageContext } from "../../context/LanguageContext";
 
 import styles from "./ProductCard.module.css";
 
 const ProductCard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useContext(LanguageContext);
 
   // const product = useSelector((state) => state.currentProduct.product);
 
@@ -63,11 +65,11 @@ const ProductCard = () => {
 
         <div className={styles.infoSection}>
           <h1>{product.name}</h1>
-          <p className={styles.inStock}>🟢 В наличии</p>
+          <p className={styles.inStock}>🟢 {t("product_card.in_stock")}</p>
 
           {product.colors?.length > 0 && (
             <div className={styles.optionBlock}>
-              <span>Цвет:</span>
+              <span>{t("busket.color")}:</span>
               <div className={styles.colorOptions}>
                 {product.colors.map((color, index) => (
                   <button
@@ -85,7 +87,7 @@ const ProductCard = () => {
 
           {product.sizes?.length > 0 && (
             <div className={styles.optionBlock}>
-              <span>Размер:</span>
+              <span>{t("busket.size")}:</span>
               <div className={styles.sizeOptions}>
                 {product.sizes.map((size, index) => (
                   <button
@@ -103,7 +105,7 @@ const ProductCard = () => {
           )}
 
           <div className={styles.optionBlock}>
-            <span>Количество:</span>
+            <span>{t("busket.quantity")}:</span>
             <div className={styles.quantity}>
               <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>
                 −
@@ -125,7 +127,7 @@ const ProductCard = () => {
               className={styles.buyButton}
               onClick={() => setIsModalOpen(true)}
             >
-              Купить в 1 клик
+              {t("products_block.buy")}
             </button>
 
             <button className={styles.cartBtn}>
@@ -136,11 +138,11 @@ const ProductCard = () => {
             </button>
           </div>
 
-          <p className={styles.guarantee}>✓ Гарантия 2 года</p>
+          <p className={styles.guarantee}>✓ {t("product_card.guarantee")}</p>
         </div>
       </div>
 
-      <h2>Описание</h2>
+      <h2>{t("product_card.description_title")}</h2>
       <div>
         <p>
           Назначение Рентгенозащитный воротник предназначен для защиты
