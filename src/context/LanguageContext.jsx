@@ -135,6 +135,11 @@ const translations = {
       disposable: "Bir dəfəlik məhsullar",
       antiseptics: "Antiseptiklər və dezinfeksiya",
     },
+    product_card: {
+      in_stock: "Stokda var",
+      guarantee: "2 il zəmanət",
+      description_title: "Təsvir",
+    },
     busket: {
       empty_cart: "Səbətiniz boşdur",
       favorites_empty: "Seçilmişlər siyahısı boşdur",
@@ -369,6 +374,11 @@ const translations = {
       disposable: "Disposable products",
       antiseptics: "Antiseptics and disinfection",
     },
+    product_card: {
+      in_stock: "In stock",
+      guarantee: "2-year warranty",
+      description_title: "Description",
+    },
     busket: {
       empty_cart: "Your cart is empty",
       favorites_empty: "Favorites list is empty",
@@ -602,6 +612,11 @@ const translations = {
       xr: "Рентгенозащитная одежда",
       disposable: "Одноразовая продукция",
       antiseptics: "Антисептики и дезинфекция",
+    },
+    product_card: {
+      in_stock: "В наличии",
+      guarantee: "Гарантия 2 года",
+      description_title: "Описание",
     },
     busket: {
       empty_cart: "Ваша корзина пуста",
