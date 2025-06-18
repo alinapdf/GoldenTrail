@@ -167,6 +167,10 @@
   background-image: url("../../assets/img/Heartb.svg");
   background-color: rgb(18, 32, 45);
 }
+.FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_main-info .FilteredProducts_btns .FilteredProducts_btn.fav.active {
+  background-image: url("../../assets/img/Heartb.svg");
+  background-color: rgb(18, 32, 45);
+}
 .FilteredProducts-objs .FilteredProducts .FilteredProducts_top .FilteredProducts_sizes {
   display: flex;
   gap: 23px;

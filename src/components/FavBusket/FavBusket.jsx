@@ -5,14 +5,19 @@ import {
   clearFav,
   increaseQuantity,
   decreaseQuantity,
+  setFavorites,
 } from "../../redux/AddFav";
 import { addItem } from "../../redux/CardSlice";
 import { addCartItem, productToCartItem } from "../../api/cart";
-import { optionLabel } from "../../utils/options";
+import {
+  fetchFavorites,
+  removeFavorite as apiRemoveFavorite,
+} from "../../api/favorites";
+import { optionLabel, optionKey } from "../../utils/options";
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
 import dezenfekiciya from "../../assets/img/dezenfekciya.png";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 
 function FavBusket() {
@@ -20,8 +25,25 @@ function FavBusket() {
   const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();
 
-  const handleRemove = (id) => {
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const data = await fetchFavorites();
+        if (Array.isArray(data)) dispatch(setFavorites(data));
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    load();
+  }, [dispatch]);
+
+  const handleRemove = async (id) => {
     dispatch(removeFav(id));
+    try {
+      await apiRemoveFavorite(id);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handleAdd = async (product) => {

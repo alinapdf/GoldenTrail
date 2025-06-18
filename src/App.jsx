@@ -7,6 +7,9 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import LoginRegistration from "./components/LoginRegistration/LoginRegistration";
 import FilteredProducts from "./components/FilteredProducts/FilteredProducts";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setFavorites } from "./redux/AddFav";
+import { fetchFavorites } from "./api/favorites";
 import LoadingOverlay from "./components/LoadingOverlay/LoadingOverlay";
 import ResetParol from "./components/LoginRegistration/ResetParol/ResetParol";
 import ErrorBlock from "./components/Error/Error";
@@ -16,6 +19,19 @@ import MyMap from "./components/myMap/myMap";
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const loadFavs = async () => {
+      try {
+        const data = await fetchFavorites();
+        if (Array.isArray(data)) dispatch(setFavorites(data));
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    loadFavs();
+  }, [dispatch]);
 
   useEffect(() => {
     setLoading(true);

@@ -1,6 +1,6 @@
 import useProducts from "../../hooks/useProducts";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
 import { addCartItem, productToCartItem } from "../../api/cart";
 import { optionKey, optionValue, optionLabel } from "../../utils/options";
@@ -8,9 +8,12 @@ import { useContext, useState } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 
 import "./SoMayLike.scss";
+import { addFav } from "../../redux/AddFav";
+import { addFavorite, productToFavorite } from "../../api/favorites";
 function SoMayLike() {
   const { t } = useContext(LanguageContext);
   const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites);
 
   const products = useProducts();
 
@@ -32,6 +35,16 @@ function SoMayLike() {
       }
     };
 
+    const handleAddFav = async () => {
+      dispatch(addFav(product));
+      try {
+        const fav = productToFavorite(product);
+        await addFavorite(fav);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
     return (
       <div className="SoMayLike" key={product.id}>
         <div className="SoMayLike_top">
@@ -42,7 +55,12 @@ function SoMayLike() {
             <div className="SoMayLike_status">{product.status}</div>
             <div className="SoMayLike_btns">
               <button className="SoMayLike_btn baasket" onClick={handleAdd}></button>
-              <button className="SoMayLike_btn fav"></button>
+              <button
+                className={`SoMayLike_btn fav${
+                  favorites.find((f) => f.id === product.id) ? " active" : ""
+                }`}
+                onClick={handleAddFav}
+              ></button>
             </div>
           </div>
           <h3>{product.name}</h3>

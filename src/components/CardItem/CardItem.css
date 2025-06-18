@@ -89,6 +89,10 @@
   background-image: url("../../assets/img/Heartb.svg");
   background-color: rgb(18, 32, 45);
 }
+.container-productCard .productCard-objs .productCard .productCard_top .productCard_main-info .productCard_btns .productCard_btn.fav.active {
+  background-image: url("../../assets/img/Heartb.svg");
+  background-color: rgb(18, 32, 45);
+}
 .container-productCard .productCard-objs .productCard .productCard_top .productCard_sizes {
   display: flex;
   gap: 23px;
@@ -241,6 +245,10 @@
   }
   .container-productCard .productCard-objs .productCard .productCard_top .productCard_main-info .productCard_btns .productCard_btn.fav:hover {
     background-image: url("../../assets/img/heart.svg");
+    background-color: rgb(18, 32, 45);
+  }
+  .container-productCard .productCard-objs .productCard .productCard_top .productCard_main-info .productCard_btns .productCard_btn.fav.active {
+    background-image: url("../../assets/img/Heartb.svg");
     background-color: rgb(18, 32, 45);
   }
   .container-productCard .productCard-objs .productCard .productCard_top .productCard_sizes {

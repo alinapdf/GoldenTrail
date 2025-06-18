@@ -91,6 +91,10 @@
   background-image: url("../../assets/img/Heartb.svg");
   background-color: rgb(18, 32, 45);
 }
+.container-SoMayLike .SoMayLike-objs .SoMayLike .SoMayLike_top .SoMayLike_main-info .SoMayLike_btns .SoMayLike_btn.fav.active {
+  background-image: url("../../assets/img/Heartb.svg");
+  background-color: rgb(18, 32, 45);
+}
 .container-SoMayLike .SoMayLike-objs .SoMayLike .SoMayLike_top .SoMayLike_sizes {
   display: flex;
   gap: 23px;
@@ -235,6 +239,14 @@
   }
   .container-SoMayLike .SoMayLike-objs .SoMayLike .SoMayLike_top .SoMayLike_main-info .SoMayLike_btns .SoMayLike_btn.fav:hover {
     background-image: url("../../assets/img/heart.svg");
+    background-color: rgb(18, 32, 45);
+  }
+  .container-SoMayLike .SoMayLike-objs .SoMayLike .SoMayLike_top .SoMayLike_main-info .SoMayLike_btns .SoMayLike_btn.fav.active {
+    background-image: url("../../assets/img/Heartb.svg");
+    background-color: rgb(18, 32, 45);
+  }
+  .container-SoMayLike .SoMayLike-objs .SoMayLike .SoMayLike_top .SoMayLike_main-info .SoMayLike_btns .SoMayLike_btn.fav.active {
+    background-image: url("../../assets/img/Heartb.svg");
     background-color: rgb(18, 32, 45);
   }
   .container-SoMayLike .SoMayLike-objs .SoMayLike .SoMayLike_top .SoMayLike_sizes {

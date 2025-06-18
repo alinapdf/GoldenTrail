@@ -5,11 +5,12 @@ import up from "../../assets/img/up.svg";
 import vector from "../../assets/img/Vector.svg";
 
 import useProducts from "../../hooks/useProducts";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
 import { addCartItem, productToCartItem } from "../../api/cart";
 import { optionKey, optionValue, optionLabel } from "../../utils/options";
 import { addFav } from "../../redux/AddFav";
+import { addFavorite, productToFavorite } from "../../api/favorites";
 
 import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
@@ -18,9 +19,16 @@ function FilteredProducts() {
   const [showAllFilters, setShowAllFilters] = useState(false);
 
   const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites);
 
-  const handleAddFav = (product) => {
+  const handleAddFav = async (product) => {
     dispatch(addFav(product));
+    try {
+      const fav = productToFavorite(product);
+      await addFavorite(fav);
+    } catch (err) {
+      console.error(err);
+    }
   };
   const products = useProducts();
 
@@ -56,7 +64,9 @@ function FilteredProducts() {
                 onClick={handleAdd}
               ></button>
               <button
-                className="FilteredProducts_btn fav"
+                className={`FilteredProducts_btn fav${
+                  favorites.find((f) => f.id === product.id) ? " active" : ""
+                }`}
                 onClick={() => handleAddFav(product)}
               ></button>
             </div>

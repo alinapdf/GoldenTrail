@@ -98,6 +98,10 @@
   background-image: url("../../assets/img/Heartb.svg");
   background-color: rgb(18, 32, 45);
 }
+.container-BestSellers .BestSellers-objs .BestSellers .BestSellers_top .BestSellers_main-info .BestSellers_btns .BestSellers_btn.fav.active {
+  background-image: url("../../assets/img/Heartb.svg");
+  background-color: rgb(18, 32, 45);
+}
 .container-BestSellers .BestSellers-objs .BestSellers .BestSellers_top .BestSellers_sizes {
   display: flex;
   gap: 23px;
@@ -243,6 +247,14 @@
   }
   .container-BestSellers .BestSellers-objs .BestSellers .BestSellers_top .BestSellers_main-info .BestSellers_btns .BestSellers_btn.fav:hover {
     background-image: url("../../assets/img/heart.svg");
+    background-color: rgb(18, 32, 45);
+  }
+  .container-BestSellers .BestSellers-objs .BestSellers .BestSellers_top .BestSellers_main-info .BestSellers_btns .BestSellers_btn.fav.active {
+    background-image: url("../../assets/img/Heartb.svg");
+    background-color: rgb(18, 32, 45);
+  }
+  .container-BestSellers .BestSellers-objs .BestSellers .BestSellers_top .BestSellers_main-info .BestSellers_btns .BestSellers_btn.fav.active {
+    background-image: url("../../assets/img/Heartb.svg");
     background-color: rgb(18, 32, 45);
   }
   .container-BestSellers .BestSellers-objs .BestSellers .BestSellers_top .BestSellers_sizes {

@@ -97,6 +97,10 @@
   background-image: url("../../assets/img/Heartb.svg");
   background-color: rgb(18, 32, 45);
 }
+.container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_top .ChoseProffesional_main-info .ChoseProffesional_btns .ChoseProffesional_btn.fav.active {
+  background-image: url("../../assets/img/Heartb.svg");
+  background-color: rgb(18, 32, 45);
+}
 .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_top .ChoseProffesional_sizes {
   display: flex;
   gap: 23px;
@@ -245,6 +249,14 @@
   }
   .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_top .ChoseProffesional_main-info .ChoseProffesional_btns .ChoseProffesional_btn.fav:hover {
     background-image: url("../../assets/img/heart.svg");
+    background-color: rgb(18, 32, 45);
+  }
+  .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_top .ChoseProffesional_main-info .ChoseProffesional_btns .ChoseProffesional_btn.fav.active {
+    background-image: url("../../assets/img/Heartb.svg");
+    background-color: rgb(18, 32, 45);
+  }
+  .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_top .ChoseProffesional_main-info .ChoseProffesional_btns .ChoseProffesional_btn.fav.active {
+    background-image: url("../../assets/img/Heartb.svg");
     background-color: rgb(18, 32, 45);
   }
   .container-ChoseProffesional .ChoseProffesional-objs .ChoseProffesional .ChoseProffesional_top .ChoseProffesional_sizes {

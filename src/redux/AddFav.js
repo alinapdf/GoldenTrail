@@ -4,6 +4,7 @@ const favoritesSlice = createSlice({
   name: "favorites",
   initialState: [],
   reducers: {
+    setFavorites: (_, action) => action.payload,
     addFav: (state, action) => {
       const exists = state.find((item) => item.id === action.payload.id);
       if (!exists) {
@@ -32,6 +33,7 @@ const favoritesSlice = createSlice({
 });
 
 export const {
+  setFavorites,
   addFav,
   removeFav,
   clearFav,

@@ -3,20 +3,28 @@ import useProducts from "../../hooks/useProducts";
 import { useContext, useState } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/CardSlice";
 import { addCartItem, productToCartItem } from "../../api/cart";
 import { optionKey, optionValue, optionLabel } from "../../utils/options";
 import { addFav } from "../../redux/AddFav";
+import { addFavorite, productToFavorite } from "../../api/favorites";
 import { Link } from "react-router-dom";
 import { setCurrentProduct } from "../../redux/CurrentProductSlice";
 
 function NewProducts() {
   const { t } = useContext(LanguageContext);
   const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites);
 
-  const handleAddFav = (product) => {
+  const handleAddFav = async (product) => {
     dispatch(addFav(product));
+    try {
+      const fav = productToFavorite(product);
+      await addFavorite(fav);
+    } catch (err) {
+      console.error(err);
+    }
   };
   const products = useProducts().filter((p) => p.is_new);
 
@@ -48,7 +56,12 @@ function NewProducts() {
             <div className="newProducts_status">{product.status}</div>
             <div className="newProducts_btns">
               <button className="newProducts_btn baasket" onClick={handleAdd}></button>
-              <button className="newProducts_btn fav" onClick={() => handleAddFav(product)}></button>
+              <button
+                className={`newProducts_btn fav${
+                  favorites.find((f) => f.id === product.id) ? " active" : ""
+                }`}
+                onClick={() => handleAddFav(product)}
+              ></button>
             </div>
           </div>
           <h3>{product.name}</h3>

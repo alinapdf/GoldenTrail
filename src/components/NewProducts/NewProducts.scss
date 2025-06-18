@@ -90,6 +90,10 @@
                 background-image: url("../../assets/img/Heartb.svg");
                 background-color: rgba(18, 32, 45, 1);
               }
+              &.active {
+                background-image: url("../../assets/img/Heartb.svg");
+                background-color: rgba(18, 32, 45, 1);
+              }
             }
           }
         }

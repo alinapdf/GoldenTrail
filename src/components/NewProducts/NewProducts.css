@@ -95,6 +95,10 @@
   background-image: url("../../assets/img/Heartb.svg");
   background-color: rgb(18, 32, 45);
 }
+.container-newproducts .newProducts-objs .newProducts .newProducts_top .newProducts_main-info .newProducts_btns .newProducts_btn.fav.active {
+  background-image: url("../../assets/img/Heartb.svg");
+  background-color: rgb(18, 32, 45);
+}
 .container-newproducts .newProducts-objs .newProducts .newProducts_top .newProducts_sizes {
   display: flex;
   gap: 23px;
@@ -239,6 +243,14 @@
   }
   .container-newproducts .newProducts-objs .newProducts .newProducts_top .newProducts_main-info .newProducts_btns .newProducts_btn.fav:hover {
     background-image: url("../../assets/img/heart.svg");
+    background-color: rgb(18, 32, 45);
+  }
+  .container-newproducts .newProducts-objs .newProducts .newProducts_top .newProducts_main-info .newProducts_btns .newProducts_btn.fav.active {
+    background-image: url("../../assets/img/Heartb.svg");
+    background-color: rgb(18, 32, 45);
+  }
+  .container-newproducts .newProducts-objs .newProducts .newProducts_top .newProducts_main-info .newProducts_btns .newProducts_btn.fav.active {
+    background-image: url("../../assets/img/Heartb.svg");
     background-color: rgb(18, 32, 45);
   }
   .container-newproducts .newProducts-objs .newProducts .newProducts_top .newProducts_sizes {
