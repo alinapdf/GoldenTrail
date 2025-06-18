@@ -48,7 +48,8 @@ export async function login(credentials) {
 }
 
 export async function getCsrfCookie() {
-  await fetch(`${API_BASE_URL}/sanctum/csrf-cookie`, {
+  const url = new URL('/sanctum/csrf-cookie', API_BASE_URL).toString();
+  await fetch(url, {
     credentials: 'include',
   });
 }
