@@ -12,6 +12,7 @@ import {
   incrementCartItem,
   decrementCartItem,
 } from "../../api/cart";
+import { optionLabel } from "../../utils/options";
 import person from "../../assets/img/person.png";
 import bahyli from "../../assets/img/bahyli.png";
 import dezenfekiciya from "../../assets/img/dezenfekciya.png";
@@ -114,11 +115,21 @@ function SelectedItem() {
                       <ul className="SelectedItem-Menu">
                         <li className="SelectedItem-Item-Size">
                           <div>{t("busket.size")}</div>
-                          <div>{item.selectedSize || item.size || item.sizes?.[0] || '-'}</div>
+                          <div>
+                            {optionLabel(
+                              item.selectedSize || item.size || item.sizes?.[0]
+                            ) || '-'}
+                          </div>
                         </li>
                         <li className="SelectedItem-Item-Color">
                           <div>{t("orders_page.color")}</div>
-                          <div>{item.selectedColor || item.color || item.colors?.[0] || '-'}</div>
+                          <div>
+                            {optionLabel(
+                              item.selectedColor ||
+                                item.color ||
+                                item.colors?.[0]
+                            ) || '-'}
+                          </div>
                         </li>
                         <li className="SelectedItem-Item-Quantity">
                           <div>{t("busket.quantity")}</div>

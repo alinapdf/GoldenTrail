@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { optionKey } from "../utils/options";
 
 const initialState = [];
 
@@ -9,7 +10,7 @@ const cartSlice = createSlice({
     setItems: (_, action) => action.payload,
     addItem: (state, action) => {
       const { id, selectedSize = "", selectedColor = "" } = action.payload;
-      const key = `${id}-${selectedSize}-${selectedColor}`;
+      const key = `${id}-${optionKey(selectedSize)}-${optionKey(selectedColor)}`;
       const existing = state.find((item) => item._key === key);
       if (existing) {
         existing.quantity += 1;
