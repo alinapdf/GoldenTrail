@@ -27,7 +27,11 @@ function FavBusket() {
   const handleAdd = async (product) => {
     dispatch(addItem(product));
     try {
-      const item = productToCartItem(product);
+      const item = productToCartItem(product, {
+        size: optionKey(product.selectedSize || product.size),
+        color: optionKey(product.selectedColor || product.color),
+        quantity: product.quantity,
+      });
       await addCartItem(item);
     } catch (err) {
       console.error(err);

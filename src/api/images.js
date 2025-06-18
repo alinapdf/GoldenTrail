@@ -8,5 +8,8 @@ export function formatImageUrl(path) {
   if (!path) return '';
   if (/^https?:\/\//i.test(path)) return path;
   const trimmed = String(path).replace(/^\/+/, '');
-  return `${IMAGE_BASE_URL}/${trimmed}`;
+  const withoutPrefix = trimmed.startsWith('product-images/')
+    ? trimmed.slice('product-images/'.length)
+    : trimmed;
+  return `${IMAGE_BASE_URL}/${withoutPrefix}`;
 }
