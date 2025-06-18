@@ -6,7 +6,9 @@ const favoritesSlice = createSlice({
   reducers: {
     setFavorites: (_, action) => action.payload,
     addFav: (state, action) => {
-      const exists = state.find((item) => item.id === action.payload.id);
+      const exists = state.find(
+        (item) => item.product_id === action.payload.product_id
+      );
       if (!exists) {
         state.push(action.payload);
       }

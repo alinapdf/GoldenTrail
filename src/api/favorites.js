@@ -36,10 +36,14 @@ export async function fetchFavorites() {
   await getCsrfCookie();
   const data = await request('/api/favorites');
   if (Array.isArray(data)) {
-    return data.map((item) => ({
-      ...item,
-      image: formatImageUrl(item.image),
-    }));
+    return data.map((item) => {
+      const image = formatImageUrl(item.image);
+      return {
+        ...item,
+        image,
+        img: image,
+      };
+    });
   }
   return data;
 }

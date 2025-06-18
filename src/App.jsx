@@ -6,6 +6,7 @@ import Desc from "./pages/Desc/Desc";
 import { Routes, Route, useLocation } from "react-router-dom";
 import LoginRegistration from "./components/LoginRegistration/LoginRegistration";
 import FilteredProducts from "./components/FilteredProducts/FilteredProducts";
+import FavoritesPage from "./pages/Favorites/Favorites";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setFavorites } from "./redux/AddFav";
@@ -47,6 +48,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPages />} />
         <Route path="/Busket" element={<Busket />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/desc/:id" element={<Desc />} />
         <Route path="/LR" element={<LoginRegistration />} />
         <Route path="/Filter" element={<FilteredProducts />} />

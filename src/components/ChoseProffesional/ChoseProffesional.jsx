@@ -20,10 +20,11 @@ function ChoseProffesional() {
   const favorites = useSelector((state) => state.favorites);
 
   const handleAddFav = async (product) => {
-    dispatch(addFav(product));
     try {
       const fav = productToFavorite(product);
-      await addFavorite(fav);
+      const data = await addFavorite(fav);
+      const payload = { ...product, ...data, product_id: product.id };
+      dispatch(addFav(payload));
     } catch (err) {
       console.error(err);
     }
@@ -60,7 +61,11 @@ function ChoseProffesional() {
               <button className="ChoseProffesional_btn baasket" onClick={handleAdd}></button>
               <button
                 className={`ChoseProffesional_btn fav${
-                  favorites.find((f) => f.id === product.id) ? " active" : ""
+                  favorites.find(
+                    (f) => f.product_id === product.id || f.id === product.id
+                  )
+                    ? " active"
+                    : ""
                 }`}
                 onClick={() => handleAddFav(product)}
               ></button>

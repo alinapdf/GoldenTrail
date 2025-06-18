@@ -100,10 +100,10 @@ function FavBusket() {
           <>
             <div className="FavBusket-Block-newcard">
               {favorites.map((item) => (
-                <div className="FavBusket-Block-Obj" key={item._key || item.id}>
+                <div className="FavBusket-Block-Obj" key={item.id}>
                   <div className="FavBusket-Left-Block">
                     <div className="FavBusket-img">
-                      <img src={item.img} alt={item.name} />
+                      <img src={item.img || item.image} alt={item.name} />
                     </div>
                     <div className="FavBusket-Blok-desc">
                       <h3 className="h3">{item.name}</h3>
@@ -140,7 +140,7 @@ function FavBusket() {
                     )}
                     <div className="FavBusket-Buttons">
                       <button
-                        onClick={() => dispatch(decreaseQuantity(item._key || item.id))}
+                        onClick={() => dispatch(decreaseQuantity(item.id))}
                         className="FavBusket-decrease"
                       >
                         -
@@ -149,7 +149,7 @@ function FavBusket() {
                         {item.quantity}
                       </span>
                       <button
-                        onClick={() => dispatch(increaseQuantity(item._key || item.id))}
+                        onClick={() => dispatch(increaseQuantity(item.id))}
                         className="FavBusket-increase"
                       >
                         +
@@ -158,7 +158,7 @@ function FavBusket() {
                     <div className="Del-Add">
                       <button
                         className="deleete"
-                        onClick={() => handleRemove(item._key || item.id)}
+                        onClick={() => handleRemove(item.id)}
                       >
                         {t("busket.delete")}
                       </button>
